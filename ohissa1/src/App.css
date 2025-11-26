@@ -1,0 +1,606 @@
+@media (max-width: 900px) {
+  .gusto-image {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 700px) {
+  /* Layout principale mobile:
+     niente flex centrato, lasciamo scroll naturale */
+  .app {
+    width: 100vw !important;
+    min-height: 100vh !important;
+    display: block !important;
+  }
+
+  main {
+    width: 100vw !important;
+    display: block !important;
+  }
+
+  /* FORM MOBILE */
+  form[action^="mailto"] {
+    /* mobile: non full-bleed, centrato con padding laterale */
+    width: min(420px, 95%) !important;
+    max-width: 100% !important;
+    margin: 24px auto 32px auto !important;
+    padding: 16px 16px 24px 16px !important;
+    font-size: 1rem !important;
+    border-radius: 16px !important;
+    background: #fff !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+
+    /* nessun posizionamento assoluto in mobile */
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    /* display a blocco per evitare problemi di flex/centering ereditati */
+    display: block !important;
+  }
+}
+
+/* Extend mobile form behavior up to 900px (tablets) so form isn't absolute on mid-size viewports) */
+@media (max-width: 900px) {
+  form[action^="mailto"] {
+    width: min(420px, 95%) !important;
+    max-width: 100% !important;
+    margin: 24px auto 32px auto !important;
+    padding: 16px 16px 24px 16px !important;
+    font-size: 1rem !important;
+    border-radius: 16px !important;
+    background: #fff !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+
+    /* NIENTE posizionamento assoluto in mobile/tablet */
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    display: block !important;
+  }
+
+  form[action^="mailto"] * {
+    box-sizing: border-box;
+  }
+
+  form[action^="mailto"] input,
+  form[action^="mailto"] textarea,
+  form[action^="mailto"] select {
+    width: 100% !important;
+    font-size: 0.98rem !important;
+    padding: 10px 8px !important;
+    border-radius: 8px !important;
+  }
+
+  form[action^="mailto"] h2 {
+    font-size: 1.2rem !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+  }
+
+  form[action^="mailto"] label {
+    font-size: 0.95rem !important;
+    margin: 8px 0 4px 0 !important;
+    display: block !important;
+    text-align: left !important;
+  }
+
+  form[action^="mailto"] button,
+  form[action^="mailto"] input[type="submit"] {
+    width: 100% !important;
+    margin-top: 16px !important;
+  }
+
+  /* footer: on tablet/mobile keep footer static and not overlapping content */
+  .app img[alt="Footer"],
+  main img[alt="Footer"] {
+    position: static !important;
+    width: 100vw !important;
+    display: block !important;
+    margin: 0 !important;
+    z-index: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+}
+
+/* Stili per la navbar custom */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-family: 'Ubuntu', system-ui, sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto;
+  padding: 18px 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.navbar-menu-icon {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* MENU FULLSCREEN */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(7, 86, 89, 0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-menu .menu-link {
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: 'Ubuntu', system-ui, sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+/* MENU FULLSCREEN MOBILE */
+@media (max-width: 700px) {
+  .fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 50vh; /* limitato a metà schermo per mostrare tutto senza scroll */
+    background: rgba(7, 86, 89, 0.95);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px 12px; /* meno padding per guadagnare spazio */
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .fullscreen-menu .menu-link {
+    color: #fff;
+    font-size: 0.9rem; /* rimpicciolisco i testi in mobile */
+    font-family: 'Ubuntu', system-ui, sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    margin-bottom: 6px; /* meno spazio verticale */
+    text-align: left;
+    transition: color 0.2s;
+    display: block;
+    padding-left: 0;
+    max-width: 100%;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .fullscreen-menu img {
+    height: 10px !important;
+    margin-bottom: 6px !important;
+    display: block;
+    margin-left: 0;
+  }
+
+  .fullscreen-menu button[aria-label="Chiudi menu"] {
+    top: 18px !important;
+    right: 18px !important;
+    font-size: 15px !important;
+  }
+}
+
+.fullscreen-menu .menu-link:hover {
+  color: #00bfae;
+}
+
+@keyframes certScroll {
+  0% { left: 0; }
+  100% { left: -100vw; }
+}
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #202833, #050608);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Card centrale */
+.page-card {
+  width: 100vw;
+  background: #ffffff;
+}
+
+/* HERO */
+.hero-section {
+  position: relative;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* NAVBAR */
+.navbar {
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 3.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* CONTENUTO */
+.content {
+  background: #ffffff;
+}
+
+/* HERO TEXT */
+.hero-text-block {
+  padding: 40px 32px 48px;
+  text-align: center;
+  color: #373737;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #006c5a;
+  margin-bottom: 24px;
+}
+
+.hero-paragraph {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 16px;
+  line-height: 1.7;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.tagline {
+  font-weight: 600;
+  color: #006c5a;
+}
+
+/* Mobile hero */
+.hero-title.mobile { font-size: 2.1rem; }
+.hero-paragraph.mobile { font-size: 0.98rem; }
+
+/* CERTIFICAZIONI */
+.certifications-section {
+  width: 100vw;
+  background-color: #006c5a;
+}
+
+.cert-carousel-wrapper {
+  width: 100%;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+}
+
+.certifications-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.7s;
+}
+
+/* GUSTO – immagine di sfondo + testo che sale con lo scroll */
+.gusto-section {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.gusto-sticky-container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  /* estendiamo l'area per rendere l'animazione visibile e graduale */
+  height: 80vh;
+}
+
+.gusto-image-wrapper {
+  /* resta sticky nella prima viewport della sezione */
+  position: sticky;
+  top: 90px; /* allinea alla navbar */
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+}
+
+.gusto-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Testo in overlay, centrato: la posizione finale è al centro dell'immagine */
+.gusto-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  font-size: 1.9rem;
+  line-height: 1.45;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0; /* parte nascosto */
+  /* transizione più lenta e con curva morbida per salita dolce */
+  transition: opacity 2.4s cubic-bezier(.22,.8,.28,1), transform 2.4s cubic-bezier(.22,.8,.28,1);
+}
+
+/* versione mobile: solo dimensioni */
+.gusto-text.mobile {
+  font-size: 1.25rem;
+  padding: 1.2rem 12px;
+}
+
+/* SEZIONI IMMAGINE FULL WIDTH */
+
+.full-width-section {
+  width: 100vw;
+}
+
+.full-width-section.white-bg {
+  background: #ffffff;
+}
+
+.full-width-section.beige-bg {
+  background: #f2e4c9;
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ============= RESPONSIVE MOBILE / TABLET ============= */
+
+@media (max-width: 900px) {
+  .app {
+    background: radial-gradient(circle at top, #202833, #050608);
+  }
+
+  .hero-text-block {
+    padding: 24px 16px 32px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-paragraph {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  /* Sposta leggermente in basso l'immagine Frame 374 su mobile/tablet
+     usando transform (non influisce sul flusso del documento, quindi il form
+     sottostante rimane nella sua posizione) */
+  img[alt="Frame 374"] {
+    transform: translateY(10vh);
+    transition: transform 360ms ease;
+    display: block;
+  }
+}
+
+.full-width-section { width: 100vw; }
+.white-bg { background: #ffffff; }
+.beige-bg { background: #f2e4c9; }
+
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border: 1px solid white;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  transition: 0.3s;
+  background: rgba(255,255,255,0.2);
+}
+.btn:hover {
+  background: rgba(255,255,255,0.35);
+  color: white !important;
+}
+
+.ohissa-page {
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: block;
+}
+
+/*=====================
+  BLOCCO PRODOTTI OHISSA
+======================*/
+
+/*=====================
+  BLOCCO PRODOTTI OHISSA
+======================*/
+
+.ohissa-products-block {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  height: 420px;
+  box-sizing: border-box;
+}
+
+/* div con sfondo dinamico */
+.ohissa-products-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.4s ease-in-out;
+  z-index: 1;
+}
+
+
+/* Desktop: testo centrato sopra l'immagine */
+.ohissa-products-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
+}
+
+.ohissa-products-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.ohissa-products-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.ohissa-products-buttons .btn {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+  /* Navbar mobile: logo a sinistra, meno padding per evitare overflow */
+  .navbar {
+    padding: 0 1rem;
+    height: 72px;
+  }
+
+  .navbar-logo {
+    justify-content: flex-start;
+    margin: 0;
+    padding-left: 8px;
+    font-size: 1.5rem;
+  }
+
+  .navbar-menu-icon {
+    right: 12px;
+    top: 22px;
+  }
+
+
+/* ===== BLOCCO PRODOTTI – MOBILE ===== */
+
+.ohissa-mobile-products {
+  width: 100%;
+  padding: 24px 16px 56px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.ohissa-mobile-products-inner {
+  max-width: 320px;            /* larghezza simile allo screenshot */
+  margin: 0 auto;
+  padding: 18px 14px 22px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.ohissa-mobile-products-title {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* bottoni in colonna a tutta larghezza */
+.ohissa-mobile-products-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ohissa-mobile-products-buttons .btn {
+  width: 100%;
+  text-align: center;
+  padding: 10px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.25);
+  font-size: 0.95rem;
+}
