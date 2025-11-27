@@ -330,7 +330,7 @@ const ricette = [
     preparazione:
       "Condisci la Tartare di Pesce Spada OHissa con olio, sale e pepe. Prepara la salsa mescolando maionese e curry. Disponi poi la tartare in un coppapasta, aggiungi la salsa sopra e decora con aneto.",
     difficolta: "Difficile",
-    tempo: " min",
+    tempo: "7 min",
   },
   {
     img: Frame390_2,
