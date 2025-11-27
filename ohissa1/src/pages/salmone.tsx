@@ -302,7 +302,7 @@ const Salmone: React.FC = () => {
               style={{
                 display: "flex",
                 flexDirection: isDesktop ? "row" : "column",
-                alignItems: isDesktop ? "center" : "flex-start",
+                alignItems: "center",
                 gap: "28px",
               }}
             >
@@ -361,7 +361,7 @@ const Salmone: React.FC = () => {
               style={{
                 display: "flex",
                 flexDirection: isDesktop ? "row-reverse" : "column",
-                alignItems: isDesktop ? "center" : "flex-start",
+                alignItems: "center",
                 gap: "28px",
               }}
             >
@@ -420,7 +420,7 @@ const Salmone: React.FC = () => {
               style={{
                 display: "flex",
                 flexDirection: isDesktop ? "row" : "column",
-                alignItems: isDesktop ? "center" : "flex-start",
+                alignItems: "center",
                 gap: "28px",
               }}
             >

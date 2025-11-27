@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../App.css";
 
-import HeroSection from "../assets/HeroSection.png";          // desktop
+import HeroSection from "../assets/Hero Section.png";          // desktop
 import CorporateVideo from "../assets/Corporate Ohissa 2025 (1).mp4";
 import TeaserVideo from "../assets/Teaser Ohissa 2025 vert.mp4";
 import HeroMobile from "../assets/Hero.png";                  // mobile / tablet
@@ -549,7 +549,7 @@ const Homepage = () => {
         {/* PRODOTTI – SCOPRI LA LINEA DEL BENESSERE */}
 
         {isMobile ? (
-          <section className="ohissa-mobile-products">
+          <section className="ohissa-mobile-products" style={{ width: "100vw", position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}>
             <div
               className="ohissa-mobile-products-inner"
               style={{
@@ -557,6 +557,9 @@ const Homepage = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 marginTop: "60px",
+                width: "100vw",
+                minWidth: "100vw",
+                boxSizing: "border-box",
               }}
             >
               <h1 className="ohissa-mobile-products-title">
@@ -743,6 +746,7 @@ const Homepage = () => {
             <video
               src={isMobile ? TeaserVideo : CorporateVideo}
               controls
+              poster={isMobile ? GustoMobile : undefined}
               style={{
                 width: "100%",
                 height: isMobile ? "220px" : "420px",
@@ -926,7 +930,7 @@ const Homepage = () => {
             style={{
               position: "absolute",
               top: isMobile ? "60%" : "50%",
-              right: isMobile ? "2%" : "7%",
+              right: isMobile ? "0.5%" : "7%",
               transform: isMobile ? "translateY(-50%)" : "translateY(-50%)",
               background: "#ff7e6b",
               color: "#fff",
@@ -941,9 +945,9 @@ const Homepage = () => {
               transition: "background 0.2s, color 0.2s",
               cursor: "pointer",
               display: "inline-block",
-              minWidth: isMobile ? "auto" : undefined,
-              maxWidth: isMobile ? "60px" : undefined,
-              textAlign: "center"
+              minWidth: isMobile ? "60px" : undefined,
+              textAlign: "center",
+              whiteSpace: isMobile ? "nowrap" : undefined
             }}
             aria-label="Scopri di più su Cortilia"
             onMouseOver={e => e.currentTarget.style.background = '#ff5a3c'}

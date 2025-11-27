@@ -557,7 +557,7 @@ const OhissaSport: React.FC = () => {
 
 {/* CTA BLU: “SCOPRI LA NOSTRA LINEA DEL BENESSERE” ----------------- */}
 {isMobile ? (
-  <section className="ohissa-mobile-products">
+  <section className="ohissa-mobile-products" style={{ marginBottom: 32 }}>
     <div
       className="ohissa-mobile-products-inner"
       style={{

@@ -258,10 +258,10 @@ const TonnoPinnaGialla: React.FC = () => {
     {/* TARTARE – immagine sinistra, testo destra */}
     <div
       style={{
-        display: "flex",
-        flexDirection: isDesktop ? "row" : "column",
-        alignItems: isDesktop ? "center" : "flex-start",
-        gap: "28px",
+          display: "flex",
+          flexDirection: isDesktop ? "row" : "column",
+          alignItems: isDesktop ? "center" : "center",
+          gap: "28px",
       }}
     >
       <div
@@ -317,10 +317,10 @@ const TonnoPinnaGialla: React.FC = () => {
     {/* CARPACCIO – immagine destra, testo sinistra */}
     <div
       style={{
-        display: "flex",
-        flexDirection: isDesktop ? "row-reverse" : "column",
-        alignItems: isDesktop ? "center" : "flex-start",
-        gap: "28px",
+          display: "flex",
+          flexDirection: isDesktop ? "row-reverse" : "column",
+          alignItems: isDesktop ? "center" : "center",
+          gap: "28px",
       }}
     >
       <div
@@ -377,10 +377,10 @@ const TonnoPinnaGialla: React.FC = () => {
     {/* SAKU – immagine sinistra, testo destra */}
     <div
       style={{
-        display: "flex",
-        flexDirection: isDesktop ? "row" : "column",
-        alignItems: isDesktop ? "center" : "flex-start",
-        gap: "28px",
+          display: "flex",
+          flexDirection: isDesktop ? "row" : "column",
+          alignItems: isDesktop ? "center" : "center",
+          gap: "28px",
       }}
     >
       <div
@@ -436,10 +436,10 @@ const TonnoPinnaGialla: React.FC = () => {
     {/* POKE – immagine destra, testo sinistra */}
     <div
       style={{
-        display: "flex",
-        flexDirection: isDesktop ? "row-reverse" : "column",
-        alignItems: isDesktop ? "center" : "flex-start",
-        gap: "28px",
+          display: "flex",
+          flexDirection: isDesktop ? "row-reverse" : "column",
+          alignItems: isDesktop ? "center" : "center",
+          gap: "28px",
       }}
     >
       <div

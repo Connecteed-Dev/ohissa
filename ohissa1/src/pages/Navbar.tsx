@@ -243,11 +243,21 @@ const Navbar: React.FC = () => {
                   justifyContent: "center",
                   zIndex: 10001,
                   padding: 0,
+                  fontSize: "2.1rem",
+                  lineHeight: 1,
                 }}
                 aria-label="Chiudi menu"
               >
-                <span style={{ display: "block", width: 22, height: 3, background: "#fff", borderRadius: 2, transform: "rotate(45deg)" }}></span>
-                <span style={{ display: "block", width: 22, height: 3, background: "#fff", borderRadius: 2, transform: "rotate(-45deg)" }}></span>
+                <span style={{
+                  display: "block",
+                  width: "100%",
+                  height: "100%",
+                  color: "#fff",
+                  fontWeight: 700,
+                  fontFamily: "Arial, Helvetica, sans-serif",
+                  textAlign: "center",
+                  pointerEvents: "none"
+                }}>×</span>
               </button>
               <a href="/" style={{ display: "block", width: "100%", textAlign: "center" }}>
                 <img

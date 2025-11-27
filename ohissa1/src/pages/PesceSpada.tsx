@@ -286,7 +286,7 @@ const PesceSpada: React.FC = () => {
               style={{
                 display: "flex",
                 flexDirection: isDesktop ? "row" : "column",
-                alignItems: isDesktop ? "center" : "flex-start",
+                alignItems: "center",
                 gap: "32px",
               }}
             >
