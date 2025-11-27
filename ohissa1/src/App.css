@@ -575,7 +575,7 @@ html, body {
   max-width: 320px;            /* larghezza simile allo screenshot */
   margin: 0 auto;
   padding: 18px 14px 22px;
-  border-radius: 10px;
+
   box-sizing: border-box;
 }
 

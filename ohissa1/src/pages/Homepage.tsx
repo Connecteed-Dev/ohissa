@@ -330,7 +330,7 @@ const ricette = [
     preparazione:
       "Condisci la Tartare di Pesce Spada OHissa con olio, sale e pepe. Prepara la salsa mescolando maionese e curry. Disponi poi la tartare in un coppapasta, aggiungi la salsa sopra e decora con aneto.",
     difficolta: "Difficile",
-    tempo: "7 min",
+    tempo: " min",
   },
   {
     img: Frame390_2,
@@ -556,7 +556,7 @@ const Homepage = () => {
 
         {/* PRODOTTI – SCOPRI LA LINEA DEL BENESSERE */}
 
-        {isMobile && (
+        {isMobile ? (
           <section className="ohissa-mobile-products" style={{ width: "100vw", position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}>
             <div
               className="ohissa-mobile-products-inner"
@@ -567,7 +567,7 @@ const Homepage = () => {
                 marginTop: "60px",
                 width: "100vw",
                 minWidth: "100vw",
-                boxSizing: "border-box",
+                
               }}
             >
               <h1 className="ohissa-mobile-products-title">
@@ -575,6 +575,45 @@ const Homepage = () => {
               </h1>
 
               <div className="ohissa-mobile-products-buttons">
+                <a href="/tonno-pinna-gialla" className="btn">
+                  Tonno a pinne gialle
+                </a>
+                <a href="/tonno-alalunga" className="btn">
+                  Tonno alalunga
+                </a>
+                <a href="/salmone" className="btn">
+                  Salmone
+                </a>
+                <a href="/pesce-spada" className="btn">
+                  Pesce spada
+                </a>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+
+        {/* DESKTOP: blocco con hover dinamico */}
+        {isDesktop && (
+          <div className="ohissa-products-block" style={{ position: "relative" }}>
+            <img
+              src={productsBg}
+              alt="Prodotti OHissa"
+              className="ohissa-products-bg"
+              style={{
+                transition: "0.3s",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                zIndex: 0,
+                objectFit: "cover"
+              }}
+            />
+            <div className="ohissa-products-overlay" style={{ position: "relative", zIndex: 1 }}>
+              <h1 className="ohissa-products-title">SCOPRI TUTTI I PRODOTTI OHISSA</h1>
+              <div className="ohissa-products-buttons">
                 <a
                   href="/tonno-pinna-gialla"
                   className="btn"
@@ -609,66 +648,153 @@ const Homepage = () => {
                 </a>
               </div>
             </div>
-          </section>
+
+
+          </div>
         )}
-        {/* Close mobile products section */}
 
         {/* CERTIFICAZIONI – FASCIA VERDE */}
-        <section
-          className="certifications-section"
-          style={{
-            background: "#075659",
-            padding: "24px 0",
-            display: "flex",
-            justifyContent: "center",
-            overflow: "hidden"
-          }}
-        >
-          <div
+        {isMobile ? (
+          <section
+            className="certifications-section"
             style={{
-              width: "100vw",
+              background: "#075659",
+              padding: "24px 16px",
               display: "flex",
-              alignItems: "center",
-              position: "relative",
-              overflow: "hidden",
-              height: "80px"
+              justifyContent: "center",
+              overflow: "hidden"
             }}
           >
             <div
               style={{
+                width: "100%",
+                maxWidth: "1100px",
+                height: "80px",
+                position: "relative",
+                overflow: "hidden",
                 display: "flex",
                 alignItems: "center",
-                gap: "38px",
-                position: "absolute",
-                left: "100%",
-                animation: "logoScroll 12s linear infinite"
+                justifyContent: "center"
               }}
             >
-              <span
+              <div
                 style={{
-                  color: "#fff",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  lineHeight: 1.2,
-                  textAlign: "right",
-                  minWidth: "120px"
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "38px",
+                  position: "absolute",
+                  left: "100%",
+                  animation: "logoScroll 12s linear infinite"
                 }}
               >
-                ISO 14001:2015<br />ISO 45001:2018
-              </span>
-              <img src={ItalianLandscapeBlueCMYK} alt="MSC" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
-              <img src={AscLogo} alt="ASC" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
-              <img src={IfsLogo} alt="IFS Food" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
-              <img src={CsrLogo} alt="Ecovadis" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+                <span
+                  style={{
+                    color: "#fff",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    lineHeight: 1.2,
+                    textAlign: "right",
+                    minWidth: "120px"
+                  }}
+                >
+                  ISO 14001:2015<br />ISO 45001:2018
+                </span>
+                <img src={ItalianLandscapeBlueCMYK} alt="MSC" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+                <img src={AscLogo} alt="ASC" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+                <img src={IfsLogo} alt="IFS Food" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+                <img src={CsrLogo} alt="Ecovadis" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+              </div>
+              <style>{`
+                @keyframes logoScroll {
+                  0% { left: 100%; }
+                  100% { left: -600px; }
+                }
+              `}</style>
             </div>
-            <style>{`
-              @keyframes logoScroll {
-                0% { left: 100%; }
-                100% { left: -600px; }
-              }
-            `}</style>
-          </div>
-        </section>
+          </section>
+        ) : (
+          <section
+            className="certifications-section"
+            style={{
+              background: "#075659",
+              padding: "24px 16px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                maxWidth: "1100px",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "18px",
+                flexWrap: "wrap",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  marginRight: "8px",
+                }}
+              >
+                <span
+                  style={{
+                    color: "#fff",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    lineHeight: 1.2,
+                    textAlign: "right",
+                  }}
+                >
+                  ISO 14001:2015
+                  <br />
+                  ISO 45001:2018
+                </span>
+              </div>
+              <img
+                src={ItalianLandscapeBlueCMYK}
+                alt="MSC"
+                style={{
+                  height: 56,
+                  background: "#fff",
+                  borderRadius: 8,
+                }}
+              />
+              <img
+                src={AscLogo}
+                alt="ASC"
+                style={{
+                  height: 56,
+                  background: "#fff",
+                  borderRadius: 8,
+                }}
+              />
+              <img
+                src={IfsLogo}
+                alt="IFS Food"
+                style={{
+                  height: 56,
+                  background: "#fff",
+                  borderRadius: 8,
+                }}
+              />
+              <img
+                src={CsrLogo}
+                alt="Ecovadis"
+                style={{
+                  height: 56,
+                  background: "#fff",
+                  borderRadius: 8,
+                }}
+              />
+            </div>
+          </section>
+        )}
+
         {/* VIDEO – RISPETTO SENZA ALTERAZIONI */}
         <section
           style={{
@@ -869,28 +995,51 @@ const Homepage = () => {
             href="https://www.cortilia.it/produttori/ohissa?srsltid=AfmBOorllWXqUNxzaRk0F4ve8rHmF3Vw_l-I6NGlOEZOZU4UgOQDbHlv"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              top: isMobile ? "60%" : "50%",
-              right: isMobile ? "0.5%" : "7%",
-              transform: isMobile ? "translateY(-50%)" : "translateY(-50%)",
-              background: "#ff7e6b",
-              color: "#fff",
-              borderRadius: "24px",
-              padding: isMobile ? "2px 6px" : "16px 38px",
-              fontWeight: 700,
-              fontSize: isMobile ? "0.58rem" : "1.18rem",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
-              border: "none",
-              textDecoration: "none",
-              zIndex: 2,
-              transition: "background 0.2s, color 0.2s",
-              cursor: "pointer",
-              display: "inline-block",
-              minWidth: isMobile ? "60px" : undefined,
-              textAlign: "center",
-              whiteSpace: isMobile ? "nowrap" : undefined
-            }}
+            style={
+              isMobile
+                ? {
+                    position: "absolute",
+                    top: "60%",
+                    right: "0.5%",
+                    transform: "translateY(-50%)",
+                    background: "#ff7e6b",
+                    color: "#fff",
+                    borderRadius: "24px",
+                    padding: "2px 6px",
+                    fontWeight: 700,
+                    fontSize: "0.58rem",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
+                    border: "none",
+                    textDecoration: "none",
+                    zIndex: 2,
+                    transition: "background 0.2s, color 0.2s",
+                    cursor: "pointer",
+                    display: "inline-block",
+                    minWidth: "60px",
+                    textAlign: "center",
+                    whiteSpace: "nowrap"
+                  }
+                : {
+                    position: "absolute",
+                    top: "50%",
+                    right: "2%",
+                    transform: "translateY(-50%)",
+                    background: "#ff7e6b",
+                    color: "#fff",
+                    borderRadius: "18px",
+                    padding: "7px 18px",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
+                    border: "none",
+                    textDecoration: "none",
+                    zIndex: 2,
+                    transition: "background 0.2s, color 0.2s",
+                    cursor: "pointer",
+                    display: "inline-block",
+                    textAlign: "center"
+                  }
+            }
             aria-label="Scopri di più su Cortilia"
             onMouseOver={e => e.currentTarget.style.background = '#ff5a3c'}
             onMouseOut={e => e.currentTarget.style.background = '#ff7e6b'}
