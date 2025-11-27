@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../App.css";
 
 import HeroSection from "../assets/HeroSection.png";          // desktop
@@ -6,18 +6,13 @@ import CorporateVideo from "../assets/Corporate Ohissa 2025 (1).mp4";
 import TeaserVideo from "../assets/Teaser Ohissa 2025 vert.mp4";
 import HeroMobile from "../assets/Hero.png";                  // mobile / tablet
 
-<<<<<<< HEAD
-import Certificazioni from "../assets/certificazioni.png";
-=======
 import Certificazioni from "../assets/Certificazioni.png";
-// import CorporateVideo from "../assets/Ohissa-per-lo-Sport-1.mp4";
->>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
 
 import ScopriBenessere from "../assets/Scopri la linea benessere.png";
 import PiuSicuroFrescoDesktop from "../assets/Più sicuro del fresco1.png";
 import PiuSicuroFrescoMobile from "../assets/Più sicuro del fresco.png";
 import CortiliaDesktop from "../assets/Cortilia (1).png";
-import CortiliaMobile from "../assets/Cortilia (1).png";
+import CortiliaMobile from "../assets/Cortilia.png";
 import CortiliaBg from "../assets/Cortilia (1).png";
 import StoriaDesktop from "../assets/Storia.png";
 import StoriaMobile from "../assets/Storia (1).png";
@@ -34,10 +29,10 @@ import PesceCrudoImg from "../assets/Frame 9.png";
 import MareImg from "../assets/Frame 9 (3).png";
 import frame405 from "../assets/Frame 405.png";
 import ChiSiamo21 from "../assets/Chi siamo (21).png";
-  // quella grande orizzontale
+// quella grande orizzontale
 import ChiSiamoDesktopBg from "../assets/Chi siamo (21).png";
 import ChiSiamoMobileImg from "../assets/Chi siamo (23).png";
- // 👉 metti qui il nome reale del file stretto
+// 👉 metti qui il nome reale del file stretto
 
 
 import Logo10 from "../assets/image 10.png";
@@ -87,122 +82,31 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
   const next = () => setIndex((i) => Math.min(ricette.length - visibleItemsCount, i + visibleItemsCount));
   const visibleItems = ricette.slice(index, index + visibleItemsCount);
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        width: "100%",
-        justifyContent: "center",
-      }}
-    >
-      {isMobile ? (
-        <div
-          style={{
-            display: "flex",
-            gap: "0",
-            width: "100vw",
-            overflowX: "auto",
-            WebkitOverflowScrolling: "touch",
-            scrollSnapType: "x mandatory",
-            paddingBottom: "18px",
-          }}
-        >
-          {ricette.map((r, i) => (
-            <div
-              key={i}
-              style={{
-                width: "94vw",
-                maxWidth: "94vw",
-                margin: "0 auto 0 auto",
-                borderRadius: "18px",
-                boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
-                background: "#f4f4f4",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "auto",
-                transition: "0.3s",
-                alignItems: "stretch",
-                scrollSnapAlign: "start",
-              }}
-            >
-              <img
-                src={r.img}
-                alt={r.title}
-                style={{
-                  width: "100%",
-                  height: "170px",
-                  objectFit: "cover",
-                  display: "block",
-                  borderTopLeftRadius: "18px",
-                  borderTopRightRadius: "18px",
-                }}
-              />
-              <div
-                style={{
-                  padding: "18px 16px 14px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                  flex: 1,
-                }}
-              >
-                <h3
-                  style={{
-                    color: "#075659",
-                    fontSize: "1.4rem",
-                    fontWeight: 700,
-                    margin: 0,
-                  }}
-                >
-                  {r.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.5,
-                    margin: 0,
-                    color: "#333",
-                  }}
-                >
-                  <b>Ingredienti:</b> {r.ingredienti}
-                </p>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.5,
-                    margin: 0,
-                    color: "#333",
-                  }}
-                >
-                  <b>Preparazione:</b> {r.preparazione}
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    marginTop: "auto",
-                    fontSize: "0.95rem",
-                    color: "#075659",
-                  }}
-                >
-                  <span>📶</span>
-                  <span>Facile</span>
-                  <span>⏱️</span>
-                  <span>5 min</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <>
-          {/* FRECCIA SINISTRA */}
-          <button
-            onClick={prev}
-            disabled={index === 0}
-            style={{
+    <div style={{ display: "flex", alignItems: "center", width: "100%", justifyContent: "center" }}>
+      {/* FRECCIA SINISTRA */}
+      <button
+        onClick={prev}
+        disabled={index === 0}
+        style={
+          isMobile
+            ? {
+              width: "48px",
+              height: "48px",
+              border: "2px solid #075659",
+              background: "#e0f7fa",
+              borderRadius: "50%",
+              boxShadow: "0px 2px 8px rgba(7,86,89,0.1)",
+              fontSize: "2.3rem",
+              color: index === 0 ? "#b0cfd1" : "#075659",
+              cursor: index === 0 ? "not-allowed" : "pointer",
+              opacity: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "background 0.2s, color 0.2s, border 0.2s",
+              outline: "none",
+            }
+            : {
               width: "48px",
               height: "48px",
               background: "transparent",
@@ -217,115 +121,147 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
               boxShadow: "none",
               borderRadius: "0",
               transition: "color 0.2s",
+            }
+        }
+        onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
+          if (!e.currentTarget.disabled) {
+            if (isMobile) {
+              e.currentTarget.style.background = '#b2ebf2';
+              e.currentTarget.style.color = '#0097a7';
+              e.currentTarget.style.borderColor = '#0097a7';
+            } else {
+              e.currentTarget.style.color = '#0097a7';
+            }
+          }
+        }}
+        onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => {
+          if (!e.currentTarget.disabled) {
+            if (isMobile) {
+              e.currentTarget.style.background = '#e0f7fa';
+              e.currentTarget.style.color = index === 0 ? '#b0cfd1' : '#075659';
+              e.currentTarget.style.borderColor = '#075659';
+            } else {
+              e.currentTarget.style.color = index === 0 ? '#b0cfd1' : '#075659';
+            }
+          }
+        }}
+        aria-label="Precedente"
+      >
+        ‹
+      </button>
+      <div style={{ display: "flex", gap: isMobile ? "0" : "24px", width: isMobile ? "100%" : "auto", justifyContent: "center" }}>
+        {visibleItems.map((r, i) => (
+          <div
+            key={i}
+            style={{
+              width: isMobile ? "94vw" : "360px",
+              maxWidth: isMobile ? "94vw" : "360px",
+              margin: isMobile ? "0 auto 18px auto" : "0 auto",
+              borderRadius: "18px",
+              boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
+              background: isMobile ? "#f4f4f4" : "#fff",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              minHeight: isMobile ? "auto" : "360px",
+              transition: "0.3s",
+              alignItems: "stretch",
             }}
-            onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
-              if (!e.currentTarget.disabled) {
-                e.currentTarget.style.color = '#0097a7';
-              }
-            }}
-            onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => {
-              if (!e.currentTarget.disabled) {
-                e.currentTarget.style.color = index === 0 ? '#b0cfd1' : '#075659';
-              }
-            }}
-            aria-label="Precedente"
           >
-            ‹
-          </button>
-          <div style={{ display: "flex", gap: "24px", width: "auto", justifyContent: "center" }}>
-            {visibleItems.map((r, i) => (
-              <div
-                key={i}
+            <img
+              src={r.img}
+              alt={r.title}
+              style={{
+                width: "100%",
+                height: isMobile ? "170px" : "190px",
+                objectFit: "cover",
+                display: "block",
+                borderTopLeftRadius: "18px",
+                borderTopRightRadius: "18px",
+              }}
+            />
+            <div
+              style={{
+                padding: "18px 16px 14px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                flex: 1,
+              }}
+            >
+              <h3
                 style={{
-                  width: "360px",
-                  maxWidth: "360px",
-                  margin: "0 auto",
-                  borderRadius: "18px",
-                  boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
-                  background: "#fff",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  minHeight: "360px",
-                  transition: "0.3s",
-                  alignItems: "stretch",
+                  color: "#075659",
+                  fontSize: "1.4rem",
+                  fontWeight: 700,
+                  margin: 0,
                 }}
               >
-                <img
-                  src={r.img}
-                  alt={r.title}
-                  style={{
-                    width: "100%",
-                    height: "190px",
-                    objectFit: "cover",
-                    display: "block",
-                    borderTopLeftRadius: "18px",
-                    borderTopRightRadius: "18px",
-                  }}
-                />
-                <div
-                  style={{
-                    padding: "18px 16px 14px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                    flex: 1,
-                  }}
-                >
-                  <h3
-                    style={{
-                      color: "#075659",
-                      fontSize: "1.4rem",
-                      fontWeight: 700,
-                      margin: 0,
-                    }}
-                  >
-                    {r.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "0.98rem",
-                      lineHeight: 1.5,
-                      margin: 0,
-                      color: "#333",
-                    }}
-                  >
-                    <b>Ingredienti:</b> {r.ingredienti}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "0.98rem",
-                      lineHeight: 1.5,
-                      margin: 0,
-                      color: "#333",
-                    }}
-                  >
-                    <b>Preparazione:</b> {r.preparazione}
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      marginTop: "auto",
-                      fontSize: "0.95rem",
-                      color: "#075659",
-                    }}
-                  >
-                    <span>📶</span>
-                    <span>Facile</span>
-                    <span>⏱️</span>
-                    <span>5 min</span>
-                  </div>
-                </div>
+                {r.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: "0.98rem",
+                  lineHeight: 1.5,
+                  margin: 0,
+                  color: "#333",
+                }}
+              >
+                <b>Ingredienti:</b> {r.ingredienti}
+              </p>
+              <p
+                style={{
+                  fontSize: "0.98rem",
+                  lineHeight: 1.5,
+                  margin: 0,
+                  color: "#333",
+                }}
+              >
+                <b>Preparazione:</b> {r.preparazione}
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  marginTop: "auto",
+                  fontSize: "0.95rem",
+                  color: "#075659",
+                }}
+              >
+                <span>📶</span>
+                <span>Facile</span>
+                <span>⏱️</span>
+                <span>5 min</span>
               </div>
-            ))}
+            </div>
           </div>
-          {/* FRECCIA DESTRA */}
-          <button
-            onClick={next}
-            disabled={index >= ricette.length - visibleItemsCount}
-            style={{
+        ))}
+      </div>
+      {/* FRECCIA DESTRA */}
+      <button
+        onClick={next}
+        disabled={index >= ricette.length - visibleItemsCount}
+        style={
+          isMobile
+            ? {
+              width: "48px",
+              height: "48px",
+              border: "2px solid #075659",
+              background: "#e0f7fa",
+              borderRadius: "50%",
+              boxShadow: "0px 2px 8px rgba(7,86,89,0.1)",
+              fontSize: "2.3rem",
+              color: index >= ricette.length - visibleItemsCount ? "#b0cfd1" : "#075659",
+              cursor: index >= ricette.length - visibleItemsCount ? "not-allowed" : "pointer",
+              opacity: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "background 0.2s, color 0.2s, border 0.2s",
+              outline: "none",
+            }
+            : {
               width: "48px",
               height: "48px",
               background: "transparent",
@@ -340,23 +276,34 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
               boxShadow: "none",
               borderRadius: "0",
               transition: "color 0.2s",
-            }}
-            onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
-              if (!e.currentTarget.disabled) {
-                e.currentTarget.style.color = '#0097a7';
-              }
-            }}
-            onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => {
-              if (!e.currentTarget.disabled) {
-                e.currentTarget.style.color = index >= ricette.length - visibleItemsCount ? '#b0cfd1' : '#075659';
-              }
-            }}
-            aria-label="Successivo"
-          >
-            ›
-          </button>
-        </>
-      )}
+            }
+        }
+        onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
+          if (!e.currentTarget.disabled) {
+            if (isMobile) {
+              e.currentTarget.style.background = '#b2ebf2';
+              e.currentTarget.style.color = '#0097a7';
+              e.currentTarget.style.borderColor = '#0097a7';
+            } else {
+              e.currentTarget.style.color = '#0097a7';
+            }
+          }
+        }}
+        onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => {
+          if (!e.currentTarget.disabled) {
+            if (isMobile) {
+              e.currentTarget.style.background = '#e0f7fa';
+              e.currentTarget.style.color = index >= ricette.length - visibleItemsCount ? '#b0cfd1' : '#075659';
+              e.currentTarget.style.borderColor = '#075659';
+            } else {
+              e.currentTarget.style.color = index >= ricette.length - visibleItemsCount ? '#b0cfd1' : '#075659';
+            }
+          }
+        }}
+        aria-label="Successivo"
+      >
+        ›
+      </button>
     </div>
   );
 };
@@ -413,80 +360,7 @@ const ricette = [
   },
 ];
 
-<<<<<<< HEAD
 const Homepage = () => {
-=======
-
-/* -----------------------------------------------------
-   CERTIFICAZIONI CAROUSEL
------------------------------------------------------ */
-function CertificazioniCarousel() {
-  const images = [Certificazioni];
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const isMobile =
-    typeof window !== "undefined" && window.innerWidth <= 900;
-
-  return (
-    <div className="cert-carousel-wrapper" style={{ marginBottom: 0 }}>
-      {isMobile ? (
-        <div
-          style={{
-            width: "100vw",
-            overflow: "hidden",
-            position: "relative",
-            height: "120px",
-          }}
-        >
-          <img
-            src={images[current]}
-            alt="Certificazioni OHissa"
-            className="certifications-image"
-            style={{
-              width: "200vw",
-              height: "120px",
-              objectFit: "cover",
-              position: "absolute",
-              left: 0,
-              animation: "certScroll 12s linear infinite",
-            }}
-          />
-        </div>
-      ) : (
-        <img
-          src={images[current]}
-          alt="Certificazioni OHissa"
-          className="certifications-image"
-        />
-      )}
-    </div>
-  );
-}
-
-/* -----------------------------------------------------
-   HOMEPAGE
------------------------------------------------------ */
-// Dati ricette
-// (RIMOSSO: dichiarazione duplicata di 'ricette')
-const Homepage = () => {
-  // Stato flip per ogni card
-  const [flipped, setFlipped] = useState([false, false, false, false, false, false]);
-  const [currentPage, setCurrentPage] = useState(0);
-  const cardsPerPage = 3;
-  const totalPages = Math.ceil(ricette.length / cardsPerPage);
-  // Stato per background prodotti desktop
-  const [productsBg, setProductsBg] = useState(frame405);
-  const gustoSectionRef = useRef<HTMLDivElement | null>(null);
-  const [gustoProgress, setGustoProgress] = useState(0);
->>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
   const [isMobile, setIsMobile] = useState(false);
   const isDesktop = !isMobile;
 
@@ -545,7 +419,7 @@ const Homepage = () => {
             className="hero-image"
             style={{
               width: "100%",
-              
+
               height: "auto",
               display: "block",
               objectFit: "cover",
@@ -553,7 +427,6 @@ const Homepage = () => {
           />
         </header>
 
-<<<<<<< HEAD
         {/* TESTO HERO */}
         <section
           className="hero-text-block"
@@ -580,26 +453,6 @@ const Homepage = () => {
             <br />
             il benessere.
           </h1>
-=======
-        {/* CONTENUTO */}
-        <main className="content">
-          {/* TESTO HERO */}
-          <section className="hero-text-block">
-            <h1 className={isMobile ? "hero-title mobile" : "hero-title"}
-              style={{
-                fontSize: isMobile ? "1.8rem" : "3.2rem",
-                fontWeight: 800,
-                lineHeight: 1.12,
-                color: "#075659",
-                marginBottom: isMobile ? "18px" : "32px",
-                textAlign: "center",
-                letterSpacing: "-1px"
-              }}>
-              Amare il mare per gustare
-              <br />
-              il benessere.
-            </h1>
->>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
 
           <p
             style={{
@@ -636,7 +489,7 @@ const Homepage = () => {
           ref={gustoSectionRef}
           style={{
             width: "100vw",
-            background: "rgba(255, 255, 255, 1)afaff",
+            background: "rgba(255, 255, 255, 1)",
             display: "flex",
             justifyContent: "center",
           }}
@@ -665,9 +518,8 @@ const Homepage = () => {
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                transform: `translate(-50%, -50%) translateY(${
-                  (1 - gustoProgress) * (isMobile ? 18 : 30)
-                }vh)`,
+                transform: `translate(-50%, -50%) translateY(${(1 - gustoProgress) * (isMobile ? 18 : 30)
+                  }vh)`,
                 opacity: gustoProgress,
                 fontSize: isMobile ? "1.7rem" : "2.6rem",
                 fontWeight: 500,
@@ -695,7 +547,7 @@ const Homepage = () => {
         </section>
 
         {/* PRODOTTI – SCOPRI LA LINEA DEL BENESSERE */}
-        
+
         {isMobile ? (
           <section className="ohissa-mobile-products">
             <div
@@ -710,7 +562,7 @@ const Homepage = () => {
               <h1 className="ohissa-mobile-products-title">
                 Scopri la nostra linea<br />del benessere
               </h1>
-        
+
               <div className="ohissa-mobile-products-buttons">
                 <a href="/tonno-pinna-gialla" className="btn">
                   Tonno a pinne gialle
@@ -728,10 +580,10 @@ const Homepage = () => {
             </div>
           </section>
         ) : null}
-        
-        
-                {/* DESKTOP: blocco con hover dinamico */}
-                {isDesktop && (
+
+
+        {/* DESKTOP: blocco con hover dinamico */}
+        {isDesktop && (
           <div className="ohissa-products-block" style={{ position: "relative" }}>
             <img
               src={productsBg}
@@ -785,12 +637,11 @@ const Homepage = () => {
                 </a>
               </div>
             </div>
-            
-            
+
+
           </div>
         )}
 
-<<<<<<< HEAD
         {/* CERTIFICAZIONI – FASCIA VERDE */}
         <section
           className="certifications-section"
@@ -821,23 +672,6 @@ const Homepage = () => {
               }}
             >
               <span
-=======
-                <img
-                  src={isMobile ? GustoMobile : GustoImg}
-                  alt="Gusto OHissa"
-                  className="gusto-image"
-                  style={isMobile ? { marginBottom: "32px" } : {}}
-                />
-              </div>
-            </div>
-            );
-            {"}"};
-          </section>
-          {isMobile ? (
-            <section className="ohissa-mobile-products" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", padding: "0 0 24px 0", marginTop: "60px" }}>
-              <div
-                className="ohissa-mobile-products-inner"
->>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
                 style={{
                   color: "#fff",
                   fontWeight: 600,
@@ -858,7 +692,6 @@ const Homepage = () => {
                 height: 56,
                 background: "#fff",
                 borderRadius: 8,
-                
               }}
             />
             <img
@@ -868,7 +701,6 @@ const Homepage = () => {
                 height: 56,
                 background: "#fff",
                 borderRadius: 8,
-                
               }}
             />
             <img
@@ -878,7 +710,6 @@ const Homepage = () => {
                 height: 56,
                 background: "#fff",
                 borderRadius: 8,
-                
               }}
             />
             <img
@@ -888,7 +719,6 @@ const Homepage = () => {
                 height: 56,
                 background: "#fff",
                 borderRadius: 8,
-                
               }}
             />
           </div>
@@ -898,7 +728,7 @@ const Homepage = () => {
         <section
           style={{
             width: "100vw",
-            background: "#ffffffff",
+            background: "#ffffff",
             padding: "32px 0 40px",
             display: "flex",
             justifyContent: "center",
@@ -922,171 +752,165 @@ const Homepage = () => {
             >
               Il tuo browser non supporta il tag video.
             </video>
-<<<<<<< HEAD
           </div>
         </section>
 
         {/* PIÙ SICURO DEL FRESCO / ALIMENTAZIONE / SPORT */}
         <section
-  className="full-width-section white-bg"
-  style={{
-    padding: "48px 16px 52px",
-    background: "#fff",
-    display: "flex",
-    flexDirection: "column",
-    gap: "60px",
-  }}
->
-  {/* Più sicuro del fresco — IMMAGINE A DESTRA */}
-  <div
-    style={{
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      alignItems: "center",
-      gap: "32px",
-      justifyContent: "center",
-    }}
-  >
-    {/* Testo */}
-    <div style={{ maxWidth: 420, order: isMobile ? 2 : 1 }}>
-      <h2
-        style={{
-          color: "#075659",
-          fontSize: "2rem",
-          fontWeight: 700,
-          marginBottom: "12px",
-        }}
-      >
-        Più sicuro del fresco
-      </h2>
-      <p
-        style={{
-          fontSize: "1.05rem",
-          color: "#075659",
-          fontWeight: 400,
-          lineHeight: 1.6,
-        }}
-      >
-        OHissa è più sano del fresco grazie alla tecnologia ULT, ovvero
-        l’ibernazione, una tecnologia superiore al congelamento, che
-        applichiamo già a bordo.
-      </p>
-    </div>
+          className="full-width-section white-bg"
+          style={{
+            padding: "48px 16px 52px",
+            background: "#fff",
+            display: "flex",
+            flexDirection: "column",
+            gap: "60px",
+          }}
+        >
+          {/* Più sicuro del fresco — IMMAGINE A DESTRA */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              gap: "32px",
+              justifyContent: "center",
+            }}
+          >
+            {/* Testo */}
+            <div style={{ maxWidth: 420, order: isMobile ? 2 : 1 }}>
+              <h2
+                style={{
+                  color: "#075659",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  marginBottom: "12px",
+                }}
+              >
+                Più sicuro del fresco
+              </h2>
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  color: "#075659",
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                }}
+              >
+                OHissa è più sano del fresco grazie alla tecnologia ULT, ovvero
+                l'ibernazione, una tecnologia superiore al congelamento, che
+                applichiamo già a bordo.
+              </p>
+            </div>
 
-    {/* Immagine */}
-    <img
-      src={FrescoImg}
-      alt="Più sicuro del fresco"
-      style={{
-        width: isMobile ? "85%" : "40%",
-        objectFit: "cover",
-        order: isMobile ? 1 : 2,
-      }}
-    />
-  </div>
+            {/* Immagine */}
+            <img
+              src={FrescoImg}
+              alt="Più sicuro del fresco"
+              style={{
+                width: isMobile ? "85%" : "40%",
+                objectFit: "cover",
+                order: isMobile ? 1 : 2,
+              }}
+            />
+          </div>
 
-  {/* Alimentazione genuina — IMMAGINE A SINISTRA */}
-  <div
-    style={{
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      alignItems: "center",
-      gap: "32px",
-      justifyContent: "center",
-    }}
-  >
-    {/* Immagine a sinistra */}
-    <img
-      src={GenuinaImg}
-      alt="Alimentazione genuina"
-      style={{
-        width: isMobile ? "85%" : "40%",
-        objectFit: "cover",
-        order: isMobile ? 1 : 1,
-      }}
-    />
+          {/* Alimentazione genuina — IMMAGINE A SINISTRA */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              gap: "32px",
+              justifyContent: "center",
+            }}
+          >
+            {/* Immagine a sinistra */}
+            <img
+              src={GenuinaImg}
+              alt="Alimentazione genuina"
+              style={{
+                width: isMobile ? "85%" : "40%",
+                objectFit: "cover",
+                order: isMobile ? 1 : 1,
+              }}
+            />
 
-    {/* Testo a destra */}
-    <div style={{ maxWidth: 420, order: isMobile ? 2 : 2 }}>
-      <h2
-        style={{
-          color: "#075659",
-          fontSize: "2rem",
-          fontWeight: 700,
-          marginBottom: "12px",
-        }}
-      >
-        Alimentazione genuina
-      </h2>
-      <p
-        style={{
-          fontSize: "1.05rem",
-          color: "#075659",
-          fontWeight: 400,
-          lineHeight: 1.6,
-        }}
-      >
-        I prodotti OHissa sono lavorati al naturale senza additivi chimici,
-        mantenendo intatte le proprietà nutritive del pesce appena pescato.
-      </p>
-    </div>
-  </div>
+            {/* Testo a destra */}
+            <div style={{ maxWidth: 420, order: isMobile ? 2 : 2 }}>
+              <h2
+                style={{
+                  color: "#075659",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  marginBottom: "12px",
+                }}
+              >
+                Alimentazione genuina
+              </h2>
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  color: "#075659",
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                }}
+              >
+                I prodotti OHissa sono lavorati al naturale senza additivi chimici,
+                mantenendo intatte le proprietà nutritive del pesce appena pescato.
+              </p>
+            </div>
+          </div>
 
-  {/* OHissa per lo sport — IMMAGINE A DESTRA */}
-  <div
-    style={{
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      alignItems: "center",
-      gap: "32px",
-      justifyContent: "center",
-    }}
-  >
-    {/* Testo */}
-    <div style={{ maxWidth: 420, order: isMobile ? 2 : 1 }}>
-      <h2
-        style={{
-          color: "#075659",
-          fontSize: "2rem",
-          fontWeight: 700,
-          marginBottom: "12px",
-        }}
-      >
-        OHissa per lo sport
-      </h2>
-      <p
-        style={{
-          fontSize: "1.05rem",
-          color: "#075659",
-          fontWeight: 400,
-          lineHeight: 1.6,
-        }}
-      >
-        Sappiamo quanto sia profondo il legame tra attività sportiva e
-        alimentazione e quanto la nutrizione incida sulla performance.
-      </p>
-    </div>
+          {/* OHissa per lo sport — IMMAGINE A DESTRA */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              gap: "32px",
+              justifyContent: "center",
+            }}
+          >
+            {/* Testo */}
+            <div style={{ maxWidth: 420, order: isMobile ? 2 : 1 }}>
+              <h2
+                style={{
+                  color: "#075659",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  marginBottom: "12px",
+                }}
+              >
+                OHissa per lo sport
+              </h2>
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  color: "#075659",
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                }}
+              >
+                Sappiamo quanto sia profondo il legame tra attività sportiva e
+                alimentazione e quanto la nutrizione incida sulla performance.
+              </p>
+            </div>
 
-    {/* Immagine */}
-    <img
-      src={SportImg}
-      alt="OHissa per lo sport"
-      style={{
-        width: isMobile ? "85%" : "40%",
-        objectFit: "cover",
-        order: isMobile ? 1 : 2,
-      }}
-    />
-  </div>
-</section>
+            {/* Immagine */}
+            <img
+              src={SportImg}
+              alt="OHissa per lo sport"
+              style={{
+                width: isMobile ? "85%" : "40%",
+                objectFit: "cover",
+                order: isMobile ? 1 : 2,
+              }}
+            />
+          </div>
+        </section>
 
 
-<<<<<<< HEAD
-{/* CORTILIA */}
- {/* CORTILIA */}
-=======
         {/* CORTILIA */}
->>>>>>> c0cdec413c8492351bfa636b6648b5cf913d66b1
         <section className="full-width-section" style={{ position: "relative", width: "100%", padding: 0, margin: 0 }}>
           <img
             src={isMobile ? CortiliaMobile : CortiliaDesktop}
@@ -1094,6 +918,7 @@ const Homepage = () => {
             className="section-image"
             style={{ width: "100%", display: "block" }}
           />
+
           <a
             href="https://www.cortilia.it/produttori/ohissa?srsltid=AfmBOorllWXqUNxzaRk0F4ve8rHmF3Vw_l-I6NGlOEZOZU4UgOQDbHlv"
             target="_blank"
@@ -1124,7 +949,6 @@ const Homepage = () => {
             Scopri di più
           </a>
         </section>
-        {/* CORTILIA */}
 
         {/* STORIA – TRE BLOCCHI */}
         <section className="full-width-section white-bg storia-ohissa">
@@ -1137,7 +961,7 @@ const Homepage = () => {
                   alt="Paesaggio Maremma"
                   className="story-image"
                 />
-               
+
               </div>
               <div className="story-text">
                 <h3 className="story-title">
@@ -1187,7 +1011,7 @@ const Homepage = () => {
                   alt="Bambina che gioca in mare"
                   className="story-image"
                 />
-               
+
               </div>
               <div className="story-text">
                 <h3 className="story-title">Autentica espressione di salute</h3>
@@ -1211,135 +1035,131 @@ const Homepage = () => {
         </section>
 
         {/* CHI SIAMO */}
-{/* CHI SIAMO */}
+        <section
+          className="full-width-section chi-siamo-bg"
+          style={{
+            position: "relative",
+            width: "100%",
+            padding: 0,
+            margin: 0,
+            overflow: "hidden",
+          }}
+        >
+          {/* SFONDO: MOBILE vs DESKTOP */}
+          <img
+            src={isMobile ? ChiSiamoMobileImg : ChiSiamoDesktopBg}
+            alt="Chi siamo OHissa"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+            }}
+          />
 
-<section
-  className="full-width-section chi-siamo-bg"
-  style={{
-    position: "relative",
-    width: "100%",
-    padding: 0,
-    margin: 0,
-    overflow: "hidden",
-  }}
->
-  {/* SFONDO: MOBILE vs DESKTOP */}
-  <img
-    src={isMobile ? ChiSiamoMobileImg : ChiSiamoDesktopBg}
-    alt="Chi siamo OHissa"
-    style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-    }}
-  />
+          {/* TESTO SOVRAPPOSTO */}
+          <div
+            style={{
+              position: "absolute",
+              // posizione diversa tra mobile e desktop
+              top: isMobile ? "18%" : "50%",
+              left: isMobile ? "10%" : "58%",
+              transform: isMobile ? "none" : "translateY(-50%)",
+              maxWidth: isMobile ? "75%" : 430,
+              width: isMobile ? "75%" : "auto",
+              color: "#ffffff",
+              display: "flex",
+              flexDirection: "column",
+              gap: isMobile ? "4px" : "10px",
+              textAlign: "left",
+              fontFamily: "Ubuntu, system-ui, sans-serif",
+              marginTop: 50,
+            }}
+          >
+            <h2
+              style={{
+                fontSize: isMobile ? "2.95rem" : "1.9rem",
+                fontWeight: 700,
+                margin: 0,
+              }}
+            >
+              Chi siamo
+            </h2>
 
-  {/* TESTO SOVRAPPOSTO */}
-  <div
-    style={{
-      position: "absolute",
-      // posizione diversa tra mobile e desktop
-      top: isMobile ? "18%" : "50%",
-      left: isMobile ? "10%" : "58%",
-      transform: isMobile ? "none" : "translateY(-50%)",
-      maxWidth: isMobile ? "75%" : 430,
-      width: isMobile ? "75%" : "auto",
-      color: "#ffffff",
-      display: "flex",
-      flexDirection: "column",
-      gap: isMobile ? "4px" : "10px",
-      textAlign: "left",
-      fontFamily: "Ubuntu, system-ui, sans-serif",
-      marginTop: 50,
-    }}
-  >
-    <h2
-      style={{
-        fontSize: isMobile ? "2.95rem" : "1.9rem",
-        fontWeight: 700,
-        margin: 0,
-      }}
-    >
-      Chi siamo
-    </h2>
+            <p
+              style={{
+                fontSize: isMobile ? "1.32rem" : "0.96rem",
+                lineHeight: isMobile ? 1.35 : 1.5,
+                margin: 0,
+              }}
+            >
+              OHissa è una linea di prodotti del Gruppo Manno, uno dei
+              principali players europei del settore, che mette in campo
+              la propria centenaria esperienza nel mondo ittico, con
+              un’attenzione maniacale al benessere del consumatore finale.
+            </p>
 
-    <p
-      style={{
-        fontSize: isMobile ? "1.32rem" : "0.96rem",
-        lineHeight: isMobile ? 1.35 : 1.5,
-        margin: 0,
-      }}
-    >
-      OHissa è una linea di prodotti del Gruppo Manno, uno dei
-      principali players europei del settore, che mette in campo
-      la propria centenaria esperienza nel mondo ittico, con
-      un’attenzione maniacale al benessere del consumatore finale.
-    </p>
+            <p
+              style={{
+                fontSize: isMobile ? "1.32rem" : "0.96rem",
+                lineHeight: isMobile ? 1.35 : 1.5,
+                margin: 0,
+              }}
+            >
+              Il termine Ohissa rimanda all’incitamento di un lavoro
+              fatto con forza, dedizione, sacrificio e passione, come il
+              lavoro dei pescatori.
+            </p>
 
-    <p
-      style={{
-        fontSize: isMobile ? "1.32rem" : "0.96rem",
-        lineHeight: isMobile ? 1.35 : 1.5,
-        margin: 0,
-      }}
-    >
-      Il termine Ohissa rimanda all’incitamento di un lavoro
-      fatto con forza, dedizione, sacrificio e passione, come il
-      lavoro dei pescatori.
-    </p>
+            <p
+              style={{
+                fontSize: isMobile ? "1.32rem" : "0.96rem",
+                lineHeight: isMobile ? 1.35 : 1.5,
+                margin: 0,
+              }}
+            >
+              I prodotti OHissa sono naturali, sani, controllati e
+              proposti in diversi tagli.
+            </p>
 
-    <p
-      style={{
-        fontSize: isMobile ? "1.32rem" : "0.96rem",
-        lineHeight: isMobile ? 1.35 : 1.5,
-        margin: 0,
-      }}
-    >
-      I prodotti OHissa sono naturali, sani, controllati e
-      proposti in diversi tagli.
-    </p>
+            <p
+              style={{
+                fontSize: isMobile ? "1.32rem" : "0.96rem",
+                lineHeight: isMobile ? 1.35 : 1.5,
+                margin: 0,
+              }}
+            >
+              Tradizione, salute ed etica sono i valori che da sempre
+              guidano il Gruppo Manno.
+            </p>
+          </div>
+        </section>
 
-    <p
-      style={{
-        fontSize: isMobile ? "1.32rem" : "0.96rem",
-        lineHeight: isMobile ? 1.35 : 1.5,
-        margin: 0,
-      }}
-    >
-      Tradizione, salute ed etica sono i valori che da sempre
-      guidano il Gruppo Manno.
-    </p>
-  </div>
-</section>
+        {/* LE NOSTRE RICETTE – CAROSELLO */}
+        <section
+          className="full-width-section white-bg"
+          style={{
+            padding: "40px 0 56px",
+            background: "#ffffff",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h2
+            style={{
+              color: "#075659",
+              fontSize: "2.1rem",
+              fontWeight: 700,
+              marginBottom: "28px",
+              textAlign: "center",
+            }}
+          >
+            Le nostre ricette
+          </h2>
 
-
-       {/* LE NOSTRE RICETTE – CAROSELLO */}
-<section
-  className="full-width-section white-bg"
-  style={{
-    padding: "40px 0 56px",
-    background: "#ffffff",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  }}
->
-  <h2
-    style={{
-      color: "#075659",
-      fontSize: "2.1rem",
-      fontWeight: 700,
-      marginBottom: "28px",
-      textAlign: "center",
-    }}
-  >
-    Le nostre ricette
-  </h2>
-
-  {/* CAROSELLO */}
-  <CarouselRicette ricette={ricette} />
-</section>
-
+          {/* CAROSELLO */}
+          <CarouselRicette ricette={ricette} />
+        </section>
 
         {/* FOOTER */}
         <footer className="ohissa-footer" style={{ width: "100vw" }}>
@@ -1620,191 +1440,48 @@ const Homepage = () => {
             OHISSA 2025 - OHISSA S.R.L. - Via San Gregorio 55 - 20124 Milano
             P.IVA 12646260960 - By Webmaremma
           </div>
-           
+
           {/* fascia bianca loghi istituzionali – placeholder */}
           <div
-  className="ohissa-footer-bottom"
-  style={{
-    background: "#fff",
-    padding: "18px 24px 24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "40px",
-    flexWrap: "wrap",
-  }}
->
-  <img
-    src={Logo10}
-    alt="Fondo 1"
-    style={{ height: 42, width: "auto", objectFit: "contain" }}
-  />
-  <img
-    src={Logo9}
-    alt="Fondo 2"
-    style={{ height: 42, width: "auto", objectFit: "contain" }}
-  />
-  <img
-    src={LogoFrame331}
-    alt="Fondo 3"
-    style={{ height: 42, width: "auto", objectFit: "contain" }}
-  />
-  <img
-    src={Logo7}
-    alt="Fondo 4"
-    style={{ height: 42, width: "auto", objectFit: "contain" }}
-  />
-  <img
-    src={Logo6}
-    alt="Fondo 5"
-    style={{ height: 42, width: "auto", objectFit: "contain" }}
-  />
-</div>
+            className="ohissa-footer-bottom"
+            style={{
+              background: "#fff",
+              padding: "18px 24px 24px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "40px",
+              flexWrap: "wrap",
+            }}
+          >
+            <img
+              src={Logo10}
+              alt="Fondo 1"
+              style={{ height: 42, width: "auto", objectFit: "contain" }}
+            />
+            <img
+              src={Logo9}
+              alt="Fondo 2"
+              style={{ height: 42, width: "auto", objectFit: "contain" }}
+            />
+            <img
+              src={LogoFrame331}
+              alt="Fondo 3"
+              style={{ height: 42, width: "auto", objectFit: "contain" }}
+            />
+            <img
+              src={Logo7}
+              alt="Fondo 4"
+              style={{ height: 42, width: "auto", objectFit: "contain" }}
+            />
+            <img
+              src={Logo6}
+              alt="Fondo 5"
+              style={{ height: 42, width: "auto", objectFit: "contain" }}
+            />
+          </div>
 
         </footer>
-=======
-          </section>
-
-          {/* PIÙ SICURO DEL FRESCO – SFONDO BIANCO */}
-          <section className="full-width-section white-bg">
-            <img
-              src={
-                isMobile
-                  ? PiuSicuroFrescoMobile
-                  : PiuSicuroFrescoDesktop
-              }
-              alt="Più sicuro del fresco"
-              className="section-image"
-            />
-          </section>
-
-          {/* CORTILIA */}
-          <section className="full-width-section">
-            <img
-              src={isMobile ? CortiliaMobile : CortiliaDesktop}
-              alt="Cortilia OHissa"
-              className="section-image"
-            />
-          </section>
-
-          {/* STORIA – SFONDO BIANCO */}
-          <section className="full-width-section white-bg">
-            <img
-              src={isMobile ? StoriaMobile : StoriaDesktop}
-              alt="Storia OHissa"
-              className="section-image"
-            />
-          </section>
-
-          {/* CHI SIAMO */}
-          <section className="full-width-section">
-            <img
-              src={isMobile ? ChiSiamoMobile : ChiSiamoDesktop}
-              alt="Chi siamo OHissa"
-              className="section-image"
-            />
-          </section>
-
-          {/* RICETTE – 6 CARD */}
-          {/* RICETTE – 6 CARD */}
-          {/* RICETTE – 6 CARD */}
-          <section className="full-width-section white-bg" style={{ padding: "32px 0" }}>
-            <div style={{
-              display: "flex",
-              flexWrap: "nowrap",
-              justifyContent: "center",
-              maxWidth: "1400px",
-              margin: "0 auto",
-              gap: "32px",
-            }}>
-              {ricette.slice(currentPage * cardsPerPage, currentPage * cardsPerPage + cardsPerPage).map((r) => (
-                <div
-                  key={r.title}
-                  style={{
-                    width: "370px",
-                    minWidth: "260px",
-                    maxWidth: "100%",
-                    borderRadius: "20px",
-                    boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
-                    background: "#fff",
-                    overflow: "hidden",
-                    display: "flex",
-                    flexDirection: "column",
-                    minHeight: "620px",
-                    height: "auto"
-                  }}
-                >
-                  <img
-                    src={r.img}
-                    alt={r.title}
-                    style={{
-                      width: "100%",
-                      height: "180px",
-                      objectFit: "cover",
-                      borderTopLeftRadius: "20px",
-                      borderTopRightRadius: "20px",
-                    }}
-                  />
-                  <div style={{ padding: "22px 16px 16px 16px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
-                    <h3 style={{ color: "#075659", fontSize: "1.45rem", fontWeight: 700, margin: "0 0 14px 0", letterSpacing: "-0.5px" }}>{r.title}</h3>
-                    <div style={{ fontSize: "1.08rem", marginBottom: "10px", lineHeight: 1.32 }}><b>Ingredienti:</b> {r.ingredienti}</div>
-                    <div style={{ fontSize: "1.08rem", marginBottom: "10px", lineHeight: 1.32 }}><b>Preparazione:</b> {r.preparazione}</div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "1.15rem", color: "#075659", marginTop: "auto" }}>
-                      <span style={{ opacity: 0.7, fontSize: "1em" }}>📶</span>
-                      <span>Facile</span>
-                      <span style={{ opacity: 0.7, fontSize: "1em" }}>⏱️</span>
-                      <span>5 min</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* CONTROLLI CAROSELLO */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "12px",
-              marginTop: "24px",
-            }}>
-              <button
-                onClick={() => setCurrentPage((p) => (p > 0 ? p - 1 : p))}
-                disabled={currentPage === 0}
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  border: "1px solid #075659",
-                  background: currentPage === 0 ? "#eee" : "#fff",
-                  color: "#075659",
-                  cursor: currentPage === 0 ? "default" : "pointer",
-                  minWidth: "40px",
-                }}
-              >
-                ‹
-              </button>
-              <button
-                onClick={() => setCurrentPage((p) => p < totalPages - 1 ? p + 1 : p)}
-                disabled={currentPage === totalPages - 1}
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  border: "1px solid #075659",
-                  background: currentPage === totalPages - 1 ? "#eee" : "#fff",
-                  color: "#075659",
-                  cursor: currentPage === totalPages - 1 ? "default" : "pointer",
-                  minWidth: "40px",
-                }}
-              >
-                ›
-              </button>
-            </div>
-          </section>
-          {isDesktop ? (
-            <img src={FooterDesktop} alt="Footer" style={{ width: '100vw', height: 'auto', display: 'block', borderRadius: '0', background: '#fff', position: 'relative', zIndex: 1 }} />
-          ) : (
-            <img src={FooterMobile} alt="Footer" style={{ width: '100%', display: 'block', background: '#fff', marginTop: '-80px' }} />
-          )}
-        </main>
->>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
       </div>
     </div>
   );
