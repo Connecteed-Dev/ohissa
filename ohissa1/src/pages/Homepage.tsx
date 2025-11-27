@@ -556,7 +556,7 @@ const Homepage = () => {
 
         {/* PRODOTTI – SCOPRI LA LINEA DEL BENESSERE */}
 
-        {isMobile ? (
+        {isMobile && (
           <section className="ohissa-mobile-products" style={{ width: "100vw", position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}>
             <div
               className="ohissa-mobile-products-inner"
@@ -575,45 +575,6 @@ const Homepage = () => {
               </h1>
 
               <div className="ohissa-mobile-products-buttons">
-                <a href="/tonno-pinna-gialla" className="btn">
-                  Tonno a pinne gialle
-                </a>
-                <a href="/tonno-alalunga" className="btn">
-                  Tonno alalunga
-                </a>
-                <a href="/salmone" className="btn">
-                  Salmone
-                </a>
-                <a href="/pesce-spada" className="btn">
-                  Pesce spada
-                </a>
-              </div>
-            </div>
-          </section>
-        ) : null}
-
-
-        {/* DESKTOP: blocco con hover dinamico */}
-        {isDesktop && (
-          <div className="ohissa-products-block" style={{ position: "relative" }}>
-            <img
-              src={productsBg}
-              alt="Prodotti OHissa"
-              className="ohissa-products-bg"
-              style={{
-                transition: "0.3s",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                zIndex: 0,
-                objectFit: "cover"
-              }}
-            />
-            <div className="ohissa-products-overlay" style={{ position: "relative", zIndex: 1 }}>
-              <h1 className="ohissa-products-title">SCOPRI TUTTI I PRODOTTI OHISSA</h1>
-              <div className="ohissa-products-buttons">
                 <a
                   href="/tonno-pinna-gialla"
                   className="btn"
@@ -648,38 +609,39 @@ const Homepage = () => {
                 </a>
               </div>
             </div>
-
-
-          </div>
+          </section>
         )}
+        {/* Close mobile products section */}
 
         {/* CERTIFICAZIONI – FASCIA VERDE */}
         <section
           className="certifications-section"
           style={{
             background: "#075659",
-            padding: "24px 16px",
+            padding: "24px 0",
             display: "flex",
             justifyContent: "center",
+            overflow: "hidden"
           }}
         >
           <div
             style={{
-              maxWidth: "1100px",
-              width: "100%",
+              width: "100vw",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              gap: "18px",
-              flexWrap: "wrap",
+              position: "relative",
+              overflow: "hidden",
+              height: "80px"
             }}
           >
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-end",
-                marginRight: "8px",
+                alignItems: "center",
+                gap: "38px",
+                position: "absolute",
+                left: "100%",
+                animation: "logoScroll 12s linear infinite"
               }}
             >
               <span
@@ -689,52 +651,24 @@ const Homepage = () => {
                   fontSize: "1rem",
                   lineHeight: 1.2,
                   textAlign: "right",
+                  minWidth: "120px"
                 }}
               >
-                ISO 14001:2015
-                <br />
-                ISO 45001:2018
+                ISO 14001:2015<br />ISO 45001:2018
               </span>
+              <img src={ItalianLandscapeBlueCMYK} alt="MSC" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+              <img src={AscLogo} alt="ASC" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+              <img src={IfsLogo} alt="IFS Food" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
+              <img src={CsrLogo} alt="Ecovadis" style={{ height: 56, background: "#fff", borderRadius: 8 }} />
             </div>
-            <img
-              src={ItalianLandscapeBlueCMYK}
-              alt="MSC"
-              style={{
-                height: 56,
-                background: "#fff",
-                borderRadius: 8,
-              }}
-            />
-            <img
-              src={AscLogo}
-              alt="ASC"
-              style={{
-                height: 56,
-                background: "#fff",
-                borderRadius: 8,
-              }}
-            />
-            <img
-              src={IfsLogo}
-              alt="IFS Food"
-              style={{
-                height: 56,
-                background: "#fff",
-                borderRadius: 8,
-              }}
-            />
-            <img
-              src={CsrLogo}
-              alt="Ecovadis"
-              style={{
-                height: 56,
-                background: "#fff",
-                borderRadius: 8,
-              }}
-            />
+            <style>{`
+              @keyframes logoScroll {
+                0% { left: 100%; }
+                100% { left: -600px; }
+              }
+            `}</style>
           </div>
         </section>
-
         {/* VIDEO – RISPETTO SENZA ALTERAZIONI */}
         <section
           style={{
