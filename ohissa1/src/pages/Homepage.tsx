@@ -82,7 +82,15 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
   const next = () => setIndex((i) => Math.min(ricette.length - visibleItemsCount, i + visibleItemsCount));
   const visibleItems = ricette.slice(index, index + visibleItemsCount);
   return (
-    <div style={{ display: "flex", alignItems: "center", width: "100%", justifyContent: "center" }}>
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+      justifyContent: "center",
+      paddingLeft: isMobile ? "12px" : 0,
+      paddingRight: isMobile ? "12px" : 0,
+      boxSizing: "border-box"
+    }}>
       {/* FRECCIA SINISTRA */}
       <button
         onClick={prev}
@@ -918,36 +926,63 @@ const Homepage = () => {
             className="section-image"
             style={{ width: "100%", display: "block" }}
           />
-
-          <a
-            href="https://www.cortilia.it/produttori/ohissa?srsltid=AfmBOorllWXqUNxzaRk0F4ve8rHmF3Vw_l-I6NGlOEZOZU4UgOQDbHlv"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              top: isMobile ? "60%" : "50%",
-              right: isMobile ? "8%" : "7%",
-              transform: isMobile ? "translateY(-50%)" : "translateY(-50%)",
-              background: "#ff7e6b",
-              color: "#fff",
-              borderRadius: "24px",
-              padding: isMobile ? "10px 22px" : "16px 38px",
-              fontWeight: 700,
-              fontSize: isMobile ? "1rem" : "1.18rem",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
-              border: "none",
-              textDecoration: "none",
-              zIndex: 2,
-              transition: "background 0.2s, color 0.2s",
-              cursor: "pointer",
-              display: "inline-block"
-            }}
-            aria-label="Scopri di più su Cortilia"
-            onMouseOver={e => e.currentTarget.style.background = '#ff5a3c'}
-            onMouseOut={e => e.currentTarget.style.background = '#ff7e6b'}
-          >
-            Scopri di più
-          </a>
+          {isMobile ? (
+            <a
+              href="https://www.cortilia.it/produttori/ohissa?srsltid=AfmBOorllWXqUNxzaRk0F4ve8rHmF3Vw_l-I6NGlOEZOZU4UgOQDbHlv"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: "#ff7e6b",
+                color: "#fff",
+                borderRadius: "24px",
+                padding: "12px 32px",
+                fontWeight: 700,
+                fontSize: "1.08rem",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
+                border: "none",
+                textDecoration: "none",
+                margin: "18px 0 0 0",
+                transition: "background 0.2s, color 0.2s",
+                cursor: "pointer",
+                display: "inline-block"
+              }}
+              aria-label="Scopri di più su Cortilia"
+              onMouseOver={e => e.currentTarget.style.background = '#ff5a3c'}
+              onMouseOut={e => e.currentTarget.style.background = '#ff7e6b'}
+            >
+              Scopri di più
+            </a>
+          ) : (
+            <a
+              href="https://www.cortilia.it/produttori/ohissa?srsltid=AfmBOorllWXqUNxzaRk0F4ve8rHmF3Vw_l-I6NGlOEZOZU4UgOQDbHlv"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                position: "absolute",
+                top: "50%",
+                right: "7%",
+                transform: "translateY(-50%)",
+                background: "#ff7e6b",
+                color: "#fff",
+                borderRadius: "24px",
+                padding: "16px 38px",
+                fontWeight: 700,
+                fontSize: "1.18rem",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
+                border: "none",
+                textDecoration: "none",
+                zIndex: 2,
+                transition: "background 0.2s, color 0.2s",
+                cursor: "pointer",
+                display: "inline-block"
+              }}
+              aria-label="Scopri di più su Cortilia"
+              onMouseOver={e => e.currentTarget.style.background = '#ff5a3c'}
+              onMouseOut={e => e.currentTarget.style.background = '#ff7e6b'}
+            >
+              Scopri di più
+            </a>
+          )}
         </section>
 
         {/* STORIA – TRE BLOCCHI */}
