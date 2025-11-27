@@ -150,93 +150,95 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         ‹
       </button>
       <div style={{ display: "flex", gap: isMobile ? "0" : "24px", width: isMobile ? "100%" : "auto", justifyContent: "center" }}>
-        {visibleItems.map((r, i) => (
-          <div
-            key={i}
-            style={{
-              width: isMobile ? "70vw" : "360px",
-              maxWidth: isMobile ? "70vw" : "360px",
-              margin: isMobile ? "0 auto 18px auto" : "0 auto",
-              borderRadius: "18px",
-              boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
-              background: isMobile ? "#f4f4f4" : "#fff",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              minHeight: isMobile ? "auto" : "360px",
-              transition: "0.3s",
-              alignItems: "stretch",
-            }}
-          >
-            <img
-              src={r.img}
-              alt={r.title}
-              style={{
-                width: "100%",
-                height: isMobile ? "170px" : "190px",
-                objectFit: "cover",
-                display: "block",
-                borderTopLeftRadius: "18px",
-                borderTopRightRadius: "18px",
-              }}
-            />
+        {visibleItems.map((r, i) => {
+          return (
             <div
+              key={i}
               style={{
-                padding: "18px 16px 14px",
+                width: isMobile ? "70vw" : "360px",
+                maxWidth: isMobile ? "70vw" : "360px",
+                margin: isMobile ? "0 auto 18px auto" : "0 auto",
+                borderRadius: "18px",
+                boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
+                background: isMobile ? "#f4f4f4" : "#fff",
+                overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
-                gap: "10px",
-                flex: 1,
+                minHeight: isMobile ? "auto" : "360px",
+                transition: "0.3s",
+                alignItems: "stretch",
               }}
             >
-              <h3
+              <img
+                src={r.img}
+                alt={r.title}
                 style={{
-                  color: "#075659",
-                  fontSize: "1.4rem",
-                  fontWeight: 700,
-                  margin: 0,
+                  width: "100%",
+                  height: isMobile ? "170px" : "190px",
+                  objectFit: "cover",
+                  display: "block",
+                  borderTopLeftRadius: "18px",
+                  borderTopRightRadius: "18px",
                 }}
-              >
-                {r.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: "0.98rem",
-                  lineHeight: 1.5,
-                  margin: 0,
-                  color: "#333",
-                }}
-              >
-                <b>Ingredienti:</b> {r.ingredienti}
-              </p>
-              <p
-                style={{
-                  fontSize: "0.98rem",
-                  lineHeight: 1.5,
-                  margin: 0,
-                  color: "#333",
-                }}
-              >
-                <b>Preparazione:</b> {r.preparazione}
-              </p>
+              />
               <div
                 style={{
+                  padding: "18px 16px 14px",
                   display: "flex",
-                  alignItems: "center",
+                  flexDirection: "column",
                   gap: "10px",
-                  marginTop: "auto",
-                  fontSize: "0.95rem",
-                  color: "#075659",
+                  flex: 1,
                 }}
               >
-                <span>📶</span>
-                <span>Facile</span>
-                <span>⏱️</span>
-                <span>5 min</span>
+                <h3
+                  style={{
+                    color: "#075659",
+                    fontSize: "1.4rem",
+                    fontWeight: 700,
+                    margin: 0,
+                  }}
+                >
+                  {r.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "0.98rem",
+                    lineHeight: 1.5,
+                    margin: 0,
+                    color: "#333",
+                  }}
+                >
+                  <b>Ingredienti:</b> {r.ingredienti}
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.98rem",
+                    lineHeight: 1.5,
+                    margin: 0,
+                    color: "#333",
+                  }}
+                >
+                  <b>Preparazione:</b> {r.preparazione}
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    marginTop: "auto",
+                    fontSize: "0.95rem",
+                    color: "#075659",
+                  }}
+                >
+                  <span>📶</span>
+                  <span>{r.difficolta}</span>
+                  <span>⏱️</span>
+                  <span>{r.tempo}</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       {/* FRECCIA DESTRA */}
       <button
@@ -317,6 +319,8 @@ const ricette = [
       "Tartare di Tonno OHissa, un panino per burger, due foglie d’insalata, un pomodoro rosso, Guacamole e olio extravergine d’oliva e sale.",
     preparazione:
       "Taglia il pane e scaldalo leggermente. Spalma la guacamole sulla base, aggiungi poi lattuga, fette di pomodoro e la tartare di Tonno OHissa condita con olio e sale. Chiudi il panino e servi subito.",
+    difficolta: "Facile",
+    tempo: "5 min",
   },
   {
     img: Frame390_1,
@@ -325,6 +329,8 @@ const ricette = [
       "Tartare di Pesce Spada OHissa, salsa (maionese + curry in polvere), olio extravergine d’oliva, sale, pepe, aneto o finocchietto.",
     preparazione:
       "Condisci la Tartare di Pesce Spada OHissa con olio, sale e pepe. Prepara la salsa mescolando maionese e curry. Disponi poi la tartare in un coppapasta, aggiungi la salsa sopra e decora con aneto.",
+    difficolta: "Difficile",
+    tempo: "7 min",
   },
   {
     img: Frame390_2,
@@ -333,6 +339,8 @@ const ricette = [
       "Filetto di Pesce Spada OHissa, succo di limone, olio extravergine d’oliva, sale, pepe e prezzemolo fresco.",
     preparazione:
       "Affetta finemente il Pesce Spada OHissa e disponilo su un piatto. Condisci con succo di limone, olio, sale e pepe. Completa con prezzemolo tritato e servi subito.",
+    difficolta: "Medio",
+    tempo: "6 min",
   },
   {
     img: Rectangle,
@@ -341,6 +349,8 @@ const ricette = [
       "Saku di Salmone OHissa, pane a fette, pomodori secchi sott’olio, olive nere, insalatina, olio evo, sale e pepe.",
     preparazione:
       "Tosta il pane. Prepara un letto di insalatina e disponi sopra le fette di pane tostato. Taglia il salmone a fettine e aggiungilo con pomodori secchi e olive. Completa con olio e pepe.",
+    difficolta: "Medio",
+    tempo: "6 min",
   },
   {
     img: Frame390_3,
@@ -349,6 +359,8 @@ const ricette = [
       "Tartare di Salmone OHissa, riso per sushi, avocado a fette, carote julienne, edamame, salsa Ponzu o soia e maionese al lime (opzionale).",
     preparazione:
       "Prepara il riso e lascialo raffreddare. Disponi nella bowl il riso e sopra gli ingredienti a sezioni: Tartare di Salmone OHissa, avocado, carote, edamame. Condisci con salsa Ponzu o soia e una leggera maionese al lime.",
+    difficolta: "Medio",
+    tempo: "6 min",
   },
   {
     img: Frame390_4,
@@ -357,6 +369,8 @@ const ricette = [
       "Tartare di Tonno OHissa, germogli di soia, salsa di soia, olio di sesamo e semi di sesamo (opzionale).",
     preparazione:
       "Condisci la Tartare di Tonno OHissa con salsa di soia e olio di sesamo. Disponi la tartare in un coppapasta e decora con germogli di soia. Aggiungi poi semi di sesamo se desideri.",
+    difficolta: "Medio",
+    tempo: "6 min",
   },
 ];
 
@@ -450,21 +464,15 @@ const Homepage = () => {
             }}
           >
             Amare il mare per gustare
-            <br />
-            il benessere.
           </h1>
-
           <p
             style={{
-              fontSize: isMobile ? "1.05rem" : "1.25rem",
-              lineHeight: 1.6,
-              color: "#000",
-              maxWidth: "900px",
+              fontSize: isMobile ? "1.2rem" : "1.5rem",
+              fontWeight: 700,
+              color: "#075659",
               textAlign: "center",
-              marginBottom: isMobile ? "16px" : "20px",
             }}
           >
-            OHissa seleziona, lavora e prepara per il consumo – anche a crudo –
             tonno, pesce spada, salmone e ricciola. Operiamo nella nostra sede in
             Maremma, con tecnologie innovative come l’ibernazione da fresco. Il
             nostro impegno è offrire un’alimentazione sana e gustosa, che esalta
