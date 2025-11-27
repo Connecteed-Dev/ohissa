@@ -1081,8 +1081,12 @@ const Homepage = () => {
 </section>
 
 
+<<<<<<< HEAD
 {/* CORTILIA */}
  {/* CORTILIA */}
+=======
+        {/* CORTILIA */}
+>>>>>>> c0cdec413c8492351bfa636b6648b5cf913d66b1
         <section className="full-width-section" style={{ position: "relative", width: "100%", padding: 0, margin: 0 }}>
           <img
             src={isMobile ? CortiliaMobile : CortiliaDesktop}
