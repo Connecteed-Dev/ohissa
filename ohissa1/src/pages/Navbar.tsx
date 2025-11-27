@@ -174,18 +174,32 @@ const Navbar: React.FC = () => {
                 style={{
                   position: "absolute",
                   top: 12,
-                  right: 24,
+                  left: 24,
                   background: "none",
                   border: "none",
                   color: "#fff",
-                  fontSize: 32,
-                  cursor: "pointer",
+                  width: 28,
+                  height: 28,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   zIndex: 10001,
                   padding: 0,
+                  fontSize: "2.1rem",
+                  lineHeight: 1,
                 }}
                 aria-label="Chiudi menu"
               >
-                &times;
+                <span style={{
+                  display: "block",
+                  width: "100%",
+                  height: "100%",
+                  color: "#fff",
+                  fontWeight: 700,
+                  fontFamily: "Arial, Helvetica, sans-serif",
+                  textAlign: "center",
+                  pointerEvents: "none"
+                }}>×</span>
               </button>
               <a href="/" style={{ display: "block", margin: "0 auto" }}>
                 <img
@@ -218,18 +232,22 @@ const Navbar: React.FC = () => {
                 style={{
                   position: "absolute",
                   top: 12,
-                  right: 18,
+                  left: 18,
                   background: "none",
                   border: "none",
                   color: "#fff",
-                  fontSize: 32,
-                  cursor: "pointer",
+                  width: 28,
+                  height: 28,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   zIndex: 10001,
                   padding: 0,
                 }}
                 aria-label="Chiudi menu"
               >
-                &times;
+                <span style={{ display: "block", width: 22, height: 3, background: "#fff", borderRadius: 2, transform: "rotate(45deg)" }}></span>
+                <span style={{ display: "block", width: 22, height: 3, background: "#fff", borderRadius: 2, transform: "rotate(-45deg)" }}></span>
               </button>
               <a href="/" style={{ display: "block", width: "100%", textAlign: "center" }}>
                 <img

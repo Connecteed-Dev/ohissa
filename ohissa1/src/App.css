@@ -359,8 +359,8 @@ html, body {
   position: sticky;
   top: 90px; /* allinea alla navbar */
   width: 100%;
-  height: calc(100vh - 90px);
-  overflow: hidden;
+  height: calc(100vh );
+ 
 }
 
 .gusto-image {
@@ -566,7 +566,7 @@ html, body {
 
 .ohissa-mobile-products {
   width: 100%;
-  padding: 24px 16px 56px;
+ 
   background: #fff;
   box-sizing: border-box;
 }
@@ -603,4 +603,430 @@ html, body {
   border: 1px solid rgba(255,255,255,0.9);
   background: rgba(0,0,0,0.25);
   font-size: 0.95rem;
+}
+/* Contenitore sezione */
+.full-width-section.white-bg {
+  background-color: #f4f7f5; /* sfondo chiaro simile alla grafica */
+}
+
+.storia-ohissa {
+  padding: 80px 0;
+}
+
+.story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Blocchi */
+
+.story-block {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 80px;
+}
+
+.story-block:last-child {
+  margin-bottom: 0;
+}
+
+/* blocco centrale invertito come nel layout */
+.story-block--reverse {
+  flex-direction: row-reverse;
+}
+
+/* Immagini */
+
+.story-image-wrapper {
+  position: relative;
+  flex: 0 0 340px;
+  max-width: 340px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.story-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* pallino decorativo in alto a destra dell’immagine */
+.story-pill {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 5px solid #f4f7f5; /* colore sfondo sezione, crea l’effetto bordo */
+  background: #f9d88b;        /* giallo caldo come nel layout */
+}
+
+/* Testi */
+
+.story-text {
+  flex: 1;
+}
+
+.story-title {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; /* usa qui il tuo font */
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+  color: #008578; /* verde/teal del titolo nella grafica */
+}
+
+.story-body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif; /* corpo testo */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #3a4646; /* grigio scuro leggibile */
+  margin: 0 0 10px;
+}
+
+.story-body:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .storia-ohissa {
+    padding: 48px 0;
+  }
+
+  .story-block,
+  .story-block--reverse {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .story-image-wrapper {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .story-title {
+    font-size: 24px;
+  }
+
+  .story-body {
+    font-size: 15px;
+  }
+}
+.ohissa-footer {
+}
+
+/* Fascia nera */
+.ohissa-footer-top {
+  background: #111111;
+  color: #ffffff;
+  padding: 40px 24px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.ohissa-footer-column {
+  flex: 1 1 220px;
+  max-width: 360px;
+}
+
+.ohissa-footer-title {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.ohissa-footer-title.second-title {
+  margin-top: 24px;
+}
+
+.ohissa-footer-text {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 8px;
+  color: #f5f5f5;
+}
+
+.ohissa-footer-link {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.ohissa-footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Certificazioni */
+
+.ohissa-cert-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ohissa-cert-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ohissa-cert-row img {
+  max-height: 46px;
+  width: auto;
+  display: block;
+}
+
+.ifs-logo {
+  max-height: 60px;
+}
+
+.ohissa-cert-iso {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Social */
+
+.ohissa-social-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.ohissa-social-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ohissa-social-icon.linkedin {
+  margin-top: 4px;
+}
+
+.ohissa-social-icon:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+.professionisti-label {
+  margin-top: 16px;
+}
+
+/* riga testo centrale */
+
+.ohissa-footer-middle {
+  background: #111111;
+  color: #d0d0d0;
+  text-align: center;
+  font-size: 11px;
+  padding: 16px 24px 24px;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* fascia bianca loghi istituzionali */
+
+.ohissa-footer-bottom {
+  background: #ffffff;
+  padding: 18px 24px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ohissa-bottom-logo {
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.ohissa-bottom-logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* solo per vedere i placeholder finché non metti le immagini */
+.ohissa-bottom-logo.placeholder {
+  border: 1px dashed #cccccc;
+  padding: 8px 16px;
+  font-size: 11px;
+  color: #777777;
+}
+
+/* --------- MOBILE --------- */
+
+@media (max-width: 768px) {
+  .ohissa-footer-top {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .ohissa-footer-column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .ohissa-footer-middle {
+    font-size: 10px;
+    padding: 12px 16px 18px;
+  }
+
+  .ohissa-footer-bottom {
+    gap: 16px;
+  }
+
+  .ohissa-bottom-logo img {
+    max-height: 32px;
+  }
+}
+.full-width-section {
+  position: relative;
+}
+
+.section-image {
+  width: 100%;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 700px;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.tonno-cuts {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+.tonno-cuts-title {
+  color: #075659;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 36px;
+  text-align: left;
+}
+
+.tonno-cuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tonno-cut-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.tonno-cut-row--reverse {
+  flex-direction: row-reverse; /* alternanza come nel mockup */
+}
+
+.tonno-cut-img-card {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.tonno-cut-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tonno-cut-dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f2c88a; /* oro */
+  top: 10px;
+  right: 10px;
+  border: 3px solid #ffffff;
+}
+
+.tonno-cut-text h4 {
+  margin: 4px 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #075659;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tonno-cut-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #333333;
+  max-width: 260px;
+}
+
+/* Mobile: impila immagine e testo in verticale */
+@media (max-width: 900px) {
+  .tonno-cut-row,
+  .tonno-cut-row--reverse {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tonno-cut-img-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .tonno-cut-text p {
+    max-width: 100%;
+  }
+}
+.ohissa-menu-logo {
+  height: 60px !important;
+  max-height: 60px !important;
+}
+
+@media (min-width: 901px) {
+  .ohissa-menu-logo {
+    height: 78px !important;
+    max-height: 78px !important;
+  }
 }
