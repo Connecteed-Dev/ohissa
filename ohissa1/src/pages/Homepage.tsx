@@ -6,7 +6,12 @@ import CorporateVideo from "../assets/Corporate Ohissa 2025 (1).mp4";
 import TeaserVideo from "../assets/Teaser Ohissa 2025 vert.mp4";
 import HeroMobile from "../assets/Hero.png";                  // mobile / tablet
 
+<<<<<<< HEAD
 import Certificazioni from "../assets/certificazioni.png";
+=======
+import Certificazioni from "../assets/Certificazioni.png";
+// import CorporateVideo from "../assets/Ohissa-per-lo-Sport-1.mp4";
+>>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
 
 import ScopriBenessere from "../assets/Scopri la linea benessere.png";
 import PiuSicuroFrescoDesktop from "../assets/Più sicuro del fresco1.png";
@@ -360,7 +365,80 @@ const ricette = [
   },
 ];
 
+<<<<<<< HEAD
 const Homepage = () => {
+=======
+
+/* -----------------------------------------------------
+   CERTIFICAZIONI CAROUSEL
+----------------------------------------------------- */
+function CertificazioniCarousel() {
+  const images = [Certificazioni];
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth <= 900;
+
+  return (
+    <div className="cert-carousel-wrapper" style={{ marginBottom: 0 }}>
+      {isMobile ? (
+        <div
+          style={{
+            width: "100vw",
+            overflow: "hidden",
+            position: "relative",
+            height: "120px",
+          }}
+        >
+          <img
+            src={images[current]}
+            alt="Certificazioni OHissa"
+            className="certifications-image"
+            style={{
+              width: "200vw",
+              height: "120px",
+              objectFit: "cover",
+              position: "absolute",
+              left: 0,
+              animation: "certScroll 12s linear infinite",
+            }}
+          />
+        </div>
+      ) : (
+        <img
+          src={images[current]}
+          alt="Certificazioni OHissa"
+          className="certifications-image"
+        />
+      )}
+    </div>
+  );
+}
+
+/* -----------------------------------------------------
+   HOMEPAGE
+----------------------------------------------------- */
+// Dati ricette
+// (RIMOSSO: dichiarazione duplicata di 'ricette')
+const Homepage = () => {
+  // Stato flip per ogni card
+  const [flipped, setFlipped] = useState([false, false, false, false, false, false]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const cardsPerPage = 3;
+  const totalPages = Math.ceil(ricette.length / cardsPerPage);
+  // Stato per background prodotti desktop
+  const [productsBg, setProductsBg] = useState(frame405);
+  const gustoSectionRef = useRef<HTMLDivElement | null>(null);
+  const [gustoProgress, setGustoProgress] = useState(0);
+>>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
   const [isMobile, setIsMobile] = useState(false);
   const isDesktop = !isMobile;
 
@@ -427,6 +505,7 @@ const Homepage = () => {
           />
         </header>
 
+<<<<<<< HEAD
         {/* TESTO HERO */}
         <section
           className="hero-text-block"
@@ -453,6 +532,26 @@ const Homepage = () => {
             <br />
             il benessere.
           </h1>
+=======
+        {/* CONTENUTO */}
+        <main className="content">
+          {/* TESTO HERO */}
+          <section className="hero-text-block">
+            <h1 className={isMobile ? "hero-title mobile" : "hero-title"}
+              style={{
+                fontSize: isMobile ? "1.8rem" : "3.2rem",
+                fontWeight: 800,
+                lineHeight: 1.12,
+                color: "#075659",
+                marginBottom: isMobile ? "18px" : "32px",
+                textAlign: "center",
+                letterSpacing: "-1px"
+              }}>
+              Amare il mare per gustare
+              <br />
+              il benessere.
+            </h1>
+>>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
 
           <p
             style={{
@@ -643,6 +742,7 @@ const Homepage = () => {
           </div>
         )}
 
+<<<<<<< HEAD
         {/* CERTIFICAZIONI – FASCIA VERDE */}
         <section
           className="certifications-section"
@@ -673,6 +773,23 @@ const Homepage = () => {
               }}
             >
               <span
+=======
+                <img
+                  src={isMobile ? GustoMobile : GustoImg}
+                  alt="Gusto OHissa"
+                  className="gusto-image"
+                  style={isMobile ? { marginBottom: "32px" } : {}}
+                />
+              </div>
+            </div>
+            );
+            {"}"};
+          </section>
+          {isMobile ? (
+            <section className="ohissa-mobile-products" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", padding: "0 0 24px 0", marginTop: "60px" }}>
+              <div
+                className="ohissa-mobile-products-inner"
+>>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
                 style={{
                   color: "#fff",
                   fontWeight: 600,
@@ -757,6 +874,7 @@ const Homepage = () => {
             >
               Il tuo browser non supporta il tag video.
             </video>
+<<<<<<< HEAD
           </div>
         </section>
 
@@ -1492,6 +1610,149 @@ const Homepage = () => {
 </div>
 
         </footer>
+=======
+          </section>
+
+          {/* PIÙ SICURO DEL FRESCO – SFONDO BIANCO */}
+          <section className="full-width-section white-bg">
+            <img
+              src={
+                isMobile
+                  ? PiuSicuroFrescoMobile
+                  : PiuSicuroFrescoDesktop
+              }
+              alt="Più sicuro del fresco"
+              className="section-image"
+            />
+          </section>
+
+          {/* CORTILIA */}
+          <section className="full-width-section">
+            <img
+              src={isMobile ? CortiliaMobile : CortiliaDesktop}
+              alt="Cortilia OHissa"
+              className="section-image"
+            />
+          </section>
+
+          {/* STORIA – SFONDO BIANCO */}
+          <section className="full-width-section white-bg">
+            <img
+              src={isMobile ? StoriaMobile : StoriaDesktop}
+              alt="Storia OHissa"
+              className="section-image"
+            />
+          </section>
+
+          {/* CHI SIAMO */}
+          <section className="full-width-section">
+            <img
+              src={isMobile ? ChiSiamoMobile : ChiSiamoDesktop}
+              alt="Chi siamo OHissa"
+              className="section-image"
+            />
+          </section>
+
+          {/* RICETTE – 6 CARD */}
+          {/* RICETTE – 6 CARD */}
+          {/* RICETTE – 6 CARD */}
+          <section className="full-width-section white-bg" style={{ padding: "32px 0" }}>
+            <div style={{
+              display: "flex",
+              flexWrap: "nowrap",
+              justifyContent: "center",
+              maxWidth: "1400px",
+              margin: "0 auto",
+              gap: "32px",
+            }}>
+              {ricette.slice(currentPage * cardsPerPage, currentPage * cardsPerPage + cardsPerPage).map((r) => (
+                <div
+                  key={r.title}
+                  style={{
+                    width: "370px",
+                    minWidth: "260px",
+                    maxWidth: "100%",
+                    borderRadius: "20px",
+                    boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
+                    background: "#fff",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    minHeight: "620px",
+                    height: "auto"
+                  }}
+                >
+                  <img
+                    src={r.img}
+                    alt={r.title}
+                    style={{
+                      width: "100%",
+                      height: "180px",
+                      objectFit: "cover",
+                      borderTopLeftRadius: "20px",
+                      borderTopRightRadius: "20px",
+                    }}
+                  />
+                  <div style={{ padding: "22px 16px 16px 16px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+                    <h3 style={{ color: "#075659", fontSize: "1.45rem", fontWeight: 700, margin: "0 0 14px 0", letterSpacing: "-0.5px" }}>{r.title}</h3>
+                    <div style={{ fontSize: "1.08rem", marginBottom: "10px", lineHeight: 1.32 }}><b>Ingredienti:</b> {r.ingredienti}</div>
+                    <div style={{ fontSize: "1.08rem", marginBottom: "10px", lineHeight: 1.32 }}><b>Preparazione:</b> {r.preparazione}</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "1.15rem", color: "#075659", marginTop: "auto" }}>
+                      <span style={{ opacity: 0.7, fontSize: "1em" }}>📶</span>
+                      <span>Facile</span>
+                      <span style={{ opacity: 0.7, fontSize: "1em" }}>⏱️</span>
+                      <span>5 min</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* CONTROLLI CAROSELLO */}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "12px",
+              marginTop: "24px",
+            }}>
+              <button
+                onClick={() => setCurrentPage((p) => (p > 0 ? p - 1 : p))}
+                disabled={currentPage === 0}
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "999px",
+                  border: "1px solid #075659",
+                  background: currentPage === 0 ? "#eee" : "#fff",
+                  color: "#075659",
+                  cursor: currentPage === 0 ? "default" : "pointer",
+                  minWidth: "40px",
+                }}
+              >
+                ‹
+              </button>
+              <button
+                onClick={() => setCurrentPage((p) => p < totalPages - 1 ? p + 1 : p)}
+                disabled={currentPage === totalPages - 1}
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "999px",
+                  border: "1px solid #075659",
+                  background: currentPage === totalPages - 1 ? "#eee" : "#fff",
+                  color: "#075659",
+                  cursor: currentPage === totalPages - 1 ? "default" : "pointer",
+                  minWidth: "40px",
+                }}
+              >
+                ›
+              </button>
+            </div>
+          </section>
+          {isDesktop ? (
+            <img src={FooterDesktop} alt="Footer" style={{ width: '100vw', height: 'auto', display: 'block', borderRadius: '0', background: '#fff', position: 'relative', zIndex: 1 }} />
+          ) : (
+            <img src={FooterMobile} alt="Footer" style={{ width: '100%', display: 'block', background: '#fff', marginTop: '-80px' }} />
+          )}
+        </main>
+>>>>>>> 24a58ca895a7e5fad1514a67b2d2a4893ca7b8db
       </div>
     </div>
   );
