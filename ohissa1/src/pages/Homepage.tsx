@@ -105,7 +105,7 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
                 justifyContent: "center",
                 transition: "color 0.2s",
                 outline: "none",
-              }
+                }
             : {
                 width: "48px",
                 height: "48px",
@@ -126,9 +126,9 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
           if (!e.currentTarget.disabled) {
             if (isMobile) {
-              e.currentTarget.style.background = '#b2ebf2';
-              e.currentTarget.style.color = '#0097a7';
-              e.currentTarget.style.borderColor = '#0097a7';
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#0097a7';
+                e.currentTarget.style.borderColor = '#0097a7';
             } else {
               e.currentTarget.style.color = '#0097a7';
             }
@@ -137,9 +137,9 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => {
           if (!e.currentTarget.disabled) {
             if (isMobile) {
-              e.currentTarget.style.background = '#e0f7fa';
-              e.currentTarget.style.color = index === 0 ? '#b0cfd1' : '#075659';
-              e.currentTarget.style.borderColor = '#075659';
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = index === 0 ? '#b0cfd1' : '#075659';
+                e.currentTarget.style.borderColor = '#075659';
             } else {
               e.currentTarget.style.color = index === 0 ? '#b0cfd1' : '#075659';
             }
@@ -260,7 +260,7 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
                 justifyContent: "center",
                 transition: "color 0.2s",
                 outline: "none",
-              }
+                }
             : {
                 width: "48px",
                 height: "48px",
@@ -281,9 +281,9 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
           if (!e.currentTarget.disabled) {
             if (isMobile) {
-              e.currentTarget.style.background = '#b2ebf2';
-              e.currentTarget.style.color = '#0097a7';
-              e.currentTarget.style.borderColor = '#0097a7';
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#0097a7';
+                e.currentTarget.style.borderColor = '#0097a7';
             } else {
               e.currentTarget.style.color = '#0097a7';
             }
@@ -292,9 +292,9 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => {
           if (!e.currentTarget.disabled) {
             if (isMobile) {
-              e.currentTarget.style.background = '#e0f7fa';
-              e.currentTarget.style.color = index >= ricette.length - visibleItemsCount ? '#b0cfd1' : '#075659';
-              e.currentTarget.style.borderColor = '#075659';
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = index >= ricette.length - visibleItemsCount ? '#b0cfd1' : '#075659';
+                e.currentTarget.style.borderColor = '#075659';
             } else {
               e.currentTarget.style.color = index >= ricette.length - visibleItemsCount ? '#b0cfd1' : '#075659';
             }
