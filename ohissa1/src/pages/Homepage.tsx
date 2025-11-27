@@ -12,7 +12,7 @@ import ScopriBenessere from "../assets/Scopri la linea benessere.png";
 import PiuSicuroFrescoDesktop from "../assets/Più sicuro del fresco1.png";
 import PiuSicuroFrescoMobile from "../assets/Più sicuro del fresco.png";
 import CortiliaDesktop from "../assets/Cortilia (1).png";
-import CortiliaMobile from "../assets/Cortilia.png";
+import CortiliaMobile from "../assets/Cortilia (1).png";
 import CortiliaBg from "../assets/Cortilia (1).png";
 import StoriaDesktop from "../assets/Storia.png";
 import StoriaMobile from "../assets/Storia (1).png";
@@ -90,38 +90,38 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         style={
           isMobile
             ? {
-              width: "48px",
-              height: "48px",
-              border: "2px solid #075659",
-              background: "#e0f7fa",
-              borderRadius: "50%",
-              boxShadow: "0px 2px 8px rgba(7,86,89,0.1)",
-              fontSize: "2.3rem",
-              color: index === 0 ? "#b0cfd1" : "#075659",
-              cursor: index === 0 ? "not-allowed" : "pointer",
-              opacity: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "background 0.2s, color 0.2s, border 0.2s",
-              outline: "none",
-            }
+                width: "32px",
+                height: "60px",
+                background: "transparent",
+                border: "none",
+                borderRadius: "0",
+                boxShadow: "none",
+                fontSize: "2.2rem",
+                color: index === 0 ? "#b0cfd1" : "#075659",
+                cursor: index === 0 ? "not-allowed" : "pointer",
+                opacity: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "color 0.2s",
+                outline: "none",
+              }
             : {
-              width: "48px",
-              height: "48px",
-              background: "transparent",
-              fontSize: "2.3rem",
-              color: index === 0 ? "#b0cfd1" : "#075659",
-              cursor: index === 0 ? "not-allowed" : "pointer",
-              opacity: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "none",
-              boxShadow: "none",
-              borderRadius: "0",
-              transition: "color 0.2s",
-            }
+                width: "48px",
+                height: "48px",
+                background: "transparent",
+                fontSize: "2.3rem",
+                color: index === 0 ? "#b0cfd1" : "#075659",
+                cursor: index === 0 ? "not-allowed" : "pointer",
+                opacity: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "none",
+                boxShadow: "none",
+                borderRadius: "0",
+                transition: "color 0.2s",
+              }
         }
         onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
           if (!e.currentTarget.disabled) {
@@ -154,8 +154,8 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
           <div
             key={i}
             style={{
-              width: isMobile ? "94vw" : "360px",
-              maxWidth: isMobile ? "94vw" : "360px",
+              width: isMobile ? "70vw" : "360px",
+              maxWidth: isMobile ? "70vw" : "360px",
               margin: isMobile ? "0 auto 18px auto" : "0 auto",
               borderRadius: "18px",
               boxShadow: "0 4px 18px rgba(0,0,0,0.13)",
@@ -245,38 +245,38 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
         style={
           isMobile
             ? {
-              width: "48px",
-              height: "48px",
-              border: "2px solid #075659",
-              background: "#e0f7fa",
-              borderRadius: "50%",
-              boxShadow: "0px 2px 8px rgba(7,86,89,0.1)",
-              fontSize: "2.3rem",
-              color: index >= ricette.length - visibleItemsCount ? "#b0cfd1" : "#075659",
-              cursor: index >= ricette.length - visibleItemsCount ? "not-allowed" : "pointer",
-              opacity: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "background 0.2s, color 0.2s, border 0.2s",
-              outline: "none",
-            }
+                width: "32px",
+                height: "60px",
+                background: "transparent",
+                border: "none",
+                borderRadius: "0",
+                boxShadow: "none",
+                fontSize: "2.2rem",
+                color: index >= ricette.length - visibleItemsCount ? "#b0cfd1" : "#075659",
+                cursor: index >= ricette.length - visibleItemsCount ? "not-allowed" : "pointer",
+                opacity: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "color 0.2s",
+                outline: "none",
+              }
             : {
-              width: "48px",
-              height: "48px",
-              background: "transparent",
-              fontSize: "2.3rem",
-              color: index >= ricette.length - visibleItemsCount ? "#b0cfd1" : "#075659",
-              cursor: index >= ricette.length - visibleItemsCount ? "not-allowed" : "pointer",
-              opacity: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "none",
-              boxShadow: "none",
-              borderRadius: "0",
-              transition: "color 0.2s",
-            }
+                width: "48px",
+                height: "48px",
+                background: "transparent",
+                fontSize: "2.3rem",
+                color: index >= ricette.length - visibleItemsCount ? "#b0cfd1" : "#075659",
+                cursor: index >= ricette.length - visibleItemsCount ? "not-allowed" : "pointer",
+                opacity: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "none",
+                boxShadow: "none",
+                borderRadius: "0",
+                transition: "color 0.2s",
+              }
         }
         onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => {
           if (!e.currentTarget.disabled) {
@@ -926,21 +926,24 @@ const Homepage = () => {
             style={{
               position: "absolute",
               top: isMobile ? "60%" : "50%",
-              right: isMobile ? "8%" : "7%",
+              right: isMobile ? "2%" : "7%",
               transform: isMobile ? "translateY(-50%)" : "translateY(-50%)",
               background: "#ff7e6b",
               color: "#fff",
               borderRadius: "24px",
-              padding: isMobile ? "10px 22px" : "16px 38px",
+              padding: isMobile ? "2px 6px" : "16px 38px",
               fontWeight: 700,
-              fontSize: isMobile ? "1rem" : "1.18rem",
+              fontSize: isMobile ? "0.58rem" : "1.18rem",
               boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
               border: "none",
               textDecoration: "none",
               zIndex: 2,
               transition: "background 0.2s, color 0.2s",
               cursor: "pointer",
-              display: "inline-block"
+              display: "inline-block",
+              minWidth: isMobile ? "auto" : undefined,
+              maxWidth: isMobile ? "60px" : undefined,
+              textAlign: "center"
             }}
             aria-label="Scopri di più su Cortilia"
             onMouseOver={e => e.currentTarget.style.background = '#ff5a3c'}

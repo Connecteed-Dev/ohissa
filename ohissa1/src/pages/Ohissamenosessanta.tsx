@@ -44,7 +44,7 @@ const OhissaMenoSessanta: React.FC = () => {
                 <p style={{ fontSize: '1.09rem', color: '#075659', fontFamily: 'Ubuntu, system-ui, sans-serif', lineHeight: 1.55, margin: '18px 0 0 0', maxWidth: '340px', width: '100%', textAlign: 'center', padding: '0 16px' }}>
                   La linea Menosessanta nasce da una selezione di Tonno a Pinna Gialla, Tonno Obeso, Ricciola Oceanica e Salmone, tutti 100% naturali e destinati ai canali Horeca, alla GDO e ai grossisti. Ogni prodotto viene surgelato all’origine a -60°C per garantire sicurezza, gusto e una consistenza superiore. Successivamente il pesce viene lavorato e confezionato in atmosfera protettiva nei nostri laboratori in Toscana, mantenendo freschezza e qualità premium.
                 </p>
-                <img src={Frame350_7} alt="Menosessanta prodotto" style={{ width: '220px', height: '220px', objectFit: 'cover', margin: '22px auto 32px auto', display: 'block', maxWidth: '95vw', borderRadius: '50%' }} />
+                <img src={Frame350_7} alt="Menosessanta prodotto" style={{ width: '240px', height: '220px', objectFit: 'cover', margin: '22px auto 32px auto', display: 'block', maxWidth: '95vw' }} />
               </div>
             </section>
           </>
