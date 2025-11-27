@@ -82,7 +82,15 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
   const next = () => setIndex((i) => Math.min(ricette.length - visibleItemsCount, i + visibleItemsCount));
   const visibleItems = ricette.slice(index, index + visibleItemsCount);
   return (
-    <div style={{ display: "flex", alignItems: "center", width: "100%", justifyContent: "center" }}>
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+      justifyContent: "center",
+      paddingLeft: isMobile ? "12px" : 0,
+      paddingRight: isMobile ? "12px" : 0,
+      boxSizing: "border-box"
+    }}>
       {/* FRECCIA SINISTRA */}
       <button
         onClick={prev}
