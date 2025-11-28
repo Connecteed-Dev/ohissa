@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 
-import Logo from '../assets/logo.png';
+import Logo from '../assets/download ohi.png';
 
 const Navbar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
