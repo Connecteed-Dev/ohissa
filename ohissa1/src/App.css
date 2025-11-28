@@ -230,18 +230,30 @@ html, body {
   padding: 0;
 }
   /* Forza input e textarea dei form contatti sempre bianchi e testo scuro */
-  input,
-  textarea {
-    background: #fff !important;
-    color: #075659 !important;
-    caret-color: #075659 !important;
-  }
 
-  input::placeholder,
-  textarea::placeholder {
-    color: #075659 !important;
-    opacity: 1 !important;
-  }
+form[action^="mailto"] input,
+form[action^="mailto"] textarea,
+form[action^="mailto"] select,
+form[action^="mailto"] button,
+input,
+textarea,
+select {
+  background: #fff !important;
+  color: #075659 !important;
+  caret-color: #075659 !important;
+  border: 1px solid #008578 !important;
+  appearance: none !important;
+  color-scheme: only light !important;
+  box-shadow: none !important;
+}
+
+form[action^="mailto"] input::placeholder,
+form[action^="mailto"] textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: #075659 !important;
+  opacity: 1 !important;
+}
 
 .app {
   min-height: 100vh;
