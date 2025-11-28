@@ -1536,7 +1536,7 @@ const Homepage = () => {
             }}
           >
             OHISSA 2025 - OHISSA S.R.L. - Via San Gregorio 55 - 20124 Milano
-            P.IVA 12646260960 - By Webmaremma
+            P.IVA 12646260960 - By Connecteed
           </div>
 
           {/* fascia bianca loghi istituzionali – placeholder */}
