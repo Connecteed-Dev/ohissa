@@ -234,6 +234,13 @@ html, body {
   textarea {
     background: #fff !important;
     color: #075659 !important;
+    caret-color: #075659 !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #075659 !important;
+    opacity: 1 !important;
   }
 
 .app {
