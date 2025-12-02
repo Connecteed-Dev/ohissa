@@ -6,7 +6,7 @@ import Frame350_1 from "../assets/Frame 350 (1).png";      // tondo pesce spada
 import PescaProduzione1 from "../assets/2-3bb5d4b6.png"; // barca
 import Frame412_3 from "../assets/Frame 412 (3).png";      // tartare pesce spada
 import Frame412_1 from "../assets/Frame 38 (1).png";      // immagine ricetta
-import ChiSiamo14 from "../assets/Chi siamo (14).png";     // cerchio verde ricetta
+import ChiSiamo24 from "../assets/Chi siamo (24).png";
 import Frame374 from "../assets/Frame 374.png";            // sfondo form contatti
 import Logo10 from "../assets/image 10.png";
 import Logo9 from "../assets/image 9.png";
@@ -351,7 +351,7 @@ const PesceSpada: React.FC = () => {
           style={{
             position: "relative",
             width: "100vw",
-            backgroundColor: "#075659",
+            minHeight: 480,
             display: "flex",
             justifyContent: "center",
             padding: isDesktop ? "72px 0 76px" : "52px 0 64px",
@@ -361,12 +361,17 @@ const PesceSpada: React.FC = () => {
           <div
             style={{
               position: "absolute",
-              inset: 0,
-              backgroundImage: `url(${ChiSiamo14})`,
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "#075659",
+              backgroundImage: `url(${ChiSiamo24})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              backgroundSize: isDesktop ? "contain" : "180%",
-              opacity: 0.9,
+              backgroundSize: "contain",
+              opacity: 1,
+              zIndex: 1,
             }}
           />
           <div
@@ -377,6 +382,7 @@ const PesceSpada: React.FC = () => {
               flexDirection: "column",
               alignItems: "center",
               gap: "24px",
+              zIndex: 2,
             }}
           >
             <h2
@@ -394,7 +400,7 @@ const PesceSpada: React.FC = () => {
 
             <div
               style={{
-                background: "#fff",
+                background: "rgba(255,255,255,0.97)",
                 borderRadius: "18px",
                 boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
                 maxWidth: 520,

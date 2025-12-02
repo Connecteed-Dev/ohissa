@@ -11,6 +11,7 @@ import Frame412_1 from "../assets/Frame 412 (1).png"; // saku
 import Frame412_2 from "../assets/Frame 412 (2).png"; // poke
 
 import ChiSiamo19 from "../assets/Chi siamo (19).png"; // cerchio verde ricetta
+import ChiSiamo24 from "../assets/Chi siamo (24).png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
 import Ricetta from "../assets/Frame 38.png"; // immagine ricetta
 // LOGHI CERTIFICAZIONI
@@ -326,11 +327,12 @@ const Salmone: React.FC = () => {
             style={{
               position: "absolute",
               inset: 0,
-              backgroundImage: `url(${ChiSiamo19})`,
+              backgroundImage: `url(${ChiSiamo24})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              backgroundSize: isDesktop ? "contain" : "180%",
-              opacity: 0.9,
+              backgroundSize: "cover",
+              opacity: 1,
+              zIndex: 1,
             }}
           />
           <div
@@ -341,6 +343,7 @@ const Salmone: React.FC = () => {
               flexDirection: "column",
               alignItems: "center",
               gap: "24px",
+              zIndex: 2,
             }}
           >
             <h2
@@ -358,7 +361,7 @@ const Salmone: React.FC = () => {
 
             <div
               style={{
-                background: "#fff",
+                background: "rgba(255,255,255,0.97)",
                 borderRadius: "18px",
                 boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
                 maxWidth: 520,
