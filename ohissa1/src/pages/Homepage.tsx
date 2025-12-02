@@ -2,9 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import "../App.css";
 
 import HeroSection from "../assets/Hero Section.png";          // desktop
+import ScreenshotVideoPoster from "../assets/Screenshot 2025-12-02 131527.png";
+import HeroSection3 from "../assets/Hero Section (3).png";
+import HeroSection4 from "../assets/Hero Section (4).png";
+import HeroSection5 from "../assets/Hero Section (5).png";
+import HeroSection6 from "../assets/Hero Section (6).png";
 import CorporateVideo from "../assets/Corporate Ohissa 2025 (1).mp4";
 import TeaserVideo from "../assets/Teaser Ohissa 2025 vert.mp4";
 import HeroMobile from "../assets/Hero.png";                  // mobile / tablet
+import Hero9 from "../assets/Hero (9).png";
+import Hero10 from "../assets/Hero (10).png";
+import Hero11 from "../assets/Hero (11).png";
+import Hero12 from "../assets/Hero (12).png";
 
 import Certificazioni from "../assets/Certificazioni.png";
 
@@ -230,8 +239,7 @@ const CarouselRicette = ({ ricette }: { ricette: any[] }) => {
                     color: "#075659",
                   }}
                 >
-                  <span>📶</span>
-                  <span>{r.difficolta}</span>
+                  
                   <span>⏱️</span>
                   <span>{r.tempo}</span>
                 </div>
@@ -319,7 +327,6 @@ const ricette = [
       "Tartare di Tonno OHissa, un panino per burger, due foglie d’insalata, un pomodoro rosso, Guacamole e olio extravergine d’oliva e sale.",
     preparazione:
       "Taglia il pane e scaldalo leggermente. Spalma la guacamole sulla base, aggiungi poi lattuga, fette di pomodoro e la tartare di Tonno OHissa condita con olio e sale. Chiudi il panino e servi subito.",
-    difficolta: "Facile",
     tempo: "5 min",
   },
   {
@@ -329,7 +336,6 @@ const ricette = [
       "Tartare di Pesce Spada OHissa, salsa (maionese + curry in polvere), olio extravergine d’oliva, sale, pepe, aneto o finocchietto.",
     preparazione:
       "Condisci la Tartare di Pesce Spada OHissa con olio, sale e pepe. Prepara la salsa mescolando maionese e curry. Disponi poi la tartare in un coppapasta, aggiungi la salsa sopra e decora con aneto.",
-    difficolta: "Difficile",
     tempo: "7 min",
   },
   {
@@ -339,7 +345,6 @@ const ricette = [
       "Filetto di Pesce Spada OHissa, succo di limone, olio extravergine d’oliva, sale, pepe e prezzemolo fresco.",
     preparazione:
       "Affetta finemente il Pesce Spada OHissa e disponilo su un piatto. Condisci con succo di limone, olio, sale e pepe. Completa con prezzemolo tritato e servi subito.",
-    difficolta: "Medio",
     tempo: "6 min",
   },
   {
@@ -349,7 +354,6 @@ const ricette = [
       "Saku di Salmone OHissa, pane a fette, pomodori secchi sott’olio, olive nere, insalatina, olio evo, sale e pepe.",
     preparazione:
       "Tosta il pane. Prepara un letto di insalatina e disponi sopra le fette di pane tostato. Taglia il salmone a fettine e aggiungilo con pomodori secchi e olive. Completa con olio e pepe.",
-    difficolta: "Medio",
     tempo: "6 min",
   },
   {
@@ -359,7 +363,6 @@ const ricette = [
       "Tartare di Salmone OHissa, riso per sushi, avocado a fette, carote julienne, edamame, salsa Ponzu o soia e maionese al lime (opzionale).",
     preparazione:
       "Prepara il riso e lascialo raffreddare. Disponi nella bowl il riso e sopra gli ingredienti a sezioni: Tartare di Salmone OHissa, avocado, carote, edamame. Condisci con salsa Ponzu o soia e una leggera maionese al lime.",
-    difficolta: "Medio",
     tempo: "6 min",
   },
   {
@@ -369,7 +372,6 @@ const ricette = [
       "Tartare di Tonno OHissa, germogli di soia, salsa di soia, olio di sesamo e semi di sesamo (opzionale).",
     preparazione:
       "Condisci la Tartare di Tonno OHissa con salsa di soia e olio di sesamo. Disponi la tartare in un coppapasta e decora con germogli di soia. Aggiungi poi semi di sesamo se desideri.",
-    difficolta: "Medio",
     tempo: "6 min",
   },
 ];
@@ -420,71 +422,135 @@ const Homepage = () => {
     setProductsBg(bg);
   }
 
+  // HERO SLIDESHOW
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [heroTransition, setHeroTransition] = useState(false);
+  const [heroIndexMobile, setHeroIndexMobile] = useState(0);
+  const [heroTransitionMobile, setHeroTransitionMobile] = useState(false);
+  // Durata transizione più smooth
+  const transitionDuration = 1200; // ms
+  const intervalDuration = 3500; // ms
+
+  useEffect(() => {
+    if (!isDesktop) return;
+    const interval = setInterval(() => {
+      setHeroTransition(true);
+      setTimeout(() => {
+        setHeroIndex((prev) => (prev + 1) % heroImages.length);
+        setHeroTransition(false);
+      }, transitionDuration);
+    }, intervalDuration);
+    return () => clearInterval(interval);
+  }, [isDesktop]);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const interval = setInterval(() => {
+      setHeroTransitionMobile(true);
+      setTimeout(() => {
+        setHeroIndexMobile((prev) => (prev + 1) % heroImagesMobile.length);
+        setHeroTransitionMobile(false);
+      }, transitionDuration);
+    }, intervalDuration);
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
+  const heroImages = [HeroSection, HeroSection3, HeroSection4, HeroSection5, HeroSection6];
+  const heroImagesMobile = [HeroMobile, Hero9, Hero10, Hero11, Hero12];
+
   return (
     <div className="app">
       <Navbar />
 
       <div className="page-card">
         {/* HERO */}
-        <header className="hero-section">
-          <img
-            src={isMobile ? HeroMobile : HeroSection}
-            alt="Tonno che nuota nel mare"
-            className="hero-image"
-            style={{
-              width: "100%",
-
-              height: "auto",
-              display: "block",
-              objectFit: "cover",
-            }}
-          />
+        <header className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
+          {isDesktop ? (
+            <img
+              src={heroImages[heroIndex]}
+              alt="Tonno che nuota nel mare"
+              className="hero-image"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                objectFit: "cover",
+                transition: `filter ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1), opacity ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1)`,
+                filter: heroTransition ? "blur(24px)" : "none",
+                opacity: heroTransition ? 0 : 1,
+                position: "relative",
+                zIndex: 1
+              }}
+            />
+          ) : (
+            <img
+              src={heroImagesMobile[heroIndexMobile]}
+              alt="Tonno che nuota nel mare"
+              className="hero-image"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                objectFit: "cover",
+                transition: `filter ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1), opacity ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1)`,
+                filter: heroTransitionMobile ? "blur(24px)" : "none",
+                opacity: heroTransitionMobile ? 0 : 1,
+                position: "relative",
+                zIndex: 1
+              }}
+            />
+          )}
         </header>
 
         {/* TESTO HERO */}
         <section
           className="hero-text-block"
           style={{
-            background: "#ffffff",
+            background: "#fff",
             padding: isMobile ? "32px 16px 40px" : "48px 16px 0px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            width: "100%",
+            boxSizing: "border-box"
           }}
         >
           <h1
             style={{
-              fontSize: isMobile ? "1.9rem" : "3rem",
+              fontSize: isMobile ? "2.2rem" : "3.2rem",
               fontWeight: 800,
               lineHeight: 1.15,
-              color: "#075659",
-              marginBottom: isMobile ? "16px" : "0px",
+              color: "#008080",
+              marginBottom: isMobile ? "18px" : "8px",
               textAlign: "center",
               letterSpacing: "-1px",
+              fontFamily: "Ubuntu, system-ui, sans-serif"
             }}
           >
-            Amare il mare per gustare
+            Amare il mare per gustare<br />il benessere.
           </h1>
           <p
             style={{
-              fontSize: isMobile ? "1.2rem" : "1.5rem",
-              fontWeight: 700,
-              color: "#075659",
+              fontSize: isMobile ? "1.1rem" : "1.35rem",
+              fontWeight: 400,
+              color: "#222",
               textAlign: "center",
+              maxWidth: "900px",
+              margin: isMobile ? "0 0 18px 0" : "0 0 22px 0",
+              lineHeight: 1.45,
+              fontFamily: "Ubuntu, system-ui, sans-serif"
             }}
           >
-            tonno, pesce spada, salmone e ricciola. Operiamo nella nostra sede in
-            Maremma, con tecnologie innovative come l’ibernazione da fresco. Il
-            nostro impegno è offrire un’alimentazione sana e gustosa, che esalta
-            il palato e rispetta l’ambiente.
+            OHissa seleziona, lavora e prepara per il consumo – anche a crudo – tonno, pesce spada, salmone e ricciola. Operiamo nella nostra sede in Maremma, dove confezioniamo il pesce con tecnologie innovative come l’ibernazione da fresco. Il nostro impegno è offrire un’alimentazione sana e gustosa, che esalta il palato e rispetta l’ambiente.
           </p>
-
           <p
             style={{
-              fontSize: isMobile ? "1.2rem" : "1.5rem",
+              fontSize: isMobile ? "1.25rem" : "1.7rem",
               fontWeight: 700,
-              color: "#075659",
+              color: "#008080",
               textAlign: "center",
+              margin: 0,
+              fontFamily: "Ubuntu, system-ui, sans-serif"
             }}
           >
             OHissa: così buono che fa bene.
@@ -526,9 +592,9 @@ const Homepage = () => {
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                transform: `translate(-50%, -50%) translateY(${(1 - gustoProgress) * (isMobile ? 18 : 30)
-                  }vh)`,
-                opacity: gustoProgress,
+                // Effetto: nessun fermo a metà, ingrandimento 20% (scala da 1 a 1.2)
+                transform: `translate(-50%, -50%) scale(${1 + 0.2 * gustoProgress})`,
+                opacity: 0.7,
                 fontSize: isMobile ? "1.7rem" : "2.6rem",
                 fontWeight: 500,
                 lineHeight: 1.2,
@@ -537,6 +603,7 @@ const Homepage = () => {
                 letterSpacing: "-0.5px",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
                 padding: "0 12px",
+                transition: "transform 0.3s, opacity 0.3s",
               }}
             >
               Gusto, naturalità,
@@ -814,7 +881,7 @@ const Homepage = () => {
             <video
               src={isMobile ? TeaserVideo : CorporateVideo}
               controls
-              poster={isMobile ? GustoMobile : undefined}
+              poster={ScreenshotVideoPoster}
               style={{
                 width: "100%",
                 height: isMobile ? "220px" : "420px",
@@ -1203,7 +1270,7 @@ const Homepage = () => {
                 margin: 0,
               }}
             >
-              Il termine Ohissa rimanda all’incitamento di un lavoro
+              Il termine OHissa rimanda all’incitamento di un lavoro
               fatto con forza, dedizione, sacrificio e passione, come il
               lavoro dei pescatori.
             </p>
@@ -1315,7 +1382,7 @@ const Homepage = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

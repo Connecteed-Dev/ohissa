@@ -585,6 +585,12 @@ textarea::placeholder {
 .ohissa-products-buttons .btn {
   font-size: 14px;
   padding: 8px 16px;
+  background: rgba(0,0,0,0.40);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.5s, color 0.4s;
 }
 
   /* Navbar mobile: logo a sinistra, meno padding per evitare overflow */

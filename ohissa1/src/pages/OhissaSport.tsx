@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Frame381_1 from "../assets/Frame 381 (1).png";
 import "../App.css";
 import Navbar from "./Navbar";
 import Logo10 from "../assets/image 10.png";
@@ -18,6 +19,7 @@ import Frame427_008 from "../assets/Frame 427321008.png";
 import Frame415_1 from "../assets/Frame 415 (1).png";
 import Group5_1 from "../assets/Group 5 (1).png";
 import Frame384_6 from "../assets/Frame 384 (6).png";
+import Frame415_4 from "../assets/Frame 415 (4).png";
 import Frame412_11 from "../assets/Frame 412 (11).png";
 import Frame412_12 from "../assets/Frame 412 (12).png";
 import Frame412_13 from "../assets/Frame 412 (13).png";
@@ -110,7 +112,6 @@ const OhissaSport: React.FC = () => {
             alt=""
             style={{ display: "none" }}
           />
-        </section>
 
         {/* BLOCCO TESTO NERO: “OHissa per lo sport” ------------------------- */}
         <section
@@ -130,7 +131,7 @@ const OhissaSport: React.FC = () => {
               marginBottom: "16px",
             }}
           >
-            OHissa per lo sport
+            OHissa per una nutrizione sana e gustosa
           </h1>
           <p
             style={{
@@ -170,7 +171,7 @@ const OhissaSport: React.FC = () => {
           }}
         >
           <img
-            src={Frame384_6}
+            src={Frame415_4}
             alt="Sport icons"
             style={{
               width: isMobile ? "90%" : "100%",
@@ -183,299 +184,201 @@ const OhissaSport: React.FC = () => {
         <section
           style={{
             width: "100%",
-            
-            padding: isMobile ? "40px 16px" : "56px 16px 72px",
+            padding: "56px 16px 72px",
             boxSizing: "border-box",
           }}
         >
-         {/* CARD PRODOTTI --------------------------------------------------- */}
-<div
-  style={{
-    maxWidth: "960px",
-    margin: "0 auto",
-    display: "flex",
-    flexDirection: "column",
-    gap: "24px",
-  }}
->
-  {/* Tonno Pinna Gialla */}
-  <div
-    style={{
-  background: "rgba(39, 108, 111, 0.2)",
-  borderRadius: "18px",
-  padding: isMobile ? "16px" : "20px 24px",
-  display: "flex",
-  flexDirection: isMobile ? "column" : "row",
-  alignItems: "stretch",
-  gap: isMobile ? "14px" : "20px",
-  color: "#053542",
-}}
-  >
-    <div
-      style={{
-        position: "relative",
-        width: isMobile ? "100%" : 200,
-        height: isMobile ? "100%" : 200,
-        flexShrink: 0,
-      }}
-    >
-      <img
-        src={Frame412_11}
-        alt="Tonno Pinna Gialla"
-        style={{
-          width: "100%",
-          height: "100%",
-         
-          display: "block",
-        }}
-      />
-      {/* pallino dorato in alto a destra */}
-      
-    </div>
-
-    <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
-      <h3
-        style={{
-          fontSize: isMobile ? "1.15rem" : "1.35rem",
-          fontWeight: 700,
-          margin: "0 0 4px",
-          color: "#008578",
-        }}
-      >
-        Tonno Pinna Gialla
-      </h3>
-      <p
-        style={{
-          fontWeight: 700,
-          margin: "0 0 8px",
-          color: "#005b68",
-        }}
-      >
-        Il carburante dei campioni. Muscoli forti, mente lucida.
-      </p>
-      <p style={{ margin: 0 }}>
-        Fonte di proteine, di calcio e di ferro, ma anche ricco di
-        alcune vitamine fondamentali:
-        <br />
-        <b>Niacina (Vitamina B3)</b>, utile per chi pratica sport in
-        quanto aiuta a mantenere un buon tono muscolare;
-        <br />
-        <b>B6</b>, che stimola le funzioni cerebrali e previene
-        l’invecchiamento;
-        <br />
-        <b>B12</b>, che è fondamentale per il buon funzionamento
-        dell’organismo: contribuisce infatti alla trasformazione dei
-        nutrienti in energia e alla riduzione dello stress.
-      </p>
-    </div>
-  </div>
-
-  {/* Tonno Alalunga */}
-  <div
-    style={{
-  background: "rgba(39, 108, 111, 0.2)",
-  borderRadius: "18px",
-  padding: isMobile ? "16px" : "20px 24px",
-  display: "flex",
-  flexDirection: isMobile ? "column" : "row",
-  alignItems: "stretch",
-  gap: isMobile ? "14px" : "20px",
-  color: "#053542",
-}}
-  >
-    <div
-      style={{
-        position: "relative",
-        width: isMobile ? "100%" : 200,
-        height: isMobile ? "100%" : 200,
-        flexShrink: 0,
-      }}
-    >
-      <img
-        src={Frame412_12}
-        alt="Tonno Alalunga"
-        style={{
-          width: "100%",
-          height: "100%",
-          
-          display: "block",
-        }}
-      />
-      {/* pallino dorato in alto a sinistra */}
-      
-    </div>
-
-    <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
-      <h3
-        style={{
-          fontSize: isMobile ? "1.15rem" : "1.35rem",
-          fontWeight: 700,
-          margin: "0 0 4px",
-          color: "#008578",
-        }}
-      >
-        Tonno Alalunga
-      </h3>
-      <p
-        style={{
-          fontWeight: 700,
-          margin: "0 0 8px",
-          color: "#005b68",
-        }}
-      >
-        Leggerezza potente. Proteine nobili, grassi buoni.
-      </p>
-      <p style={{ margin: 0 }}>
-        Con le stesse virtù del suo cugino, il Tonno Pinna Gialla, è ricco
-        di proteine e povero di grassi.
-        <br />
-        <br />
-        Gran parte dei grassi che contiene sono i polinsaturi
-        <b> Omega-3</b>, che tengono a bada i livelli di colesterolo
-        cattivo nel sangue e sono grandi alleati delle funzioni cerebrali,
-        favorendo la concentrazione e aiutando la memoria.
-      </p>
-    </div>
-  </div>
-
-  {/* Salmone */}
-  <div
-    style={{
-  background: "rgba(39, 108, 111, 0.2)",
-  borderRadius: "18px",
-  padding: isMobile ? "16px" : "20px 24px",
-  display: "flex",
-  flexDirection: isMobile ? "column" : "row",
-  alignItems: "stretch",
-  gap: isMobile ? "14px" : "20px",
-  color: "#053542",
-}}
-  >
-    <div
-      style={{
-        position: "relative",
-        width: isMobile ? "100%" : 200,
-        height: isMobile ? "100%" : 200,
-        flexShrink: 0,
-      }}
-    >
-      <img
-        src={Frame412_13}
-        alt="Salmone"
-        style={{
-          width: "100%",
-          height: "100%",
-          
-          display: "block",
-        }}
-      />
-      {/* pallino dorato in alto a destra */}
-      
-    </div>
-
-    <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
-      <h3
-        style={{
-          fontSize: isMobile ? "1.15rem" : "1.35rem",
-          fontWeight: 700,
-          margin: "0 0 4px",
-          color: "#008578",
-        }}
-      >
-        Salmone
-      </h3>
-      <p
-        style={{
-          fontWeight: 700,
-          margin: "0 0 8px",
-          color: "#005b68",
-        }}
-      >
-        Il re degli Omega-3. Cuore protetto, cervello attivo.
-      </p>
-      <p style={{ margin: 0 }}>
-        Con un alto valore energetico, il Salmone è ricco di <b>fosforo</b> e
-        <b> magnesio</b>, entrambi sali minerali essenziali per la
-        produzione di energia, processo in cui è impegnata anche la
-        <b> Vitamina B2</b>, pure presente nel Salmone.
-        <br />
-        <br />
-        Inoltre, <b>Vitamina B5</b>, <b>Folato</b> e <b>Acido Ascorbico</b>{" "}
-        riducono lo stato di stanchezza e fatica.
-      </p>
-    </div>
-  </div>
-
-  {/* Pesce spada */}
-  <div
-    style={{
-  background: "rgba(39, 108, 111, 0.2)",
-  borderRadius: "18px",
-  padding: isMobile ? "16px" : "20px 24px",
-  display: "flex",
-  flexDirection: isMobile ? "column" : "row",
-  alignItems: "stretch",
-  gap: isMobile ? "14px" : "20px",
-  color: "#053542",
-}}
-  >
-    <div
-      style={{
-        position: "relative",
-        width: isMobile ? "100%" : 200,
-        height: isMobile ? "100%" : 200,
-        flexShrink: 0,
-      }}
-    >
-      <img
-        src={Frame412_14}
-        alt="Pesce spada"
-        style={{
-          width: "100%",
-          height: "100%",
-         
-          display: "block",
-        }}
-      />
-      {/* pallino dorato in alto a sinistra */}
-      
-      
-    </div>
-
-    <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
-      <h3
-        style={{
-          fontSize: isMobile ? "1.15rem" : "1.35rem",
-          fontWeight: 700,
-          margin: "0 0 4px",
-          color: "#008578",
-        }}
-      >
-        Pesce spada
-      </h3>
-      <p
-        style={{
-          fontWeight: 700,
-          margin: "0 0 8px",
-          color: "#005b68",
-        }}
-      >
-        Energia e resistenza. Per performance da campioni.
-      </p>
-      <p style={{ margin: 0 }}>
-        Eccezionale fonte di proteine con bassi livelli di grassi, è anche
-        ricco di:
-        <br />
-        <b>Potassio</b>, che partecipa alla contrazione muscolare;
-        <br />
-        <b>Vitamina B1</b>, chiamata “vitamina del morale” per la sua
-        capacità di condizionare in positivo l’attitudine mentale;
-        <br />
-        <b>Colina (Vitamina J)</b>, che ritarda il senso di fatica.
-      </p>
-    </div>
-  </div>
-</div>
+          <div
+            style={{
+              maxWidth: "960px",
+              margin: "0px auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+            }}
+          >
+            {/* Tonno Pinna Gialla */}
+            <div
+              style={{
+                background: "rgba(39, 108, 111, 0.2)",
+                borderRadius: "18px",
+                padding: "20px 24px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "stretch",
+                gap: "20px",
+                color: "#053542",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "200px",
+                  height: "200px",
+                  flexShrink: 0,
+                }}
+              >
+                <img
+                  src={Frame412_11}
+                  alt="Tonno Pinna Gialla"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                />
+              </div>
+              <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: 700, margin: "0 0 4px", color: "#008578" }}>
+                  Tonno A Pinna Gialla
+                </h3>
+                <p style={{ fontWeight: 700, margin: "0 0 8px", color: "#005b68" }}>
+                  Il carburante dei campioni. Muscoli forti, mente lucida.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Fonte di proteine, di calcio e di ferro, ma anche ricco di alcune vitamine fondamentali:<br />
+                  <b>Niacina (Vitamina B3)</b>, utile per chi pratica sport in quanto aiuta a mantenere un buon tono muscolare;<br />
+                  <b>B6</b>, che stimola le funzioni cerebrali e previene l’invecchiamento;<br />
+                  <b>B12</b>, che è fondamentale per il buon funzionamento dell’organismo: contribuisce infatti alla trasformazione dei nutrienti in energia e alla riduzione dello stress.
+                </p>
+              </div>
+            </div>
+            {/* Tonno Alalunga */}
+            <div
+              style={{
+                background: "rgba(39, 108, 111, 0.2)",
+                borderRadius: "18px",
+                padding: "20px 24px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "stretch",
+                gap: "20px",
+                color: "#053542",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "200px",
+                  height: "200px",
+                  flexShrink: 0,
+                }}
+              >
+                <img
+                  src={Frame412_12}
+                  alt="Tonno Alalunga"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                />
+              </div>
+              <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: 700, margin: "0 0 4px", color: "#008578" }}>
+                  Tonno Alalunga
+                </h3>
+                <p style={{ fontWeight: 700, margin: "0 0 8px", color: "#005b68" }}>
+                  Leggerezza potente. Proteine nobili, grassi buoni.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Con le stesse virtù del suo cugino, il Tonno Pinna Gialla, è ricco di proteine e povero di grassi.<br /><br />
+                  Gran parte dei grassi che contiene sono i polinsaturi<b> Omega-3</b>, che tengono a bada i livelli di colesterolo cattivo nel sangue e sono grandi alleati delle funzioni cerebrali, favorendo la concentrazione e aiutando la memoria.
+                </p>
+              </div>
+            </div>
+            {/* Salmone */}
+            <div
+              style={{
+                background: "rgba(39, 108, 111, 0.2)",
+                borderRadius: "18px",
+                padding: "20px 24px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "stretch",
+                gap: "20px",
+                color: "#053542",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "200px",
+                  height: "200px",
+                  flexShrink: 0,
+                }}
+              >
+                <img
+                  src={Frame412_13}
+                  alt="Salmone"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                />
+              </div>
+              <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: 700, margin: "0 0 4px", color: "#008578" }}>
+                  Salmone
+                </h3>
+                <p style={{ fontWeight: 700, margin: "0 0 8px", color: "#005b68" }}>
+                  Il re degli Omega-3. Cuore protetto, cervello attivo.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Con un alto valore energetico, il Salmone è ricco di <b>fosforo</b> e<b> magnesio</b>, entrambi sali minerali essenziali per la produzione di energia, processo in cui è impegnata anche la<b> Vitamina B2</b>, pure presente nel Salmone.<br /><br />
+                  Inoltre, <b>Vitamina B5</b>, <b>Folato</b> e <b>Acido Ascorbico</b> riducono lo stato di stanchezza e fatica.
+                </p>
+              </div>
+            </div>
+            {/* Pesce spada */}
+            <div
+              style={{
+                background: "rgba(39, 108, 111, 0.2)",
+                borderRadius: "18px",
+                padding: "20px 24px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "stretch",
+                gap: "20px",
+                color: "#053542",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "200px",
+                  height: "200px",
+                  flexShrink: 0,
+                }}
+              >
+                <img
+                  src={Frame412_14}
+                  alt="Pesce spada"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                />
+              </div>
+              <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: 700, margin: "0 0 4px", color: "#008578" }}>
+                  Pesce spada
+                </h3>
+                <p style={{ fontWeight: 700, margin: "0 0 8px", color: "#005b68" }}>
+                  Energia e resistenza. Per performance da campioni.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Eccezionale fonte di proteine con bassi livelli di grassi, è anche ricco di:<br />
+                  <b>Potassio</b>, che partecipa alla contrazione muscolare;<br />
+                  <b>Vitamina B1</b>, chiamata “vitamina del morale” per la sua capacità di condizionare in positivo l’attitudine mentale;<br />
+                  <b>Colina (Vitamina J)</b>, che ritarda il senso di fatica.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         </section>
 
@@ -530,9 +433,11 @@ const OhissaSport: React.FC = () => {
             <source src={OhissaSportVideo} type="video/mp4" />
             Il tuo browser non supporta il video HTML5.
           </video>
+          
 
         </section>
 
+        {/* RIGA CON I 3 CERCHI (BOTTOM) ------------------------------------ */}
         {/* RIGA CON I 3 CERCHI (BOTTOM) ------------------------------------ */}
         <section
           style={{
@@ -543,50 +448,64 @@ const OhissaSport: React.FC = () => {
             padding: isMobile ? "24px 0 32px" : "40px 0 48px",
           }}
         >
-          <img
-            src={Frame384_6}
-            alt="Sport icons bottom"
-            style={{
-              width: isMobile ? "90%" : "100%",
-             
-              display: "block",
-            }}
-          />
-          <img src={Frame415_1} alt="" style={{ display: "none" }} />
+          <div style={{ display: "flex", justifyContent: "center", margin: "0 auto 18px auto" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <img
+                src={Frame381_1}
+                alt="Loghi sportivi OHissa"
+                style={{
+                  width: isMobile ? "220px" : "320px",
+                  maxWidth: "100%",
+                  height: "auto",
+                  marginTop: "8px"
+                }}
+              />
+              <img
+                src={Frame415_4}
+                alt="Sport icons"
+                style={{
+                  width: isMobile ?  "90%" : "100%",
+                  maxWidth: "100%",
+                  height: "auto",
+                  marginTop: "8px"
+                }}
+              />
+            </div>
+            
+          </div>
+          
+          {isMobile ? (
+            <section className="ohissa-mobile-products" style={{ marginBottom: 32 }}>
+              <div
+                className="ohissa-mobile-products-inner"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${frame405})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <h1 className="ohissa-mobile-products-title">
+                  Scopri la nostra linea<br />del benessere
+                </h1>
+
+                <div className="ohissa-mobile-products-buttons">
+                  <a href="/tonno-pinna-gialla" className="btn">
+                    Tonno a pinne gialle
+                  </a>
+                  <a href="/tonno-alalunga" className="btn">
+                    Tonno alalunga
+                  </a>
+                  <a href="/salmone" className="btn">
+                    Salmone
+                  </a>
+                  <a href="/pesce-spada" className="btn">
+                    Pesce spada
+                  </a>
+                </div>
+              </div>
+            </section>
+          ) : null}
         </section>
-
-{/* CTA BLU: “SCOPRI LA NOSTRA LINEA DEL BENESSERE” ----------------- */}
-{isMobile ? (
-  <section className="ohissa-mobile-products" style={{ marginBottom: 32 }}>
-    <div
-      className="ohissa-mobile-products-inner"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${frame405})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <h1 className="ohissa-mobile-products-title">
-        Scopri la nostra linea<br />del benessere
-      </h1>
-
-      <div className="ohissa-mobile-products-buttons">
-        <a href="/tonno-pinna-gialla" className="btn">
-          Tonno a pinne gialle
-        </a>
-        <a href="/tonno-alalunga" className="btn">
-          Tonno alalunga
-        </a>
-        <a href="/salmone" className="btn">
-          Salmone
-        </a>
-        <a href="/pesce-spada" className="btn">
-          Pesce spada
-        </a>
-      </div>
-    </div>
-  </section>
-) : null}
 
 
         {/* DESKTOP: blocco con hover dinamico */}
@@ -705,7 +624,7 @@ const OhissaSport: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

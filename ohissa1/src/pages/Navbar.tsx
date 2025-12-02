@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo (2).png";
+import Frame23 from "../assets/Frame 23.png";
 
 const NAV_BG = "rgba(7, 86, 89, 0.4)"; // #075659 40%
 const MENU_BG = "rgba(7, 86, 89, 0.85)"; // più scuro per il menu
@@ -96,7 +97,7 @@ const Navbar: React.FC = () => {
               src={Logo}
               alt="Logo OHissa"
               style={{
-                height: "48px",
+                height: isMobile ? "25px" : "48px",
                 maxHeight: "56px",
                 width: "auto",
                 cursor: "pointer",
@@ -157,6 +158,12 @@ const Navbar: React.FC = () => {
             margin: 0
           }}
         >
+          {/* Bottone Area Professionisti sempre visibile in alto a destra */}
+          {!isMobile && (
+            <a href="/ohissamenosessanta" style={{ position: "fixed", top: 18, right: 32, padding: "10px 24px", border: "2px solid #fff", borderRadius: "8px", color: "#fff", background: "rgba(7,86,89,0.18)", fontWeight: 600, fontSize: "1.05rem", textDecoration: "none", transition: "background 0.2s, color 0.2s", zIndex: 100000 }}>
+              Area Professionisti
+            </a>
+          )}
           {/* Logo e X centrati in desktop, logo centrato in alto in mobile, X a destra */}
           {!isMobile ? (
             <div style={{
@@ -185,28 +192,45 @@ const Navbar: React.FC = () => {
                   justifyContent: "center",
                   zIndex: 10001,
                   padding: 0,
-                  fontSize: "2.1rem",
+                  fontSize: "inherit",
                   lineHeight: 1,
                 }}
                 aria-label="Chiudi menu"
               >
                 <span style={{
                   display: "block",
-                  width: "100%",
-                  height: "100%",
-                  color: "#fff",
-                  fontWeight: 700,
-                  fontFamily: "Arial, Helvetica, sans-serif",
-                  textAlign: "center",
-                  pointerEvents: "none"
-                }}>×</span>
+                  width: 22,
+                  height: 22,
+                  position: "relative",
+                }}>
+                  <span style={{
+                    position: "absolute",
+                    top: 9.5,
+                    left: 0,
+                    width: 22,
+                    height: 3,
+                    background: "#fff",
+                    borderRadius: 2,
+                    transform: "rotate(45deg)",
+                  }}></span>
+                  <span style={{
+                    position: "absolute",
+                    top: 9.5,
+                    left: 0,
+                    width: 22,
+                    height: 3,
+                    background: "#fff",
+                    borderRadius: 2,
+                    transform: "rotate(-45deg)",
+                  }}></span>
+                </span>
               </button>
               <a href="/" style={{ display: "block", margin: "0 auto" }}>
                 <img
-                  src={Logo}
+                  src={Frame23}
                   alt="Logo OHissa"
                   style={{
-                    height: "72px",
+                    height: "52px",
                     cursor: "pointer",
                     transform: "scale(1)",
                     transformOrigin: "center",
@@ -243,25 +267,42 @@ const Navbar: React.FC = () => {
                   justifyContent: "center",
                   zIndex: 10001,
                   padding: 0,
-                  fontSize: "2.1rem",
+                  fontSize: "inherit",
                   lineHeight: 1,
                 }}
                 aria-label="Chiudi menu"
               >
                 <span style={{
                   display: "block",
-                  width: "100%",
-                  height: "100%",
-                  color: "#fff",
-                  fontWeight: 700,
-                  fontFamily: "Arial, Helvetica, sans-serif",
-                  textAlign: "center",
-                  pointerEvents: "none"
-                }}>×</span>
+                  width: 22,
+                  height: 22,
+                  position: "relative",
+                }}>
+                  <span style={{
+                    position: "absolute",
+                    top: 9.5,
+                    left: 0,
+                    width: 22,
+                    height: 3,
+                    background: "#fff",
+                    borderRadius: 2,
+                    transform: "rotate(45deg)",
+                  }}></span>
+                  <span style={{
+                    position: "absolute",
+                    top: 9.5,
+                    left: 0,
+                    width: 22,
+                    height: 3,
+                    background: "#fff",
+                    borderRadius: 2,
+                    transform: "rotate(-45deg)",
+                  }}></span>
+                </span>
               </button>
               <a href="/" style={{ display: "block", width: "100%", textAlign: "center" }}>
                 <img
-                  src={Logo}
+                  src={Frame23}
                   alt="Logo OHissa"
                   style={{
                     height: "54px",
@@ -341,7 +382,7 @@ const Navbar: React.FC = () => {
                 maxWidth: "100%"
               }}
             >
-              Tonno Pinna Gialla
+              Tonno A Pinna Gialla
             </a>
             <a
               href="/piu-fresco-del-fresco"

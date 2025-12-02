@@ -358,6 +358,7 @@ const TonnoAlalunga: React.FC = () => {
         action="mailto:informazioni@ohissa.it"
         method="POST"
         encType="text/plain"
+        autoComplete="off"
         style={{
           width: "100%",
           background: "#ffffff",
@@ -367,19 +368,6 @@ const TonnoAlalunga: React.FC = () => {
           fontFamily: "Ubuntu, system-ui, sans-serif",
         }}
       >
-        <h2
-          style={{
-            fontSize: "0.9rem",
-            fontWeight: 700,
-            margin: "0 0 10px",
-            color: "#0a7c75",
-            lineHeight: 1.3,
-          }}
-        >
-          Cosa ne pensi di OHissa?
-          <br />
-          Vuoi saperne di più?
-        </h2>
 
         <div
           style={{
@@ -572,6 +560,11 @@ const TonnoAlalunga: React.FC = () => {
         Cosa ne pensi di OHissa?
         <br />
         Vuoi saperne di più?
+        <br />
+        <span style={{fontSize: "0.85rem", color: "#009688", fontWeight: 400}}>
+          Le informazioni inviate non sono protette. Non inserire dati sensibili. <br />
+          <a href="/privacy" style={{color: "#009688", textDecoration: "underline"}}>Privacy Policy</a>
+        </span>
       </h2>
 
       <div
@@ -703,6 +696,7 @@ const TonnoAlalunga: React.FC = () => {
                   alignItems: "center",
                   gap: "2px",
                   fontWeight: 400,
+                  cursor: "pointer"
                 }}
               >
                 <input
@@ -710,6 +704,8 @@ const TonnoAlalunga: React.FC = () => {
                   name="voto_ohissa"
                   value={n}
                   style={{ accentColor: "#00bfae" }}
+                  tabIndex={0}
+                  required={n === 1}
                 />
                 {n}
               </label>
@@ -794,7 +790,7 @@ const TonnoAlalunga: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

@@ -231,7 +231,6 @@ const Salmone: React.FC = () => {
                 maxWidth: isDesktop ? "420px" : "90vw",
                 width: isDesktop ? undefined : "90vw",
                 color: "#fff",
-                textShadow: "0 2px 10px rgba(0,0,0,0.6)",
                 padding: isDesktop ? undefined : "0 8vw",
                 textAlign: isDesktop ? "left" : "center",
                 zIndex: 2,
@@ -269,212 +268,47 @@ const Salmone: React.FC = () => {
         </section>
 
         {/* TAGLI DI SALMONE */}
-        <section
-          style={{
-            width: "100vw",
-            background: "#ffffffff",
-              padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
-              display: "flex",
-              justifyContent: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "min(960px, 92vw)",
-              display: "flex",
-              flexDirection: "column",
-                gap: isDesktop ? "40px" : "32px",
-            }}
-          >
-            <h2
-              style={{
-                  color: "#00a6a0",
-                  fontSize: isDesktop ? "2.1rem" : "1.8rem",
-                  fontWeight: 700,
-                  margin: 0,
-              }}
-            >
-              Tagli di Salmone
-            </h2>
-
-            {/* Tartare */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: isDesktop ? "row" : "column",
-                alignItems: "center",
-                gap: "28px",
-              }}
-            >
-              <div
-                style={{
-                  position: "relative",
-                  width: isDesktop ? 220 : 220,
-                  height: isDesktop ? 250 : 240,
-                  
-                }}
-              >
-                <img
-                  src={Frame412}
-                  alt="Tartare"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
-                
+          <section style={{ width: "100vw", background: "#fff", padding: isDesktop ? "64px 0 72px" : "40px 0 40px", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "min(960px, 92vw)", display: "flex", flexDirection: "column", gap: isDesktop ? "40px" : "32px" }}>
+              <h2 style={{ color: "#00a6a0", fontSize: isDesktop ? "2.1rem" : "1.8rem", fontWeight: 700, margin: 0 }}>Tagli di Salmone</h2>
+              {/* Tartare */}
+              <div style={{ display: "flex", flexDirection: isDesktop ? "row" : "column", alignItems: "center", gap: "28px" }}>
+                <div className="story-image-wrapper" style={{ position: "relative", width: 370, height: 380 }}>
+                  <img src={Frame412} alt="Tartare" className="story-image" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <div className="story-text" style={{ flex: "1 1 0%", color: "#111" }}>
+                  <h3 className="story-title" style={{ color: "#00a6a0", fontSize: "1.5rem", margin: "0 0 8px" }}>Tartare</h3>
+                  <p className="story-body" style={{ fontSize: "0.98rem", lineHeight: 1.7, margin: 0 }}>
+                    Il pesce crudo è rigorosamente tagliato a coltello in cubetti molto piccoli di grandezza non superiore al centimetro (una dadolata piccola e precisa) riassemblati in graziosi tortini.
+                  </p>
+                </div>
               </div>
-
-              <div
-                style={{
-                    flex: 1,
-                    color: "#111",
-                }}
-              >
-                <h3
-                  style={{
-                    color: "#00a6a0",
-                    fontSize: "1.5rem",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  Tartare
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                >
-                  Il pesce crudo è rigorosamente tagliato a coltello in cubetti
-                  molto piccoli di grandezza non superiore al centimetro (una
-                  dadolata piccola e precisa) riassemblati in graziosi tortini.
-                </p>
+              {/* Saku (immagine a destra) */}
+              <div style={{ display: "flex", flexDirection: isDesktop ? "row-reverse" : "column", alignItems: "center", gap: "28px" }}>
+                <div className="story-image-wrapper" style={{ position: "relative", width: 370, height: 380 }}>
+                  <img src={Frame412_1} alt="Saku" className="story-image" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <div className="story-text" style={{ flex: "1 1 0%", color: "#111" }}>
+                  <h3 className="story-title" style={{ color: "#00a6a0", fontSize: "1.5rem", margin: "0 0 8px" }}>Saku</h3>
+                  <p className="story-body" style={{ fontSize: "0.98rem", lineHeight: 1.7, margin: 0 }}>
+                    È la parte più nobile del filetto del pesce tagliata in un compatto blocchetto rifilato e senza pelle: un taglio leggermente spesso e morbidissimo.
+                  </p>
+                </div>
+              </div>
+              {/* Poke */}
+              <div style={{ display: "flex", flexDirection: isDesktop ? "row" : "column", alignItems: "center", gap: "28px" }}>
+                <div className="story-image-wrapper" style={{ position: "relative", width: 370, height: 380 }}>
+                  <img src={Frame412_2} alt="Poke" className="story-image" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <div className="story-text" style={{ flex: "1 1 0%", color: "#111" }}>
+                  <h3 className="story-title" style={{ color: "#00a6a0", fontSize: "1.5rem", margin: "0 0 8px" }}>Poke</h3>
+                  <p className="story-body" style={{ fontSize: "0.98rem", lineHeight: 1.7, margin: 0 }}>
+                    Di origine hawaiana, il filetto del pesce è tagliato in cubetti: poke in hawaiano significa proprio “tagliare a pezzi”. È un taglio molto morbido e gustoso.
+                  </p>
+                </div>
               </div>
             </div>
-
-            {/* Saku (immagine a destra) */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: isDesktop ? "row-reverse" : "column",
-                alignItems: "center",
-                gap: "28px",
-              }}
-            >
-              <div
-                style={{
-                  position: "relative",
-                  width: isDesktop ? 220 : 220,
-                  height: isDesktop ? 250 : 240,
-                  
-                }}
-              >
-                <img
-                  src={Frame412_1}
-                  alt="Saku"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
-               
-              </div>
-
-              <div
-                style={{
-                    flex: 1,
-                    color: "#111",
-                }}
-              >
-                <h3
-                  style={{
-                    color: "#00a6a0",
-                    fontSize: "1.5rem",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  Saku
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                >
-                  È la parte più nobile del filetto del pesce tagliata in un
-                  compatto blocchetto rifilato e senza pelle: un taglio
-                  leggermente spesso e morbidissimo.
-                </p>
-              </div>
-            </div>
-
-            {/* Poke */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: isDesktop ? "row" : "column",
-                alignItems: "center",
-                gap: "28px",
-              }}
-            >
-              <div
-                style={{
-                  position: "relative",
-                  width: isDesktop ? 220 : 220,
-                  height: isDesktop ? 250 : 240,
-                  
-                }}
-              >
-                <img
-                  src={Frame412_2}
-                  alt="Poke"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
-                
-              </div>
-
-              <div
-                style={{
-                    flex: 1,
-                    color: "#111",
-                }}
-              >
-                <h3
-                  style={{
-                    color: "#00a6a0",
-                    fontSize: "1.5rem",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  Poke
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                >
-                  Di origine hawaiana, il filetto del pesce è tagliato in
-                  cubetti: poke in hawaiano significa proprio “tagliare a
-                  pezzi”. È un taglio molto morbido e gustoso.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
 
         {/* SUGGERIMENTO RICETTA */}
         <section
@@ -625,6 +459,7 @@ const Salmone: React.FC = () => {
         action="mailto:informazioni@ohissa.it"
         method="POST"
         encType="text/plain"
+        autoComplete="off"
         style={{
           width: "100%",
           background: "#ffffff",
@@ -634,19 +469,6 @@ const Salmone: React.FC = () => {
           fontFamily: "Ubuntu, system-ui, sans-serif",
         }}
       >
-        <h2
-          style={{
-            fontSize: "0.9rem",
-            fontWeight: 700,
-            margin: "0 0 10px",
-            color: "#0a7c75",
-            lineHeight: 1.3,
-          }}
-        >
-          Cosa ne pensi di OHissa?
-          <br />
-          Vuoi saperne di più?
-        </h2>
 
         <div
           style={{
@@ -839,6 +661,11 @@ const Salmone: React.FC = () => {
         Cosa ne pensi di OHissa?
         <br />
         Vuoi saperne di più?
+        <br />
+        <span style={{fontSize: "0.85rem", color: "#009688", fontWeight: 400}}>
+          Le informazioni inviate non sono protette. Non inserire dati sensibili. <br />
+          <a href="/privacy" style={{color: "#009688", textDecoration: "underline"}}>Privacy Policy</a>
+        </span>
       </h2>
 
       <div
@@ -970,6 +797,7 @@ const Salmone: React.FC = () => {
                   alignItems: "center",
                   gap: "2px",
                   fontWeight: 400,
+                  cursor: "pointer"
                 }}
               >
                 <input
@@ -977,6 +805,8 @@ const Salmone: React.FC = () => {
                   name="voto_ohissa"
                   value={n}
                   style={{ accentColor: "#00bfae" }}
+                  tabIndex={0}
+                  required={n === 1}
                 />
                 {n}
               </label>
@@ -1062,7 +892,7 @@ const Salmone: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

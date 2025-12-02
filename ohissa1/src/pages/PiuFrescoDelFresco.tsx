@@ -40,82 +40,119 @@ const PiuFrescoDelFresco: React.FC = () => {
       <main style={{ width: "100%", background: "#fff" }}>
         {/* HERO */}
         <img src={Group6} alt="Hero Più fresco del fresco" style={{ width: "100%", display: "block", objectFit: "cover" }} />
-          {/* TITOLO CENTRALE */}
+        {isDesktop && (
           <section style={{ width: "100%", padding: "40px 0 24px", display: "flex", justifyContent: "center", background: "#fff" }}>
-            <h1 style={{ color: "#00796b", fontFamily: "Ubuntu, system-ui, sans-serif", fontSize: "4rem", fontWeight: 700, margin: 0 }}>
+            <h1 style={{ color: "#00796b", fontFamily: "Ubuntu, system-ui, sans-serif", fontSize: "3rem", fontWeight: 700, margin: 0 }}>
               Più sicuro del fresco
             </h1>
           </section>
-
-          {/* BLOCCO GUSTO E SICUREZZA ALIMENTARE */}
-          <section
+        )}
+        {/* BLOCCO GUSTO E SICUREZZA ALIMENTARE */}
+        <section
+          style={{
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            background: "#ffffff",
+            padding: isDesktop ? "48px 0 48px 0" : "18px 0 18px 0",
+          }}
+        > 
+          <div
             style={{
-              width: "100vw",
+              width: "min(960px, 92vw)",
               display: "flex",
-              justifyContent: "center",
-              background: "#ffffff",
-              padding: isDesktop ? "48px 0 48px 0" : "18px 0 18px 0",
+              flexDirection: isDesktop ? "row" : "column",
+              alignItems: "center",
+              gap: isDesktop ? "56px" : "24px",
             }}
           >
-            <div
-              style={{
-                width: "min(960px, 92vw)",
-                display: "flex",
-                flexDirection: isDesktop ? "row" : "column",
-                alignItems: "center",
-                gap: isDesktop ? "56px" : "24px",
-              }}
-            >
-              <div
-                style={{
-                  width: isDesktop ? 360 : 290,
-                  height: isDesktop ? 330 : 260,
-                }}
-              >
-                <img
-                  src={Frame350_4}
-                  alt="Dettaglio pesce spada"
+            {/* MOBILE: layout verticale centrato */}
+            {isDesktop ? (
+              <>
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
+                    width: 360,
+                    height: 330,
                   }}
-                />
-              </div>
-
+                >
+                  <img
+                    src={Frame350_4}
+                    alt="Dettaglio pesce spada"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    flex: 1,
+                    color: "#075659",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "16px",
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontSize: "2.4rem",
+                      fontWeight: 700,
+                      margin: 0,
+                      color: "#008578",
+                    }}
+                  >
+                    Gusto e sicurezza alimentare
+                  </h2>
+                  <p
+                    style={{
+                      fontSize: "1.05rem",
+                      lineHeight: 1.7,
+                      margin: 0,
+                      color: "#555",
+                    }}
+                  >
+                    Per mantenere intatto il gusto, la consistenza, il colore e le caratteristiche organolettiche del pesce fresco appena pescato e per garantire, allo stesso tempo, la massima sicurezza alimentare, Ohissa utilizza prodotti derivanti dalla tecnologia di ibernazione “Ultra Low Temperature” (ULT).<br /><br />Questa tecnica, che abbatte il rischio di parassitosi e di proliferazione dei batteri, risponde a tutte le regolamentazioni europee riguardanti la sicurezza del prodotto alimentare e in particolare la sicurezza di consumo a crudo.<br /><br />Grazie alla tecnologia Ultra-Low Temperature (ULT) Ohissa è come appena pescato ma, in più, garantisce anche un’ineguagliabile sicurezza alimentare.
+                  </p>
+                </div>
+              </>
+            ) : (
               <div
                 style={{
-                  flex: 1,
-                  color: "#075659",
+                  width: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "16px",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0px",
                 }}
               >
-                <h2
-                  style={{
-                    fontSize: isDesktop ? "2.4rem" : "2.1rem",
-                    fontWeight: 700,
-                    margin: 0,
-                    color: "#008578",
-                  }}
-                >
+                <h1 style={{ color: "#00796b", fontFamily: "Ubuntu, system-ui, sans-serif", fontSize: "2rem", fontWeight: 700, margin: "0 0 12px 0", textAlign: "center" }}>
+                  Più sicuro del fresco
+                </h1>
+                <div style={{ width: 210, height: 190, overflow: "hidden", marginBottom: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <img
+                    src={Frame350_4}
+                    alt="Dettaglio pesce spada"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                </div>
+                <h2 style={{ fontSize: "2.1rem", fontWeight: 700, margin: "0 0 10px 0", color: "#008578", textAlign: "center" }}>
                   Gusto e sicurezza alimentare
                 </h2>
-                <p
-                  style={{
-                    fontSize: isDesktop ? "1.05rem" : "1rem",
-                    lineHeight: 1.7,
-                    margin: 0,
-                    color: "#555",
-                  }}
-                >
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, margin: 0, color: "#555", textAlign: "center" }}>
                   Per mantenere intatto il gusto, la consistenza, il colore e le caratteristiche organolettiche del pesce fresco appena pescato e per garantire, allo stesso tempo, la massima sicurezza alimentare, Ohissa utilizza prodotti derivanti dalla tecnologia di ibernazione “Ultra Low Temperature” (ULT).<br /><br />Questa tecnica, che abbatte il rischio di parassitosi e di proliferazione dei batteri, risponde a tutte le regolamentazioni europee riguardanti la sicurezza del prodotto alimentare e in particolare la sicurezza di consumo a crudo.<br /><br />Grazie alla tecnologia Ultra-Low Temperature (ULT) Ohissa è come appena pescato ma, in più, garantisce anche un’ineguagliabile sicurezza alimentare.
                 </p>
               </div>
-            </div>
-          </section>
+            )}
+          </div>
+        </section>
        
         {/* TITOLO CENTRALE */}
         
@@ -141,23 +178,38 @@ const PiuFrescoDelFresco: React.FC = () => {
     }}
   >
     {/* FOTO */}
-    <div
-      style={{
-        width: isDesktop ? 360 : 290,
-        height: isDesktop ? 330 : 260,
-      }}
-    >
-      <img
-        src={Frame350_5}
-        alt="Dettaglio pesce spada"
+    {isDesktop ? (
+      <div
         style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          display: "block",
+          width: 360,
+          height: 330,
         }}
-      />
-    </div>
+      >
+        <img
+          src={Frame350_5}
+          alt="Dettaglio pesce spada"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
+        />
+      </div>
+    ) : (
+      <div style={{ width: 210, height: 190, overflow: "hidden", margin: "0 auto 10px auto", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <img
+          src={Frame350_5}
+          alt="Dettaglio pesce spada"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
+        />
+      </div>
+    )}
 
     {/* TESTO */}
     <div
@@ -479,7 +531,7 @@ const PiuFrescoDelFresco: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

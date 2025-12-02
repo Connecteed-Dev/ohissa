@@ -214,7 +214,7 @@ const TonnoPinnaGialla: React.FC = () => {
                   margin: 0,
                 }}
               >
-                Il tonno giallo viene pescato esclusivamente con palangari di
+                Il tonno a pinna gialla viene pescato esclusivamente con palangari di
               superficie e reti da circuizione che permettono una pesca
               selettiva e a ridotto impatto ambientale. La lavorazione avviene
               entro poche ore dallo sbarco del pescato.
@@ -252,7 +252,7 @@ const TonnoPinnaGialla: React.FC = () => {
         margin: 0,
       }}
     >
-      Tagli di tonno pinna gialla
+      Tagli di tonno a pinna gialla
     </h2>
 
     {/* TARTARE – immagine sinistra, testo destra */}
@@ -644,6 +644,7 @@ const TonnoPinnaGialla: React.FC = () => {
         action="mailto:informazioni@ohissa.it"
         method="POST"
         encType="text/plain"
+        autoComplete="off"
         style={{
           width: "100%",
           background: "#ffffff",
@@ -653,19 +654,6 @@ const TonnoPinnaGialla: React.FC = () => {
           fontFamily: "Ubuntu, system-ui, sans-serif",
         }}
       >
-        <h2
-          style={{
-            fontSize: "0.9rem",
-            fontWeight: 700,
-            margin: "0 0 10px",
-            color: "#0a7c75",
-            lineHeight: 1.3,
-          }}
-        >
-          Cosa ne pensi di OHissa?
-          <br />
-          Vuoi saperne di più?
-        </h2>
 
         <div
           style={{
@@ -858,6 +846,11 @@ const TonnoPinnaGialla: React.FC = () => {
         Cosa ne pensi di OHissa?
         <br />
         Vuoi saperne di più?
+        <br />
+        <span style={{fontSize: "0.85rem", color: "#009688", fontWeight: 400}}>
+          Le informazioni inviate non sono protette. Non inserire dati sensibili. <br />
+          <a href="/privacy" style={{color: "#009688", textDecoration: "underline"}}>Privacy Policy</a>
+        </span>
       </h2>
 
       <div
@@ -989,6 +982,7 @@ const TonnoPinnaGialla: React.FC = () => {
                   alignItems: "center",
                   gap: "2px",
                   fontWeight: 400,
+                  cursor: "pointer"
                 }}
               >
                 <input
@@ -996,6 +990,8 @@ const TonnoPinnaGialla: React.FC = () => {
                   name="voto_ohissa"
                   value={n}
                   style={{ accentColor: "#00bfae" }}
+                  tabIndex={0}
+                  required={n === 1}
                 />
                 {n}
               </label>
@@ -1081,7 +1077,7 @@ const TonnoPinnaGialla: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

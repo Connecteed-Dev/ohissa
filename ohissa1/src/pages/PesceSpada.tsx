@@ -215,7 +215,7 @@ const PesceSpada: React.FC = () => {
                 transform: isDesktop ? "none" : "translateX(-50%)",
                 maxWidth: isDesktop ? "420px" : "90vw",
                 width: isDesktop ? undefined : "90vw",
-                color: "#fff",
+                color: "#000000ff",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
                 padding: isDesktop ? undefined : "0 8vw",
                 textAlign: isDesktop ? "left" : "center",
@@ -491,6 +491,7 @@ const PesceSpada: React.FC = () => {
         action="mailto:informazioni@ohissa.it"
         method="POST"
         encType="text/plain"
+        autoComplete="off"
         style={{
           width: "100%",
           background: "#ffffff",
@@ -500,19 +501,6 @@ const PesceSpada: React.FC = () => {
           fontFamily: "Ubuntu, system-ui, sans-serif",
         }}
       >
-        <h2
-          style={{
-            fontSize: "0.9rem",
-            fontWeight: 700,
-            margin: "0 0 10px",
-            color: "#0a7c75",
-            lineHeight: 1.3,
-          }}
-        >
-          Cosa ne pensi di OHissa?
-          <br />
-          Vuoi saperne di più?
-        </h2>
 
         <div
           style={{
@@ -705,6 +693,11 @@ const PesceSpada: React.FC = () => {
         Cosa ne pensi di OHissa?
         <br />
         Vuoi saperne di più?
+        <br />
+        <span style={{fontSize: "0.85rem", color: "#009688", fontWeight: 400}}>
+          Le informazioni inviate non sono protette. Non inserire dati sensibili. <br />
+          <a href="/privacy" style={{color: "#009688", textDecoration: "underline"}}>Privacy Policy</a>
+        </span>
       </h2>
 
       <div
@@ -836,6 +829,7 @@ const PesceSpada: React.FC = () => {
                   alignItems: "center",
                   gap: "2px",
                   fontWeight: 400,
+                  cursor: "pointer"
                 }}
               >
                 <input
@@ -843,6 +837,8 @@ const PesceSpada: React.FC = () => {
                   name="voto_ohissa"
                   value={n}
                   style={{ accentColor: "#00bfae" }}
+                  tabIndex={0}
+                  required={n === 1}
                 />
                 {n}
               </label>
@@ -927,7 +923,7 @@ const PesceSpada: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{

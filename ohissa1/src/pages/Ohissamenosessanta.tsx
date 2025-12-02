@@ -21,6 +21,7 @@ import LogoFrame331 from "../assets/Frame 331.png";
 import Logo7 from "../assets/image 7.png";
 import Logo6 from "../assets/image 6.png";
 import MenoSessantaMarchio from "../assets/MenoSessanta marchio POS RGB 1 (2).png";
+import Logo1 from "../assets/Logo 1.png";
 const OhissaMenoSessanta: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 900);
 
@@ -55,10 +56,10 @@ const OhissaMenoSessanta: React.FC = () => {
             {/* Sezione contenuto */}
             <section style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '64px 0 32px', boxSizing: 'border-box', gap: '48px' }}>
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingRight: '32px', minWidth: '320px', maxWidth: '520px' }}>
-                <img src={MenoSessantaMarchio} alt="MenoSessanta Marchio" style={{ width: '320px', maxWidth: '90%', margin: '0 auto 24px auto', display: 'block' }} />
+                <img src={Logo1} alt="Logo OHissa MenoSessanta" style={{ width: '320px', maxWidth: '90%', margin: '0 auto 24px auto', display: 'block' }} />
                 <p style={{ fontSize: '1.18rem', color: '#075659', fontFamily: 'Ubuntu, system-ui, sans-serif', lineHeight: 1.6, textAlign: 'left', marginBottom: '32px' }}>
                   La linea Menosessanta è composta da filoni di Tonno a Pinna Gialla, Tonno Obeso, Ricciola Oceanica e Salmone al 100% naturali e destinati al canale dei Grossisti e alla Grande Distribuzione Organizzata. Tutti i prodotti vengono ibernati all’origine a -60°C per garantire la massima sicurezza e un gusto e una consistenza immutati – da qui il nome della gamma. Successivamente  il pesce viene lavorato e confezionato in ATM nei nostri laboratori in Toscana.<br /><br />
-                  Scopri la nostra linea premium quality e la nostra specialità Quore di Tonno nel catalogo.
+                  Scopri la nostra linea premium quality e la nostra specialità Quore di Tonno nel catalogo.  <br />Per richiedere il catalogo via mail scrivi a : <a href="mailto:informazioni@ohissa.it" style={{ color: '#075659', textDecoration: 'underline' }}>informazioni@ohissa.it</a>
                 </p>
               </div>
               {/* Immagine a destra */}
@@ -122,7 +123,7 @@ const OhissaMenoSessanta: React.FC = () => {
                   margin: "22px 0 10px",
                 }}
               >
-                SEDE OPERATIVA
+                SEDE LEGALE
               </h4>
               <p
                 style={{
@@ -260,7 +261,10 @@ const OhissaMenoSessanta: React.FC = () => {
                   margin: "10px 0",
                 }}
               >
-                <span
+                <a
+                  href="https://www.facebook.com/ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     width: 28,
                     height: 28,
@@ -270,11 +274,17 @@ const OhissaMenoSessanta: React.FC = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 12,
+                    color: "#fff",
+                    textDecoration: "none"
                   }}
+                  aria-label="Facebook OHissa"
                 >
                   f
-                </span>
-                <span
+                </a>
+                <a
+                  href="https://www.instagram.com/ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     width: 28,
                     height: 28,
@@ -284,11 +294,17 @@ const OhissaMenoSessanta: React.FC = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 12,
+                    color: "#fff",
+                    textDecoration: "none"
                   }}
+                  aria-label="Instagram OHissa"
                 >
                   ig
-                </span>
-                <span
+                </a>
+                <a
+                  href="https://www.youtube.com/@ohissa"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     width: 28,
                     height: 28,
@@ -298,10 +314,13 @@ const OhissaMenoSessanta: React.FC = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 12,
+                    color: "#fff",
+                    textDecoration: "none"
                   }}
+                  aria-label="YouTube OHissa"
                 >
                   yt
-                </span>
+                </a>
               </div>
 
               <p
@@ -313,7 +332,10 @@ const OhissaMenoSessanta: React.FC = () => {
               >
                 Per professionisti:
               </p>
-              <span
+              <a
+                href="https://www.linkedin.com/company/ohissa"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   width: 28,
                   height: 28,
@@ -323,10 +345,13 @@ const OhissaMenoSessanta: React.FC = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: 12,
+                  color: "#fff",
+                  textDecoration: "none"
                 }}
+                aria-label="LinkedIn OHissa"
               >
                 in
-              </span>
+              </a>
             </div>
           </div>
 
