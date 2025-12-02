@@ -251,12 +251,12 @@ html, body {
   font-family: 'Ubuntu', system-ui, sans-serif !important;
 }
   /* Forza input e textarea dei form contatti sempre bianchi e testo scuro */
-
-form[action^="mailto"] input,
+/* tutti gli input tranne radio e checkbox */
+form[action^="mailto"] input:not([type="radio"]):not([type="checkbox"]),
 form[action^="mailto"] textarea,
 form[action^="mailto"] select,
 form[action^="mailto"] button,
-input,
+input:not([type="radio"]):not([type="checkbox"]),
 textarea,
 select {
   background: #fff !important;
@@ -267,6 +267,7 @@ select {
   color-scheme: only light !important;
   box-shadow: none !important;
 }
+
 
 form[action^="mailto"] input::placeholder,
 form[action^="mailto"] textarea::placeholder,
@@ -1081,4 +1082,13 @@ textarea::placeholder {
     height: 78px !important;
     max-height: 78px !important;
   }
+}
+/* ripristina i radio standard del browser */
+input[type="radio"] {
+  appearance: auto;
+  -webkit-appearance: radio;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }

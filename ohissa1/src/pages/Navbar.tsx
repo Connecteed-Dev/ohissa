@@ -174,14 +174,14 @@ const Navbar: React.FC = () => {
               justifyContent: "center",
               position: "relative",
               marginTop: "32px",
-              marginBottom: "18px"
+              marginBottom: "38px" // più spazio sotto il logo
             }}>
               <button
                 onClick={() => setMenuOpen(false)}
                 style={{
                   position: "absolute",
-                  top: 12,
-                  left: 24,
+                  top: isMobile ? 12 : undefined,
+                  left: isMobile ? 18 : 0,
                   background: "none",
                   border: "none",
                   color: "#fff",
@@ -192,8 +192,10 @@ const Navbar: React.FC = () => {
                   justifyContent: "center",
                   zIndex: 10001,
                   padding: 0,
+                  paddingLeft: !isMobile ? "3.2rem" : undefined,
                   fontSize: "inherit",
                   lineHeight: 1,
+                  marginLeft: "0.5rem",
                 }}
                 aria-label="Chiudi menu"
               >

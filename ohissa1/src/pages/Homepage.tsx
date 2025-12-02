@@ -592,7 +592,6 @@ const Homepage = () => {
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                // Effetto: nessun fermo a metà, ingrandimento 20% (scala da 1 a 1.2)
                 transform: `translate(-50%, -50%) scale(${1 + 0.2 * gustoProgress})`,
                 opacity: 0.7,
                 fontSize: isMobile ? "1.7rem" : "2.6rem",
@@ -603,7 +602,7 @@ const Homepage = () => {
                 letterSpacing: "-0.5px",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
                 padding: "0 12px",
-                transition: "transform 0.3s, opacity 0.3s",
+                transition: "opacity 2.4s cubic-bezier(.22,.8,.28,1), transform 2.4s cubic-bezier(.22,.8,.28,1)",
               }}
             >
               Gusto, naturalità,
@@ -1525,61 +1524,22 @@ const Homepage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook OHissa"
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    border: "1px solid #fff",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    color: "#fff",
-                    textDecoration: "none"
-                  }}
-                >
-                  f
-                </a>
+                  style={{width:28,height:28,borderRadius:"50%",border:"1px solid #fff",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:12,color:"#fff",textDecoration:"none"}}
+                >f</a>
                 <a
                   href="https://www.instagram.com/ohissa.official"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram OHissa"
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    border: "1px solid #fff",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    color: "#fff",
-                    textDecoration: "none"
-                  }}
-                >
-                  ig
-                </a>
+                  style={{width:28,height:28,borderRadius:"50%",border:"1px solid #fff",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:12,color:"#fff",textDecoration:"none"}}
+                >ig</a>
                 <a
                   href="https://www.youtube.com/@ohissa.official"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube OHissa"
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    border: "1px solid #fff",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    color: "#fff",
-                    textDecoration: "none"
-                  }}
-                >
-                  yt
-                </a>
+                  style={{width:28,height:28,borderRadius:"50%",border:"1px solid #fff",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:12,color:"#fff",textDecoration:"none"}}
+                >yt</a>
               </div>
 
               <p

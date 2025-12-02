@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 
 import heroTonno from "../assets/Group 4 (2).png";            // immagine tonno in mare
@@ -32,6 +32,77 @@ const TonnoPinnaGialla: React.FC = () => {
   const isDesktop = window.innerWidth >= 1024;
   const isMobile = window.innerWidth < 1024;
 
+  const API_BASE = "http://api.ohissa.it:8083";
+
+// ===== STATO FORM =====
+const [formData, setFormData] = useState({
+  nome: "",
+  cognome: "",
+  email: "",
+  messaggio: "",
+  conosci_ohissa: "",
+  voto_ohissa: "",
+});
+
+const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+  "idle"
+);
+const [errorMessage, setErrorMessage] = useState<string>("");
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  const { name, value } = e.target;
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setStatus("loading");
+  setErrorMessage("");
+
+  try {
+    // ⭐️⭐️⭐️ IL BACKEND VUOLE QUESTO FORMATO ESATTO ⭐️⭐️⭐️
+    const payload = {
+      name: formData.nome,
+      surname: formData.cognome,
+      email: formData.email,
+      message: formData.messaggio,
+      like: formData.voto_ohissa ? Number(formData.voto_ohissa) : 0,
+      alreadyKnow: formData.conosci_ohissa === "si",
+    };
+
+    console.log("Payload inviato:", payload);
+
+    const res = await fetch(`${API_BASE}/contact/send`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      throw new Error(`Errore ${res.status}`);
+    }
+
+    setStatus("success");
+
+    setFormData({
+      nome: "",
+      cognome: "",
+      email: "",
+      messaggio: "",
+      conosci_ohissa: "",
+      voto_ohissa: "",
+    });
+  } catch (err: any) {
+    setStatus("error");
+    setErrorMessage(err?.message || "Si è verificato un errore inatteso");
+  }
+};
+
+  // =======================
   return (
     <div className="tonno-page">
       <Navbar />
@@ -593,433 +664,499 @@ const TonnoPinnaGialla: React.FC = () => {
 
       {/* FORM CONTATTI */}
          {/* FORM CONTATTI SU SFONDO GRAFICO */}
-        {/* FORM CONTATTI OHISSA */}
-<div
-  style={{
-    position: "relative",
-    width: "100vw",
-    display: "flex",
-    
-    background: isMobile ? "#ffffffff" : "#fff",
-    paddingBottom: isMobile ? "24px" : 0,
-  }}
->
-  {/* SFONDO SOLO DESKTOP */}
-  {!isMobile && (
-    <img
-      src={Frame374}
-      alt="Frame 374"
-      style={{
-        width: "auto",
-        height: "100vh",
-        display: "block",
-        borderRadius: 0,
-        background: "#fff",
-      }}
-    />
-  )}
-
-  {/* --------- MOBILE: CARD STRETTA COME NELLA FIGMA --------- */}
-  {isMobile ? (
-    <div
-      style={{
-        width: "100%",
-        maxWidth: 360,
-        margin: "0 ",
-      }}
-    >
-      {/* logo + header come immagine in alto */}
-      <img
-        src={Frame374}
-        alt="Frame 374 mobile"
-        style={{
-          width: "100%",
-          height: "auto",
-          display: "block",
-          borderRadius: "0 0 0 0",
-        }}
-      />
-
-      <form
-        action="mailto:informazioni@ohissa.it"
-        method="POST"
-        encType="text/plain"
-        autoComplete="off"
-        style={{
-          width: "100%",
-          background: "#ffffff",
-          borderRadius: "0 0 18px 18px",
-          padding: "14px 12px 16px",
-          boxSizing: "border-box",
-          fontFamily: "Ubuntu, system-ui, sans-serif",
-        }}
-      >
-
+       {/* FORM CONTATTI OHISSA */}
         <div
           style={{
+            position: "relative",
+            width: "100vw",
             display: "flex",
-            flexDirection: "column",
-            gap: "8px",
-            fontSize: "0.8rem",
+            background: isMobile ? "#ffffffff" : "#fff",
+            paddingBottom: isMobile ? "24px" : 0,
           }}
         >
-          <label style={{ fontWeight: 500 }}>Nome*</label>
-          <input
-            type="text"
-            name="nome"
-            placeholder="Inserisci il tuo nome"
-            required
-            style={{
-              padding: "8px",
-              borderRadius: "8px",
-              border: "1.5px solid #009688",
-              fontSize: "0.8rem",
-              fontFamily: "inherit",
-            }}
-          />
-
-          <label style={{ fontWeight: 500 }}>Cognome*</label>
-          <input
-            type="text"
-            name="cognome"
-            placeholder="Inserisci il tuo cognome"
-            required
-            style={{
-              padding: "8px",
-              borderRadius: "8px",
-              border: "1.5px solid #009688",
-              fontSize: "0.8rem",
-              fontFamily: "inherit",
-            }}
-          />
-
-          <label style={{ fontWeight: 500 }}>Email*</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Inserisci la tua email"
-            required
-            style={{
-              padding: "8px",
-              borderRadius: "8px",
-              border: "1.5px solid #009688",
-              fontSize: "0.8rem",
-              fontFamily: "inherit",
-            }}
-          />
-
-          <label style={{ fontWeight: 500 }}>Messaggio</label>
-          <textarea
-            name="messaggio"
-            rows={4}
-            placeholder="Scrivi il tuo messaggio"
-            style={{
-              padding: "8px",
-              borderRadius: "8px",
-              border: "1.5px solid #009688",
-              fontSize: "0.8rem",
-              fontFamily: "inherit",
-              resize: "vertical",
-            }}
-          />
-        </div>
-
-        {/* Conosci già OHissa? */}
-        <div style={{ marginTop: "10px", fontSize: "0.8rem" }}>
-          <label style={{ fontWeight: 500 }}>Conosci già OHissa?</label>
-          <div style={{ display: "flex", gap: "16px", marginTop: "4px" }}>
-            <label
+          {!isMobile && (
+            <img
+              src={Frame374}
+              alt="Frame 374"
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                fontWeight: 400,
+                width: "auto",
+                height: "100vh",
+                display: "block",
+                borderRadius: 0,
+                background: "#fff",
+              }}
+            />
+          )}
+
+          {isMobile ? (
+            // MOBILE
+            <div
+              style={{
+                width: "100%",
+                maxWidth: 360,
+                margin: "0 ",
               }}
             >
-              <input
-                type="radio"
-                name="conosci_ohissa"
-                value="si"
-                style={{ accentColor: "#00bfae" }}
-              />
-              Si
-            </label>
-            <label
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                fontWeight: 400,
-              }}
-            >
-              <input
-                type="radio"
-                name="conosci_ohissa"
-                value="no"
-                style={{ accentColor: "#00bfae" }}
-              />
-              No
-            </label>
-          </div>
-        </div>
-
-        {/* Quanto ti è piaciuto OHissa? */}
-        <div style={{ marginTop: "8px", fontSize: "0.8rem" }}>
-          <label style={{ fontWeight: 500 }}>Quanto ti è piaciuto OHissa?</label>
-          <div
-            style={{
-              display: "flex",
-              gap: "6px",
-              marginTop: "4px",
-              flexWrap: "wrap",
-            }}
-          >
-            {[1, 2, 3, 4, 5].map((n) => (
-              <label
-                key={n}
+              <img
+                src={Frame374}
+                alt="Frame 374 mobile"
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "2px",
-                  fontWeight: 400,
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: "0 0 0 0",
+                }}
+              />
+
+              <form
+                onSubmit={handleSubmit}
+                autoComplete="off"
+                style={{
+                  width: "100%",
+                  background: "#ffffff",
+                  borderRadius: "0 0 18px 18px",
+                  padding: "14px 12px 16px",
+                  boxSizing: "border-box",
+                  fontFamily: "Ubuntu, system-ui, sans-serif",
                 }}
               >
-                <input
-                  type="radio"
-                  name="voto_ohissa"
-                  value={n}
-                  style={{ accentColor: "#00bfae" }}
-                />
-                {n}
-              </label>
-            ))}
-          </div>
-        </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "8px",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  <label style={{ fontWeight: 500 }}>Nome*</label>
+                  <input
+                    type="text"
+                    name="nome"
+                    placeholder="Inserisci il tuo nome"
+                    required
+                    value={formData.nome}
+                    onChange={handleChange}
+                    style={{
+                      padding: "8px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #009688",
+                      fontSize: "0.8rem",
+                      fontFamily: "inherit",
+                    }}
+                  />
 
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            background: "#00695c",
-            color: "#fff",
-            border: "none",
-            borderRadius: "6px",
-            padding: "10px",
-            fontSize: "0.9rem",
-            fontWeight: 600,
-            cursor: "pointer",
-            marginTop: "12px",
-          }}
-        >
-          Invia
-        </button>
-      </form>
-    </div>
-  ) : (
-    /* --------- DESKTOP: FORM CENTRATO SOPRA L'IMMAGINE --------- */
-    <form
-      action="mailto:informazioni@ohissa.it"
-      method="POST"
-      encType="text/plain"
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        width: "min(560px, 90vw)",
-        background: "#ffffff",
-        borderRadius: "18px",
-        padding: "24px 26px 26px",
-        boxSizing: "border-box",
-        boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
-        fontFamily: "Ubuntu, system-ui, sans-serif",
-      }}
-    >
-      <h2
-        style={{
-          textAlign: "center",
-          fontSize: "2rem",
-          fontWeight: 700,
-          marginBottom: "10px",
-        }}
-      >
-        Cosa ne pensi di OHissa?
-        <br />
-        Vuoi saperne di più?
-        <br />
-        <span style={{fontSize: "0.85rem", color: "#009688", fontWeight: 400}}>
-          Le informazioni inviate non sono protette. Non inserire dati sensibili. <br />
-          <a href="/privacy" style={{color: "#009688", textDecoration: "underline"}}>Privacy Policy</a>
-        </span>
-      </h2>
+                  <label style={{ fontWeight: 500 }}>Cognome*</label>
+                  <input
+                    type="text"
+                    name="cognome"
+                    placeholder="Inserisci il tuo cognome"
+                    required
+                    value={formData.cognome}
+                    onChange={handleChange}
+                    style={{
+                      padding: "8px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #009688",
+                      fontSize: "0.8rem",
+                      fontFamily: "inherit",
+                    }}
+                  />
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          fontSize: "0.95rem",
-        }}
-      >
-        <label style={{ fontWeight: 500 }}>Nome*</label>
-        <input
-          type="text"
-          name="nome"
-          placeholder="Inserisci il tuo nome"
-          required
-          style={{
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1.5px solid #009688",
-            fontSize: "1rem",
-            fontFamily: "inherit",
-          }}
-        />
+                  <label style={{ fontWeight: 500 }}>Email*</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Inserisci la tua email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    style={{
+                      padding: "8px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #009688",
+                      fontSize: "0.8rem",
+                      fontFamily: "inherit",
+                    }}
+                  />
 
-        <label style={{ fontWeight: 500 }}>Cognome*</label>
-        <input
-          type="text"
-          name="cognome"
-          placeholder="Inserisci il tuo cognome"
-          required
-          style={{
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1.5px solid #009688",
-            fontSize: "1rem",
-            fontFamily: "inherit",
-          }}
-        />
+                  <label style={{ fontWeight: 500 }}>Messaggio</label>
+                  <textarea
+                    name="messaggio"
+                    rows={4}
+                    placeholder="Scrivi il tuo messaggio"
+                    value={formData.messaggio}
+                    onChange={handleChange}
+                    style={{
+                      padding: "8px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #009688",
+                      fontSize: "0.8rem",
+                      fontFamily: "inherit",
+                      resize: "vertical",
+                    }}
+                  />
+                </div>
 
-        <label style={{ fontWeight: 500 }}>Email*</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Inserisci la tua email"
-          required
-          style={{
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1.5px solid #009688",
-            fontSize: "1rem",
-            fontFamily: "inherit",
-          }}
-        />
+                <div style={{ marginTop: "10px", fontSize: "0.8rem" }}>
+                  <label style={{ fontWeight: 500 }}>Conosci già OHissa?</label>
+                  <div style={{ display: "flex", gap: "16px", marginTop: "4px" }}>
+                    <label
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        fontWeight: 400,
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        name="conosci_ohissa"
+                        value="si"
+                        checked={formData.conosci_ohissa === "si"}
+                        onChange={handleChange}
+                        style={{ accentColor: "#00bfae" }}
+                      />
+                      Si
+                    </label>
+                    <label
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        fontWeight: 400,
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        name="conosci_ohissa"
+                        value="no"
+                        checked={formData.conosci_ohissa === "no"}
+                        onChange={handleChange}
+                        style={{ accentColor: "#00bfae" }}
+                      />
+                      No
+                    </label>
+                  </div>
+                </div>
 
-        <label style={{ fontWeight: 500 }}>Messaggio</label>
-        <textarea
-          name="messaggio"
-          rows={4}
-          placeholder="Scrivi il tuo messaggio"
-          style={{
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1.5px solid #009688",
-            fontSize: "1rem",
-            fontFamily: "inherit",
-            resize: "vertical",
-          }}
-        />
-      </div>
+                <div style={{ marginTop: "8px", fontSize: "0.8rem" }}>
+                  <label style={{ fontWeight: 500 }}>
+                    Quanto ti è piaciuto OHissa?
+                  </label>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "6px",
+                      marginTop: "4px",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <label
+                        key={n}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "2px",
+                          fontWeight: 400,
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="voto_ohissa"
+                          value={n}
+                          checked={formData.voto_ohissa === String(n)}
+                          onChange={handleChange}
+                          style={{ accentColor: "#00bfae" }}
+                        />
+                        {n}
+                      </label>
+                    ))}
+                  </div>
+                </div>
 
-      {/* Conosci già OHissa? */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "24px",
-          flexWrap: "wrap",
-          marginTop: "10px",
-          fontSize: "0.95rem",
-        }}
-      >
-        <div>
-          <label style={{ fontWeight: 500 }}>Conosci già OHissa?</label>
-          <div style={{ display: "flex", gap: "12px", marginTop: "4px" }}>
-            <label
+                {status === "success" && (
+                  <p
+                    style={{
+                      marginTop: 10,
+                      fontSize: "0.8rem",
+                      color: "#00695c",
+                    }}
+                  >
+                    Messaggio inviato correttamente.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p
+                    style={{
+                      marginTop: 10,
+                      fontSize: "0.8rem",
+                      color: "#c62828",
+                    }}
+                  >
+                    Errore nell&apos;invio. {errorMessage}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  style={{
+                    width: "100%",
+                    background: "#00695c",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "6px",
+                    padding: "10px",
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    marginTop: "12px",
+                    opacity: status === "loading" ? 0.7 : 1,
+                  }}
+                >
+                  {status === "loading" ? "Invio in corso..." : "Invia"}
+                </button>
+              </form>
+            </div>
+          ) : (
+            // DESKTOP
+            <form
+              onSubmit={handleSubmit}
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                fontWeight: 400,
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "min(560px, 90vw)",
+                background: "#ffffff",
+                borderRadius: "18px",
+                padding: "24px 26px 26px",
+                boxSizing: "border-box",
+                boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
+                fontFamily: "Ubuntu, system-ui, sans-serif",
               }}
             >
-              <input
-                type="radio"
-                name="conosci_ohissa"
-                value="si"
-                style={{ accentColor: "#00bfae" }}
-              />
-              Si
-            </label>
-            <label
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                fontWeight: 400,
-              }}
-            >
-              <input
-                type="radio"
-                name="conosci_ohissa"
-                value="no"
-                style={{ accentColor: "#00bfae" }}
-              />
-              No
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <label style={{ fontWeight: 500 }}>Quanto ti è piaciuto OHissa?</label>
-          <div style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
-            {[1, 2, 3, 4, 5].map((n) => (
-              <label
-                key={n}
+              <h2
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "2px",
-                  fontWeight: 400,
-                  cursor: "pointer"
+                  textAlign: "center",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  marginBottom: "10px",
                 }}
               >
-                <input
-                  type="radio"
-                  name="voto_ohissa"
-                  value={n}
-                  style={{ accentColor: "#00bfae" }}
-                  tabIndex={0}
-                  required={n === 1}
-                />
-                {n}
-              </label>
-            ))}
-          </div>
-        </div>
-      </div>
+                Cosa ne pensi di OHissa?
+                <br />
+                Vuoi saperne di più?
+                <br />
+                
+              </h2>
 
-      <button
-        type="submit"
-        style={{
-          background: "#00695c",
-          color: "#fff",
-          border: "none",
-          borderRadius: "8px",
-          padding: "12px",
-          fontSize: "1.05rem",
-          fontWeight: 600,
-          cursor: "pointer",
-          marginTop: "14px",
-          width: "100%",
-        }}
-      >
-        Invia
-      </button>
-    </form>
-  )}
-</div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                  fontSize: "0.95rem",
+                }}
+              >
+                <label style={{ fontWeight: 500 }}>Nome*</label>
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="Inserisci il tuo nome"
+                  required
+                  value={formData.nome}
+                  onChange={handleChange}
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    border: "1.5px solid #009688",
+                    fontSize: "1rem",
+                    fontFamily: "inherit",
+                  }}
+                />
+
+                <label style={{ fontWeight: 500 }}>Cognome*</label>
+                <input
+                  type="text"
+                  name="cognome"
+                  placeholder="Inserisci il tuo cognome"
+                  required
+                  value={formData.cognome}
+                  onChange={handleChange}
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    border: "1.5px solid #009688",
+                    fontSize: "1rem",
+                    fontFamily: "inherit",
+                  }}
+                />
+
+                <label style={{ fontWeight: 500 }}>Email*</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Inserisci la tua email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    border: "1.5px solid #009688",
+                    fontSize: "1rem",
+                    fontFamily: "inherit",
+                  }}
+                />
+
+                <label style={{ fontWeight: 500 }}>Messaggio</label>
+                <textarea
+                  name="messaggio"
+                  rows={4}
+                  placeholder="Scrivi il tuo messaggio"
+                  value={formData.messaggio}
+                  onChange={handleChange}
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    border: "1.5px solid #009688",
+                    fontSize: "1rem",
+                    fontFamily: "inherit",
+                    resize: "vertical",
+                  }}
+                />
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  gap: "24px",
+                  flexWrap: "wrap",
+                  marginTop: "10px",
+                  fontSize: "0.95rem",
+                }}
+              >
+                <div>
+                  <label style={{ fontWeight: 500 }}>Conosci già OHissa?</label>
+                  <div style={{ display: "flex", gap: "12px", marginTop: "4px" }}>
+                    <label
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        fontWeight: 400,
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        name="conosci_ohissa"
+                        value="si"
+                        checked={formData.conosci_ohissa === "si"}
+                        onChange={handleChange}
+                        style={{ accentColor: "#00bfae" }}
+                      />
+                      Si
+                    </label>
+                    <label
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        fontWeight: 400,
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        name="conosci_ohissa"
+                        value="no"
+                        checked={formData.conosci_ohissa === "no"}
+                        onChange={handleChange}
+                        style={{ accentColor: "#00bfae" }}
+                      />
+                      No
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label style={{ fontWeight: 500 }}>
+                    Quanto ti è piaciuto OHissa?
+                  </label>
+                  <div style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <label
+                        key={n}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "2px",
+                          fontWeight: 400,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="voto_ohissa"
+                          value={n}
+                          checked={formData.voto_ohissa === String(n)}
+                          onChange={handleChange}
+                          style={{ accentColor: "#00bfae" }}
+                        />
+                        {n}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {status === "success" && (
+                <p
+                  style={{
+                    marginTop: 10,
+                    fontSize: "0.85rem",
+                    color: "#00695c",
+                  }}
+                >
+                  Messaggio inviato correttamente.
+                </p>
+              )}
+              {status === "error" && (
+                <p
+                  style={{
+                    marginTop: 10,
+                    fontSize: "0.85rem",
+                    color: "#c62828",
+                  }}
+                >
+                  Errore nell&apos;invio. {errorMessage}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                style={{
+                  background: "#00695c",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "8px",
+                  padding: "12px",
+                  fontSize: "1.05rem",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  marginTop: "14px",
+                  width: "100%",
+                  opacity: status === "loading" ? 0.7 : 1,
+                }}
+              >
+                {status === "loading" ? "Invio in corso..." : "Invia"}
+              </button>
+            </form>
+          )}
+        </div>
 
         {/* FOOTER */}
         <footer className="ohissa-footer" style={{ width: "100vw", marginTop: isDesktop ? "-120px" : "-60px", position: "relative", zIndex: 2 }}>

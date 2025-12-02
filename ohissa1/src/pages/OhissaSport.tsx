@@ -762,48 +762,27 @@ const OhissaSport: React.FC = () => {
                   margin: "10px 0",
                 }}
               >
-                <span
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    border: "1px solid #fff",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                  }}
-                >
-                  f
-                </span>
-                <span
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    border: "1px solid #fff",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                  }}
-                >
-                  ig
-                </span>
-                <span
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    border: "1px solid #fff",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                  }}
-                >
-                  yt
-                </span>
+                <a
+                  href="https://www.facebook.com/ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook OHissa"
+                  style={{width:28,height:28,borderRadius:"50%",border:"1px solid #fff",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:12,color:"#fff",textDecoration:"none"}}
+                >f</a>
+                <a
+                  href="https://www.instagram.com/ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram OHissa"
+                  style={{width:28,height:28,borderRadius:"50%",border:"1px solid #fff",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:12,color:"#fff",textDecoration:"none"}}
+                >ig</a>
+                <a
+                  href="https://www.youtube.com/@ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube OHissa"
+                  style={{width:28,height:28,borderRadius:"50%",border:"1px solid #fff",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:12,color:"#fff",textDecoration:"none"}}
+                >yt</a>
               </div>
 
               <p
