@@ -143,6 +143,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Ubuntu', system-ui, sans-serif !important;
 }
 
 .navbar-menu-icon {
@@ -247,6 +248,7 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Ubuntu', system-ui, sans-serif !important;
 }
   /* Forza input e textarea dei form contatti sempre bianchi e testo scuro */
 
