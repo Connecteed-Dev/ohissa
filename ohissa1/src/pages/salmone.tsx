@@ -33,7 +33,7 @@ const Salmone: React.FC = () => {
   );
   const isMobile = !isDesktop;
 
-  const API_BASE = "https://api.ohissa.it:8083";
+  const API_BASE = "https://api.ohissa.it";
 
 // ===== STATO FORM =====
 const [formData, setFormData] = useState({
