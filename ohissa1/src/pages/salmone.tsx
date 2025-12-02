@@ -25,7 +25,7 @@ import LogoFrame331 from "../assets/Frame 331.png";
 import Logo7 from "../assets/image 7.png";
 import Logo6 from "../assets/image 6.png";
 
-const API_BASE = "http://api.ohissa.it:8083";
+const API_BASE = "https://api.ohissa.it:8083";
 
 const Salmone: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(
@@ -33,7 +33,7 @@ const Salmone: React.FC = () => {
   );
   const isMobile = !isDesktop;
 
-  const API_BASE = "http://api.ohissa.it:8083";
+  const API_BASE = "https://api.ohissa.it:8083";
 
 // ===== STATO FORM =====
 const [formData, setFormData] = useState({
