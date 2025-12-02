@@ -46,7 +46,7 @@ const TonnoAlalunga: React.FC = () => {
     return () => window.removeEventListener('resize', onResize);
   }, []);
   
-    const API_BASE = "http://api.ohissa.it:8083";
+    const API_BASE = "https://api.ohissa.it:8083";
   
   // ===== STATO FORM =====
   const [formData, setFormData] = useState({

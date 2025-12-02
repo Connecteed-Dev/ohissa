@@ -28,7 +28,7 @@ const PesceSpada: React.FC = () => {
     typeof window !== "undefined" ? window.innerWidth <= 900 : false
   );
 
-  const API_BASE = "http://api.ohissa.it:8083";
+  const API_BASE = "https://api.ohissa.it:8083";
 
 // ===== STATO FORM =====
 const [formData, setFormData] = useState({

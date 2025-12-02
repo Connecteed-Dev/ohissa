@@ -32,7 +32,7 @@ const TonnoPinnaGialla: React.FC = () => {
   const isDesktop = window.innerWidth >= 1024;
   const isMobile = window.innerWidth < 1024;
 
-  const API_BASE = "http://api.ohissa.it:8083";
+  const API_BASE = "https://api.ohissa.it:8083";
 
 // ===== STATO FORM =====
 const [formData, setFormData] = useState({
