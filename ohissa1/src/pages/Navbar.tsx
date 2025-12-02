@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo (2).png";
+import Logo from "../assets/Frame 23.png";
 import Frame23 from "../assets/Frame 23.png";
 
 const NAV_BG = "rgba(7, 86, 89, 0.4)"; // #075659 40%

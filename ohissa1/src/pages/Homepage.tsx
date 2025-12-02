@@ -1520,7 +1520,11 @@ const Homepage = () => {
                   margin: "10px 0",
                 }}
               >
-                <span
+                <a
+                  href="https://www.facebook.com/ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook OHissa"
                   style={{
                     width: 28,
                     height: 28,
@@ -1530,11 +1534,17 @@ const Homepage = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 12,
+                    color: "#fff",
+                    textDecoration: "none"
                   }}
                 >
                   f
-                </span>
-                <span
+                </a>
+                <a
+                  href="https://www.instagram.com/ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram OHissa"
                   style={{
                     width: 28,
                     height: 28,
@@ -1544,11 +1554,17 @@ const Homepage = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 12,
+                    color: "#fff",
+                    textDecoration: "none"
                   }}
                 >
                   ig
-                </span>
-                <span
+                </a>
+                <a
+                  href="https://www.youtube.com/@ohissa.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube OHissa"
                   style={{
                     width: 28,
                     height: 28,
@@ -1558,10 +1574,12 @@ const Homepage = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 12,
+                    color: "#fff",
+                    textDecoration: "none"
                   }}
                 >
                   yt
-                </span>
+                </a>
               </div>
 
               <p
@@ -1573,7 +1591,11 @@ const Homepage = () => {
               >
                 Per professionisti:
               </p>
-              <span
+              <a
+                href="https://www.linkedin.com/company/ohissa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn OHissa"
                 style={{
                   width: 28,
                   height: 28,
@@ -1583,10 +1605,12 @@ const Homepage = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: 12,
+                  color: "#fff",
+                  textDecoration: "none"
                 }}
               >
                 in
-              </span>
+              </a>
             </div>
           </div>
 
