@@ -498,8 +498,8 @@ const Homepage = () => {
       width: "100%",
       height: "auto",
       transition: `opacity ${transitionDuration}ms ease-in-out, filter ${transitionDuration}ms ease-in-out`,
-      opacity: heroTransition ? 0 : 1,
-      filter: heroTransition ? "blur(14px)" : "none",
+      opacity: (isDesktop ? heroTransition : heroTransitionMobile) ? 0 : 1,
+      filter: (isDesktop ? heroTransition : heroTransitionMobile) ? "blur(14px)" : "none",
       zIndex: 2,
     }}
   />
@@ -519,7 +519,7 @@ const Homepage = () => {
       width: "100%",
       height: "auto",
       transition: `opacity ${transitionDuration}ms ease-in-out`,
-      opacity: heroTransition ? 1 : 0,
+      opacity: (isDesktop ? heroTransition : heroTransitionMobile) ? 1 : 0,
       zIndex: 1,
     }}
   />
