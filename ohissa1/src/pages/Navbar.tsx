@@ -159,11 +159,26 @@ const Navbar: React.FC = () => {
           }}
         >
           {/* Bottone Area Professionisti sempre visibile in alto a destra */}
-          {!isMobile && (
-            <a href="/ohissamenosessanta" style={{ position: "fixed", top: 18, right: 32, padding: "10px 24px", border: "2px solid #fff", borderRadius: "8px", color: "#fff", background: "rgba(7,86,89,0.18)", fontWeight: 600, fontSize: "1.05rem", textDecoration: "none", transition: "background 0.2s, color 0.2s", zIndex: 100000 }}>
-              Area Professionisti
-            </a>
-          )}
+          <a
+            href="/ohissamenosessanta"
+            style={{
+              position: "fixed",
+              top: 18,
+              right: 32,
+              padding: isMobile && menuOpen ? "2px 7px" : isMobile ? "6px 12px" : "10px 24px",
+              border: isMobile ? "1px solid #fff" : "2px solid #fff",
+              borderRadius: isMobile ? "6px" : "8px",
+              color: "#fff",
+              background: "rgba(7,86,89,0.18)",
+              fontWeight: 600,
+              fontSize: isMobile && menuOpen ? "0.62rem" : isMobile ? "0.82rem" : "1.05rem",
+              textDecoration: "none",
+              transition: "background 0.2s, color 0.2s, font-size 0.2s, padding 0.2s",
+              zIndex: 100000
+            }}
+          >
+            Area Professionisti
+          </a>
           {/* Logo e X centrati in desktop, logo centrato in alto in mobile, X a destra */}
           {!isMobile ? (
             <div style={{
@@ -179,36 +194,40 @@ const Navbar: React.FC = () => {
               <button
                 onClick={() => setMenuOpen(false)}
                 style={{
-                  position: "absolute",
-                  top: isMobile ? 12 : undefined,
-                  left: isMobile ? 18 : 0,
+                  position: "fixed",
+                  top: isMobile ? 12 : 21,
+                  left: isMobile ? 18 : 46,
                   background: "none",
                   border: "none",
                   color: "#fff",
-                  width: 28,
-                  height: 28,
+                  width: 44,
+                  height: 44,
+                  minWidth: 44,
+                  minHeight: 44,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  zIndex: 10001,
+                  zIndex: 100001,
                   padding: 0,
-                  paddingLeft: !isMobile ? "3.2rem" : undefined,
                   fontSize: "inherit",
                   lineHeight: 1,
-                  marginLeft: "0.5rem",
+                  marginLeft: 0,
+                  cursor: "pointer",
                 }}
                 aria-label="Chiudi menu"
               >
                 <span style={{
-                  display: "block",
-                  width: 22,
-                  height: 22,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 28,
+                  height: 28,
                   position: "relative",
                 }}>
                   <span style={{
                     position: "absolute",
-                    top: 9.5,
-                    left: 0,
+                    top: 12,
+                    left: 3,
                     width: 22,
                     height: 3,
                     background: "#fff",
@@ -217,8 +236,8 @@ const Navbar: React.FC = () => {
                   }}></span>
                   <span style={{
                     position: "absolute",
-                    top: 9.5,
-                    left: 0,
+                    top: 12,
+                    left: 3,
                     width: 22,
                     height: 3,
                     background: "#fff",
@@ -232,11 +251,12 @@ const Navbar: React.FC = () => {
                   src={Frame23}
                   alt="Logo OHissa"
                   style={{
-                    height: "52px",
+                    height: "48px", // stessa altezza del logo nella navbar desktop
+                    maxHeight: "56px",
+                    width: "auto",
                     cursor: "pointer",
-                    transform: "scale(1)",
-                    transformOrigin: "center",
-                    transition: "transform 260ms ease",
+                    transition: "height 0.2s",
+                    objectFit: "contain",
                     display: "block",
                   }}
                 />
