@@ -23,6 +23,7 @@ import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhce
 import CsrLogo from "../assets/Loghi/csr-r52nk3kab1dt5y95zjcydmwp2lbtys10q1ljqh7bpc.png";
 import IfsLogo from "../assets/Loghi/IFS_Food_Box_RGB-1-r45mvu6xt600pd74fix1vzcynhebn64lvz3nnhr8cg.png";
 import MscLogo from "../assets/Loghi/Italian-Landscape-Blue-CMYK.pdf-r45mw6eua0goumyy0kbyfooyc3voana00b16oslm9s.png";
+import ChiSiamo24 from "../assets/Chi siamo(24).png";
 
 import PartitaGenereLogo from "../assets/Loghi/partita-di-genere-r45mvu6xt606uceeqcisg43yrmxl0xpyo0r09dppts.png";
 
@@ -567,47 +568,53 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
  <section
-          style={{
-            position: "relative",
-            width: "100vw",
-            backgroundColor: "#075659",
-            display: "flex",
-            justifyContent: "center",
-            padding: isDesktop ? "72px 0 76px" : "52px 0 64px",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage: `url(${ChiSiamo19})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: isDesktop ? "contain" : "180%",
-              opacity: 0.9,
-            }}
-          />
-          <div
-            style={{
-              position: "relative",
-              width: "min(960px, 92vw)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "24px",
-            }}
-          >
-            <h2
-              style={{
-                color: "#fff",
-                fontSize: isDesktop ? "2.1rem" : "1.7rem",
-                fontWeight: 700,
-                textAlign: "center",
-                margin: 0,
-                textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-              }}
-            >
+         style={{
+    width: "100vw",
+    background: "#00a6a0",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
+    overflow: "hidden",
+  }}
+>
+  <img
+    src={ChiSiamo24}
+    alt="Chi siamo OHissa"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      zIndex: 1,
+      objectFit: "cover",
+      opacity: 0.7,
+    }}
+  />
+  <div
+    style={{
+      position: "relative",
+      width: "min(960px, 92vw)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "24px",
+      zIndex: 2,
+    }}
+  >
+    <h2
+      style={{
+        color: "#fff",
+        fontSize: isDesktop ? "2.1rem" : "1.7rem",
+        fontWeight: 700,
+        textAlign: "center",
+        margin: 0,
+        textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+      }}
+    >
               Un suggerimento per una ricetta sfiziosa e veloce
             </h2>
 

@@ -6,7 +6,7 @@ import Frame350_1 from "../assets/Frame 350 (1).png";      // tondo pesce spada
 import PescaProduzione1 from "../assets/2-3bb5d4b6.png"; // barca
 import Frame412_3 from "../assets/Frame 412 (3).png";      // tartare pesce spada
 import Frame412_1 from "../assets/Frame 38 (1).png";      // immagine ricetta
-import ChiSiamo24 from "../assets/Chi siamo (24).png";
+import ChiSiamo24 from "../assets/Chi siamo(24).png";
 import Frame374 from "../assets/Frame 374.png";            // sfondo form contatti
 import Logo10 from "../assets/image 10.png";
 import Logo9 from "../assets/image 9.png";
@@ -429,22 +429,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             overflow: "hidden",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "#075659",
-              backgroundImage: `url(${ChiSiamo24})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "contain",
-              opacity: 1,
-              zIndex: 1,
-            }}
-          />
+           <img
+    src={ChiSiamo24}
+    alt="Chi siamo OHissa"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      zIndex: 1,
+      objectFit: "cover",
+      opacity: 0.7,
+    }}
+  />
           <div
             style={{
               position: "relative",

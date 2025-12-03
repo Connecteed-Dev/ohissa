@@ -10,7 +10,7 @@ import Frame412_1 from "../assets/Frame 412 (1).png"; // saku
 import Frame412_2 from "../assets/Frame 412 (2).png"; // poke
 
 import ChiSiamo19 from "../assets/Chi siamo (19).png"; // cerchio verde ricetta
-import ChiSiamo24 from "../assets/Chi siamo (24).png";
+import ChiSiamo24 from "../assets/Chi siamo(24).png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
 import Ricetta from "../assets/Frame 38.png"; // immagine ricetta
 // LOGHI CERTIFICAZIONI
@@ -514,102 +514,108 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </section>
 
         {/* SUGGERIMENTO RICETTA */}
-        <section
+{/* SUGGERIMENTO RICETTA */}
+<section
+  style={{
+    width: "100vw",
+    background: "#00a6a0",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
+    overflow: "hidden",
+  }}
+>
+  <img
+    src={ChiSiamo24}
+    alt="Chi siamo OHissa"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      zIndex: 1,
+      objectFit: "cover",
+      opacity: 0.7,
+    }}
+  />
+  <div
+    style={{
+      position: "relative",
+      width: "min(960px, 92vw)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "24px",
+      zIndex: 2,
+    }}
+  >
+    <h2
+      style={{
+        color: "#fff",
+        fontSize: isDesktop ? "2.1rem" : "1.7rem",
+        fontWeight: 700,
+        textAlign: "center",
+        margin: 0,
+        textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+      }}
+    >
+      Un suggerimento per una ricetta sfiziosa e veloce
+    </h2>
+
+    <div
+      style={{
+        background: "rgba(255,255,255,0.97)",
+        borderRadius: "18px",
+        boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
+        maxWidth: 520,
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
+      <img
+        src={Ricetta}
+        alt="Ricetta con salmone"
+        style={{
+          width: "100%",
+          height: 230,
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{ padding: "18px 20px 16px" }}>
+        <h3
           style={{
-            position: "relative",
-            width: "100vw",
-            backgroundColor: "#075659",
-            display: "flex",
-            justifyContent: "center",
-            padding: isDesktop ? "72px 0 76px" : "52px 0 64px",
-            overflow: "hidden",
+            fontWeight: 700,
+            fontSize: "1.18rem",
+            margin: "0 0 8px",
+            color: "#222",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage: `url(${ChiSiamo24})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              opacity: 1,
-              zIndex: 1,
-            }}
-          />
-          <div
-            style={{
-              position: "relative",
-              width: "min(960px, 92vw)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "24px",
-              zIndex: 2,
-            }}
-          >
-            <h2
-              style={{
-                color: "#fff",
-                fontSize: isDesktop ? "2.1rem" : "1.7rem",
-                fontWeight: 700,
-                textAlign: "center",
-                margin: 0,
-                textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-              }}
-            >
-              Un suggerimento per una ricetta sfiziosa e veloce
-            </h2>
+          Saku di salmone, mango, crema di mango e uova di salmone
+        </h3>
+        <p
+          style={{
+            fontSize: "0.98rem",
+            lineHeight: 1.7,
+            margin: 0,
+            color: "#444",
+          }}
+        >
+          Un piatto fresco, dal sapore esotico: il gusto ricco e
+          avvolgente del salmone è bilanciato dalla freschezza e dalla
+          leggera acidità del mango, usato sia a cubetti che in crema.
+          L&apos;aggiunta delle uova di salmone garantisce al piatto la
+          giusta sapidità.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div
-              style={{
-                background: "rgba(255,255,255,0.97)",
-                borderRadius: "18px",
-                boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
-                maxWidth: 520,
-                width: "100%",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src={Ricetta}
-                alt="Ricetta con salmone"
-                style={{
-                  width: "100%",
-                  height: 230,
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
-              <div style={{ padding: "18px 20px 16px" }}>
-                <h3
-                  style={{
-                    fontWeight: 700,
-                    fontSize: "1.18rem",
-                    margin: "0 0 8px",
-                    color: "#222",
-                  }}
-                >
-                  Saku di salmone, mango, crema di mango e uova di salmone
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.7,
-                    margin: 0,
-                    color: "#444",
-                  }}
-                >
-                  Un piatto fresco, dal sapore esotico: il gusto ricco e
-                  avvolgente del salmone è bilanciato dalla freschezza e dalla
-                  leggera acidità del mango, usato sia a cubetti che in crema.
-                  L&apos;aggiunta delle uova di salmone garantisce al piatto la
-                  giusta sapidità.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* FORM CONTATTI OHISSA */}
         <div

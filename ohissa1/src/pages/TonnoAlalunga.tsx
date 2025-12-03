@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import ChiSiamo24 from "../assets/Chi siamo(24).png";
+
 import Group3 from "../assets/Group 3.png";
 import Group3_1 from "../assets/Group 3 (1).png";
 import Frame375_1 from "../assets/Frame 375 (1).png";
@@ -335,23 +337,52 @@ const TonnoAlalunga: React.FC = () => {
   </section><section
     className="ricetta-suggerimento-section"
     style={{
-      position: 'relative',
-      width: '100vw',
-      minHeight: '520px',
-      backgroundColor: '#075659',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center top',
-      backgroundSize: 'contain',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '64px 0',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
+    width: "100vw",
+    background: "#00a6a0",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
+    overflow: "hidden",
+  }}
+>
+  <img
+    src={ChiSiamo24}
+    alt="Chi siamo OHissa"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      zIndex: 1,
+      objectFit: "cover",
+      opacity: 0.7,
+    }}
+  />
+  <div
+    style={{
+      position: "relative",
+      width: "min(960px, 92vw)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "24px",
+      zIndex: 2,
     }}
   >
-      <h2 style={{ color: '#fff', fontSize: '2rem', fontWeight: 700, textAlign: 'center', marginBottom: '32px', textShadow: '0 2px 12px rgba(0,0,0,0.18)' }}>
+    <h2
+      style={{
+        color: "#fff",
+        fontSize: isDesktop ? "2.1rem" : "1.7rem",
+        fontWeight: 700,
+        textAlign: "center",
+        margin: 0,
+        textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+      }}
+    >
         Un suggerimento per una ricetta sfiziosa e veloce
       </h2>
       <div style={{
@@ -375,6 +406,7 @@ const TonnoAlalunga: React.FC = () => {
           </p>
         </div>
       </div>
+    </div>
     </section></>
         
 
