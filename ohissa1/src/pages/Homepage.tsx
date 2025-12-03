@@ -422,51 +422,43 @@ const Homepage = () => {
     setProductsBg(bg);
   }
 
-  // HERO SLIDESHOW
+  // HERO SLIDESHOW – crossfade senza bianco
   const [heroIndex, setHeroIndex] = useState(0);
-  const [heroTransition, setHeroTransition] = useState(false);
-  const [heroIndexMobile, setHeroIndexMobile] = useState(0);
-  const [heroTransitionMobile, setHeroTransitionMobile] = useState(false);
-  // Durata transizione più smooth
-  const transitionDuration = 1200; // ms
-  const intervalDuration = 3500; // ms
+  const [isFading, setIsFading] = useState(false);
+
+  // tempi transizione hero
+  const transitionDuration = 1200; // ms per il fade
+  const intervalDuration = 5200;   // ms tra una slide e la successiva
 
   useEffect(() => {
-    if (!isDesktop) return;
     const interval = setInterval(() => {
-      setHeroTransition(true);
-      setTimeout(() => {
+      setIsFading(true); // inizio fade‑in della prossima
+
+      window.setTimeout(() => {
         setHeroIndex((prev) => (prev + 1) % heroImages.length);
-        setHeroTransition(false);
+        setIsFading(false); // nuova immagine ora è pienamente visibile
       }, transitionDuration);
     }, intervalDuration);
-    return () => clearInterval(interval);
-  }, [isDesktop]);
 
-  useEffect(() => {
-    if (!isMobile) return;
-    const interval = setInterval(() => {
-      setHeroTransitionMobile(true);
-      setTimeout(() => {
-        setHeroIndexMobile((prev) => (prev + 1) % heroImagesMobile.length);
-        setHeroTransitionMobile(false);
-      }, transitionDuration);
-    }, intervalDuration);
-    return () => clearInterval(interval);
-  }, [isMobile]);
-
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   const heroImages = [HeroSection, HeroSection3, HeroSection4, HeroSection5, HeroSection6];
   const heroImagesMobile = [HeroMobile, Hero9, Hero10, Hero11, Hero12];
-
+  const images = isMobile ? heroImagesMobile : heroImages;
+  const nextIndex = (heroIndex + 1) % images.length;
   return (
     <div className="app">
       <Navbar />
 
       <div className="page-card">
-        {/* HERO */}
-       <header className="hero-section" style={{ position: "relative", width: "100%", overflow: "hidden" }}>
-  
-  {/* WRAPPER CHE DA L’ALTEZZA */}
+       {/* HERO */}
+<header
+  className="hero-section"
+  style={{ position: "relative", width: "100%", overflow: "hidden" }}
+>
+  {/* WRAPPER CHE DA L’ALTEZZA (ghost image) */}
   <div
     style={{
       position: "relative",
@@ -474,22 +466,21 @@ const Homepage = () => {
       height: "auto",
     }}
   >
-    {/* Questa immagine è quella che dà l’altezza naturale al box */}
     <img
-      src={isDesktop ? heroImages[heroIndex] : heroImagesMobile[heroIndexMobile]}
+      src={images[heroIndex]}
       alt=""
       style={{
         width: "100%",
         height: "auto",
         display: "block",
-        visibility: "hidden"   // NON SI VEDE, serve solo per dare altezza
+        visibility: "hidden", // solo per lo spazio
       }}
     />
   </div>
 
-  {/* IMMAGINE ATTUALE */}
+  {/* IMMAGINE CORRENTE (sotto) */}
   <img
-    src={isDesktop ? heroImages[heroIndex] : heroImagesMobile[heroIndexMobile]}
+    src={images[heroIndex]}
     alt="Tonno che nuota nel mare"
     style={{
       position: "absolute",
@@ -497,33 +488,30 @@ const Homepage = () => {
       left: 0,
       width: "100%",
       height: "auto",
-      transition: `opacity ${transitionDuration}ms ease-in-out, filter ${transitionDuration}ms ease-in-out`,
-      opacity: (isDesktop ? heroTransition : heroTransitionMobile) ? 0 : 1,
-      filter: (isDesktop ? heroTransition : heroTransitionMobile) ? "blur(14px)" : "none",
-      zIndex: 2,
-    }}
-  />
-
-  {/* IMMAGINE SUCCESSIVA */}
-  <img
-    src={
-      isDesktop
-        ? heroImages[(heroIndex + 1) % heroImages.length]
-        : heroImagesMobile[(heroIndexMobile + 1) % heroImagesMobile.length]
-    }
-    alt="Tonno che nuota nel mare"
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "auto",
-      transition: `opacity ${transitionDuration}ms ease-in-out`,
-      opacity: (isDesktop ? heroTransition : heroTransitionMobile) ? 1 : 0,
       zIndex: 1,
     }}
   />
+
+  {/* PROSSIMA IMMAGINE (sopra, con fade-in pulito) */}
+  <img
+    src={images[nextIndex]}
+    alt="Tonno che nuota nel mare"
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "auto",
+      zIndex: 2,
+      opacity: isFading ? 1 : 0,
+      transition: isFading
+        ? `opacity ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1)`
+        : "none", // niente transizione quando non stai fadding
+    }}
+  />
 </header>
+
+
 
 
 
