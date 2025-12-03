@@ -361,8 +361,8 @@ const PiuFrescoDelFresco: React.FC = () => {
           src={Frame350_6}
           alt="ULT top"
           style={{
-            width: 120,
-            height: 120,
+            width: 150,
+            height: 150,
             borderRadius: "50%",
             objectFit: "cover",
             display: "block",
@@ -419,8 +419,8 @@ const PiuFrescoDelFresco: React.FC = () => {
         src={PiuFrescoDelFrescoImg}
         alt="ULT bottom"
         style={{
-          width: isDesktop ? 220 : 120,
-          height: isDesktop ? 220 : 120,
+          width: isDesktop ? 300 : 150,
+          height: isDesktop ? 300 : 150,
           borderRadius: "50%",
           objectFit: "cover",
           display: "block",

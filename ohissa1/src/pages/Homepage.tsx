@@ -331,7 +331,7 @@ const ricette = [
   },
   {
     img: Frame390_1,
-    title: "Tartare di Pesce Spada al Curry",
+    title: "Tartare di Pesce Spada al curry",
     ingredienti:
       "Tartare di Pesce Spada OHissa, salsa (maionese + curry in polvere), olio extravergine d’oliva, sale, pepe, aneto o finocchietto.",
     preparazione:
@@ -353,7 +353,7 @@ const ricette = [
     ingredienti:
       "Saku di Salmone OHissa, pane a fette, pomodori secchi sott’olio, olive nere, insalatina, olio evo, sale e pepe.",
     preparazione:
-      "Tosta il pane. Prepara un letto di insalatina e disponi sopra le fette di pane tostato. Taglia il salmone a fettine e aggiungilo con pomodori secchi e olive. Completa con olio e pepe.",
+      "Tosta il pane. Prepara un letto di insalatina e disponi sopra le fette di pane tostato. Taglia il Salmone a fettine e aggiungilo con pomodori secchi e olive. Completa con olio e pepe.",
     tempo: "6 min",
   },
   {
@@ -464,43 +464,68 @@ const Homepage = () => {
 
       <div className="page-card">
         {/* HERO */}
-        <header className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
-          {isDesktop ? (
-            <img
-              src={heroImages[heroIndex]}
-              alt="Tonno che nuota nel mare"
-              className="hero-image"
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-                objectFit: "cover",
-                transition: `filter ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1), opacity ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1)`,
-                filter: heroTransition ? "blur(24px)" : "none",
-                opacity: heroTransition ? 0 : 1,
-                position: "relative",
-                zIndex: 1
-              }}
-            />
-          ) : (
-            <img
-              src={heroImagesMobile[heroIndexMobile]}
-              alt="Tonno che nuota nel mare"
-              className="hero-image"
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-                objectFit: "cover",
-                transition: `filter ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1), opacity ${transitionDuration}ms cubic-bezier(0.4,0.0,0.2,1)`,
-                filter: heroTransitionMobile ? "blur(24px)" : "none",
-                opacity: heroTransitionMobile ? 0 : 1,
-                position: "relative",
-                zIndex: 1
-              }}
-            />
-          )}
-        </header>
+       <header className="hero-section" style={{ position: "relative", width: "100%", overflow: "hidden" }}>
+  
+  {/* WRAPPER CHE DA L’ALTEZZA */}
+  <div
+    style={{
+      position: "relative",
+      width: "100%",
+      height: "auto",
+    }}
+  >
+    {/* Questa immagine è quella che dà l’altezza naturale al box */}
+    <img
+      src={isDesktop ? heroImages[heroIndex] : heroImagesMobile[heroIndexMobile]}
+      alt=""
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        visibility: "hidden"   // NON SI VEDE, serve solo per dare altezza
+      }}
+    />
+  </div>
+
+  {/* IMMAGINE ATTUALE */}
+  <img
+    src={isDesktop ? heroImages[heroIndex] : heroImagesMobile[heroIndexMobile]}
+    alt="Tonno che nuota nel mare"
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "auto",
+      transition: `opacity ${transitionDuration}ms ease-in-out, filter ${transitionDuration}ms ease-in-out`,
+      opacity: heroTransition ? 0 : 1,
+      filter: heroTransition ? "blur(14px)" : "none",
+      zIndex: 2,
+    }}
+  />
+
+  {/* IMMAGINE SUCCESSIVA */}
+  <img
+    src={
+      isDesktop
+        ? heroImages[(heroIndex + 1) % heroImages.length]
+        : heroImagesMobile[(heroIndexMobile + 1) % heroImagesMobile.length]
+    }
+    alt="Tonno che nuota nel mare"
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "auto",
+      transition: `opacity ${transitionDuration}ms ease-in-out`,
+      opacity: heroTransition ? 1 : 0,
+      zIndex: 1,
+    }}
+  />
+</header>
+
+
 
         {/* TESTO HERO */}
         <section
@@ -541,7 +566,7 @@ const Homepage = () => {
               fontFamily: "Ubuntu, system-ui, sans-serif"
             }}
           >
-            OHissa seleziona, lavora e prepara per il consumo – anche a crudo – tonno, pesce spada, salmone e ricciola. Operiamo nella nostra sede in Maremma, dove confezioniamo il pesce con tecnologie innovative come l’ibernazione da fresco. Il nostro impegno è offrire un’alimentazione sana e gustosa, che esalta il palato e rispetta l’ambiente.
+            OHissa seleziona, lavora e prepara per il consumo – anche a crudo – Tonno, Pesce Spada, Salmone e Ricciola. Operiamo nella nostra sede in Maremma, dove confezioniamo il pesce con tecnologie innovative come l’ibernazione da fresco. Il nostro impegno è offrire un’alimentazione sana e gustosa, che esalta il palato e rispetta l’ambiente.
           </p>
           <p
             style={{
@@ -557,7 +582,7 @@ const Homepage = () => {
           </p>
         </section>
 
-        {/* GUSTO */}
+       {/* GUSTO */}
         <section
           className="gusto-section"
           ref={gustoSectionRef}
@@ -590,10 +615,11 @@ const Homepage = () => {
               className={`gusto-text ${isMobile ? "mobile" : ""}`}
               style={{
                 position: "absolute",
-                top: "50%",
+                top: "40%",
                 left: "50%",
-                transform: `translate(-50%, -50%) scale(${1 + 0.2 * gustoProgress})`,
-                opacity: 0.7,
+                transform: `translate(-50%, -50%) translateY(${(1 - gustoProgress) * (isMobile ? 18 : 30)
+                  }vh)`,
+                
                 fontSize: isMobile ? "1.7rem" : "2.6rem",
                 fontWeight: 500,
                 lineHeight: 1.2,
@@ -602,7 +628,7 @@ const Homepage = () => {
                 letterSpacing: "-0.5px",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
                 padding: "0 12px",
-                transition: "opacity 2.4s cubic-bezier(.22,.8,.28,1), transform 2.4s cubic-bezier(.22,.8,.28,1)",
+                opacity: gustoProgress > 0.1 ? 0.7 : 0,
               }}
             >
               Gusto, naturalità,
@@ -642,16 +668,16 @@ const Homepage = () => {
 
               <div className="ohissa-mobile-products-buttons">
                 <a href="/tonno-pinna-gialla" className="btn">
-                  Tonno a pinne gialle
+                  Tonno a Pinne Gialla
                 </a>
                 <a href="/tonno-alalunga" className="btn">
-                  Tonno alalunga
+                  Tonno Alalunga
                 </a>
                 <a href="/salmone" className="btn">
                   Salmone
                 </a>
                 <a href="/pesce-spada" className="btn">
-                  Pesce spada
+                  Pesce Spada
                 </a>
               </div>
             </div>
@@ -686,7 +712,7 @@ const Homepage = () => {
                   onMouseOver={() => handleBgChange(BgTonnoPinnaGialla, 'pinna')}
                   onMouseOut={() => handleBgReset()}
                 >
-                  Tonno a pinne gialle
+                  Tonno a Pinna Gialla
                 </a>
                 <a
                   href="/tonno-alalunga"
@@ -1226,9 +1252,9 @@ const Homepage = () => {
               position: "absolute",
               // posizione diversa tra mobile e desktop
               top: isMobile ? "18%" : "50%",
-              left: isMobile ? "10%" : "58%",
-              transform: isMobile ? "none" : "translateY(-50%)",
-              maxWidth: isMobile ? "75%" : 430,
+              left: isMobile ? "10%" : "65%", // più centrale su desktop
+              transform: isMobile ? "none" : "translate(-50%, -50%)",
+              maxWidth: isMobile ? "75%" : 490,
               width: isMobile ? "75%" : "auto",
               color: "#ffffff",
               display: "flex",

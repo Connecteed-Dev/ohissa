@@ -364,7 +364,7 @@ const OhissaSport: React.FC = () => {
               </div>
               <div style={{ flex: 1, fontSize: "0.96rem", lineHeight: 1.6 }}>
                 <h3 style={{ fontSize: "1.35rem", fontWeight: 700, margin: "0 0 4px", color: "#008578" }}>
-                  Pesce spada
+                  Pesce Spada
                 </h3>
                 <p style={{ fontWeight: 700, margin: "0 0 8px", color: "#005b68" }}>
                   Energia e resistenza. Per performance da campioni.
@@ -490,7 +490,7 @@ const OhissaSport: React.FC = () => {
 
                 <div className="ohissa-mobile-products-buttons">
                   <a href="/tonno-pinna-gialla" className="btn">
-                    Tonno a pinne gialle
+                    Tonno A Pinna Gialla
                   </a>
                   <a href="/tonno-alalunga" className="btn">
                     Tonno alalunga
@@ -499,7 +499,7 @@ const OhissaSport: React.FC = () => {
                     Salmone
                   </a>
                   <a href="/pesce-spada" className="btn">
-                    Pesce spada
+                    Pesce Spada
                   </a>
                 </div>
               </div>
@@ -535,7 +535,7 @@ const OhissaSport: React.FC = () => {
           onMouseOver={() => handleBgChange(BgTonnoPinnaGialla, 'pinna')}
           onMouseOut={() => handleBgReset()}
         >
-          Tonno a pinne gialle
+          Tonno A Pinna Gialla
         </a>
         <a
           href="/tonno-alalunga"
@@ -559,7 +559,7 @@ const OhissaSport: React.FC = () => {
           onMouseOver={() => handleBgChange(BgPesceSpada, 'spada')}
           onMouseOut={() => handleBgReset()}
         >
-          Pesce spada
+          Pesce Spada
         </a>
       </div>
     </div>

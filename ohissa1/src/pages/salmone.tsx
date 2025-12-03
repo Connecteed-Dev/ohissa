@@ -239,7 +239,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   color: "#111",
                 }}
               >
-                Il salmone è un pesce molto apprezzato dalle carni morbide e
+                Il Salmone è un pesce molto apprezzato dalle carni morbide e
                 gustose, dal tipico colore rosato. È ricco di proteine ad alto
                 valore biologico, oltre che di sali minerali (fosforo e
                 selenio), vitamine del gruppo B, vitamina D, A e acidi grassi
@@ -324,7 +324,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   margin: 0,
                 }}
               >
-                Il nostro salmone proviene da pesca sostenibile certificata in
+                Il nostro Salmone proviene da pesca sostenibile certificata in
                 Norvegia e viene lavorato secondo standard FAO e UE.
                 L&apos;allevamento secondo la FAO è una fondamentale
                 opportunità per fornire risorse alimentari alla popolazione
@@ -578,7 +578,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     >
       <img
         src={Ricetta}
-        alt="Ricetta con salmone"
+        alt="Ricetta con Salmone"
         style={{
           width: "100%",
           height: 230,
@@ -595,7 +595,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             color: "#222",
           }}
         >
-          Saku di salmone, mango, crema di mango e uova di salmone
+          Saku di Salmone, mango, crema di mango e uova di Salmone
         </h3>
         <p
           style={{
@@ -606,9 +606,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           }}
         >
           Un piatto fresco, dal sapore esotico: il gusto ricco e
-          avvolgente del salmone è bilanciato dalla freschezza e dalla
+          avvolgente del Salmone è bilanciato dalla freschezza e dalla
           leggera acidità del mango, usato sia a cubetti che in crema.
-          L&apos;aggiunta delle uova di salmone garantisce al piatto la
+          L&apos;aggiunta delle uova di Salmone garantisce al piatto la
           giusta sapidità.
         </p>
       </div>
@@ -1065,16 +1065,25 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 </div>
               </div>
 
-              {status === "success" && (
-                <p
+              {status === "success" && isDesktop && (
+                <div
                   style={{
-                    marginTop: 10,
-                    fontSize: "0.85rem",
+                    marginTop: 18,
+                    fontSize: "1.15rem",
                     color: "#00695c",
+                    background: "#e6f9f3",
+                    borderRadius: 10,
+                    padding: "18px 24px",
+                    textAlign: "center",
+                    fontWeight: 600,
+                    boxShadow: "0 2px 12px rgba(0,191,174,0.08)",
                   }}
                 >
-                  Messaggio inviato correttamente.
-                </p>
+                  Grazie per averci contattato!<br />
+                  Il tuo messaggio è stato inviato con successo.<br />
+                  Ti risponderemo al più presto.<br />
+                  <span style={{fontWeight:400, fontSize:"1rem"}}>Il team OHissa ti augura una buona giornata!</span>
+                </div>
               )}
               {status === "error" && (
                 <p

@@ -237,7 +237,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   color: "#555",
                 }}
               >
-                Il pesce spada è un concentrato di proteine nobili e selenio, il
+                Il Pesce Spada è un concentrato di proteine nobili e selenio, il
                 minerale anti-age per eccellenza. Carne bianca, soda, ricca di
                 Omega-3 e vitamina D: il duo perfetto per sistema immunitario e
                 salute cardiovascolare. Povero di grassi saturi, protegge la tua
@@ -288,6 +288,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 width: isDesktop ? undefined : "90vw",
                 color: "#000000ff",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
+                lineHeight: isDesktop ? 1.25 : 1.22,
                 padding: isDesktop ? undefined : "0 8vw",
                 textAlign: isDesktop ? "left" : "center",
                 zIndex: 2,
@@ -313,7 +314,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   margin: 0,
                 }}
               >
-                Il pesce spada viene catturato con il palangaro o palamito, un
+                Il Pesce Spada viene catturato con il palangaro o palamito, un
                 particolare attrezzo con ami. Questo è un metodo di pesca
                 considerato tra i sistemi di pesca più selettivi: una pesca che
                 presta attenzione alla soggettività delle prede, molto attenta
@@ -350,7 +351,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 margin: 0,
               }}
             >
-              Tagli di pesce spada 
+              Tagli di Pesce Spada 
             </h2>
 
             <div
@@ -371,7 +372,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               >
                 <img
                   src={Frame412_3}
-                  alt="Tartare di pesce spada"
+                  alt="Tartare di Pesce Spada"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -480,7 +481,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <img
                 src={Frame412_1}
-                alt="Ricetta a base di pesce spada"
+                alt="Ricetta a base di Pesce Spada"
                 style={{
                   width: "100%",
                   height: 230,
@@ -497,7 +498,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     color: "#222",
                   }}
                 >
-                  Carpaccio di pesce spada al limone
+                  Carpaccio di Pesce Spada al limone
                 </h3>
                 <p
                   style={{
@@ -962,16 +963,25 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 </div>
               </div>
 
-              {status === "success" && (
-                <p
+              {status === "success" && isDesktop && (
+                <div
                   style={{
-                    marginTop: 10,
-                    fontSize: "0.85rem",
+                    marginTop: 18,
+                    fontSize: "1.15rem",
                     color: "#00695c",
+                    background: "#e6f9f3",
+                    borderRadius: 10,
+                    padding: "18px 24px",
+                    textAlign: "center",
+                    fontWeight: 600,
+                    boxShadow: "0 2px 12px rgba(0,191,174,0.08)",
                   }}
                 >
-                  Messaggio inviato correttamente.
-                </p>
+                  Grazie per averci contattato!<br />
+                  Il tuo messaggio è stato inviato con successo.<br />
+                  Ti risponderemo al più presto.<br />
+                  <span style={{fontWeight:400, fontSize:"1rem"}}>Il team OHissa ti augura una buona giornata!</span>
+                </div>
               )}
               {status === "error" && (
                 <p

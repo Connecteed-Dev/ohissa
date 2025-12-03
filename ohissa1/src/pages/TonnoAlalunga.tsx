@@ -163,7 +163,7 @@ const TonnoAlalunga: React.FC = () => {
             <div style={{ maxWidth: isDesktop ? '520px' : '98vw', color: '#075659', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h2 style={{ fontSize: isDesktop ? '2.2rem' : '1.3rem', fontWeight: 700, marginBottom: '8px', color: '#075659' }}>Alalunga</h2>
               <p style={{ fontSize: isDesktop ? '1.15rem' : '0.98rem', fontWeight: 400, color: '#555', marginBottom: '8px' }}>
-                L'alalunga, o tonno bianco, è il preferito dei nutrizionisti: carne delicata, ricca di proteine nobili e Omega-3 ad alto assorbimento. Meno grasso del tonno tradizionale, stessa potenza anti-infiammatoria.
+                L'Alalunga, o Tonno bianco, è il preferito dei nutrizionisti: carne delicata, ricca di proteine nobili e Omega-3 ad alto assorbimento. Meno grasso del tonno tradizionale, stessa potenza anti-infiammatoria.
               </p>
               <p style={{ fontSize: isDesktop ? '1.15rem' : '0.98rem', fontWeight: 400, color: '#555' }}>
                 È un’ottima fonte di vitamina A e di niacina, contiene inoltre buone percentuali di sali minerali: in particolare selenio, fosforo e magnesio, ma anche ferro e calcio. Sano e gustoso, contiene Omega 3, che aiutano a tenere a bada il colesterolo cattivo nel sangue.
@@ -214,7 +214,7 @@ const TonnoAlalunga: React.FC = () => {
                 width: isDesktop ? undefined : "95vw",
                 color: "#fff",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
-                padding: isDesktop ? undefined : "0 8vw",
+                  padding: isDesktop ? undefined : "0 8vw",
                 textAlign: isDesktop ? "left" : "center",
                 
               
@@ -233,7 +233,8 @@ const TonnoAlalunga: React.FC = () => {
               <p
                 style={{
                   fontSize: isDesktop ? "1.25rem" : "0.9rem",
-                  lineHeight: 1.6,
+                  
+                    lineHeight: isDesktop ? 1.25 : 1.22,
                   margin: 0,
                 }}
               >
@@ -397,12 +398,12 @@ const TonnoAlalunga: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
       }}>
-        <img src={Frame412_1} alt="Saku di salmone, mango, crema di mango e uova di salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+        <img src={Frame412_1} alt="Saku di Salmone, mango, crema di mango e uova di Salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
         <div style={{ padding: '18px 18px 12px 18px', width: '100%' }}>
           <h3 style={{ fontWeight: 700, fontSize: '1.18rem', marginBottom: '8px', color: '#222' }}>
             OHissa burger                  </h3>
           <p style={{ fontSize: '1rem', color: '#444', fontWeight: 400 }}>
-            Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
+            Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
           </p>
         </div>
       </div>
@@ -858,16 +859,25 @@ const TonnoAlalunga: React.FC = () => {
                 </div>
               </div>
 
-              {status === "success" && (
-                <p
+              {status === "success" && isDesktop && (
+                <div
                   style={{
-                    marginTop: 10,
-                    fontSize: "0.85rem",
+                    marginTop: 18,
+                    fontSize: "1.15rem",
                     color: "#00695c",
+                    background: "#e6f9f3",
+                    borderRadius: 10,
+                    padding: "18px 24px",
+                    textAlign: "center",
+                    fontWeight: 600,
+                    boxShadow: "0 2px 12px rgba(0,191,174,0.08)",
                   }}
                 >
-                  Messaggio inviato correttamente.
-                </p>
+                  Grazie per averci contattato!<br />
+                  Il tuo messaggio è stato inviato con successo.<br />
+                  Ti risponderemo al più presto.<br />
+                  <span style={{fontWeight:400, fontSize:"1rem"}}>Il team OHissa ti augura una buona giornata!</span>
+                </div>
               )}
               {status === "error" && (
                 <p

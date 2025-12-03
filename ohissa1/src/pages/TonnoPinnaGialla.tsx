@@ -110,15 +110,55 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
       {/* HERO */}
       <section className="tonno-hero">
+        <div
+          style={{
+            position: "absolute",
+            top: isDesktop ? "18%" : "18%",
+            left: isDesktop ? "6%" : "50%",
+            transform: isDesktop ? "none" : "translateX(-50%)",
+            maxWidth: isDesktop ? "420px" : "90vw",
+            width: isDesktop ? undefined : "90vw",
+            color: "#000000ff",
+            textShadow: "0 2px 10px rgba(0,0,0,0.6)",
+            lineHeight: isDesktop ? 1.25 : 1.22,
+          }}
+        >
+          <h1
+            style={{
+              fontSize: isDesktop ? "3.2rem" : "2.1rem",
+              fontWeight: 800,
+              margin: 0,
+              marginBottom: isDesktop ? "18px" : "12px",
+              color: "#00a6a0",
+              letterSpacing: "-1px",
+            }}
+          >
+            Tonno a pinna gialla
+          </h1>
+          <p
+            style={{
+              fontSize: isDesktop ? "1.25rem" : "1.05rem",
+              margin: 0,
+              color: "#222",
+              fontWeight: 500,
+              textShadow: "0 2px 10px rgba(255,255,255,0.2)",
+            }}
+          >
+            Sapore delicato, consistenza soda, ricco di Omega 3 e proteine nobili.
+          </p>
+        </div>
         <img
-              src={heroTonno}
-              alt="Tonno pinna gialla"
-              style={{
-                width: "100vw",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
+          src={heroTonno}
+          alt="Tonno a pinna gialla in mare"
+          style={{
+            width: "100vw",
+            height: isDesktop ? "600px" : "58vw",
+            objectFit: "cover",
+            display: "block",
+            borderRadius: 0,
+            position: "relative",
+            zIndex: 0,
+          }}
         />
       </section>
 
@@ -178,7 +218,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     margin: 0,
                 }}
               >
-                Tonno a pinna gialla
+                Tonno A Pinna Gialla
               </h2>
               <p
                 style={{
@@ -286,7 +326,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   margin: 0,
                 }}
               >
-                Il tonno a pinna gialla viene pescato esclusivamente con palangari di
+                Il Tonno A Pinna Gialla viene pescato esclusivamente con palangari di
               superficie e reti da circuizione che permettono una pesca
               selettiva e a ridotto impatto ambientale. La lavorazione avviene
               entro poche ore dallo sbarco del pescato.
@@ -630,7 +670,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <img
                 src={ricettaImg}
-                alt="Ricetta con salmone"
+                alt="Ricetta con Salmone"
                 style={{
                   width: "100%",
                   height: 230,
@@ -647,7 +687,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     color: "#222",
                   }}
                 >
-                  Carpaccio di pesce spada al limone
+                  Carpaccio di Pesce Spada al limone
                 </h3>
                 <p
                   style={{
@@ -658,7 +698,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   }}
                 >
                   
-                                  Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
+                                  Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
 
                 </p>
               </div>
@@ -1119,16 +1159,25 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 </div>
               </div>
 
-              {status === "success" && (
-                <p
+              {status === "success" && isDesktop && (
+                <div
                   style={{
-                    marginTop: 10,
-                    fontSize: "0.85rem",
+                    marginTop: 18,
+                    fontSize: "1.15rem",
                     color: "#00695c",
+                    background: "#e6f9f3",
+                    borderRadius: 10,
+                    padding: "18px 24px",
+                    textAlign: "center",
+                    fontWeight: 600,
+                    boxShadow: "0 2px 12px rgba(0,191,174,0.08)",
                   }}
                 >
-                  Messaggio inviato correttamente.
-                </p>
+                  Grazie per averci contattato!<br />
+                  Il tuo messaggio è stato inviato con successo.<br />
+                  Ti risponderemo al più presto.<br />
+                  <span style={{fontWeight:400, fontSize:"1rem"}}>Il team OHissa ti augura una buona giornata!</span>
+                </div>
               )}
               {status === "error" && (
                 <p
