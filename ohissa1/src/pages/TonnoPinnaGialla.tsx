@@ -611,7 +611,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
  <section
-            style={
+             style={
               isMobile
                 ? {
                     position: "relative",
@@ -678,16 +678,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               Un suggerimento per una ricetta sfiziosa e veloce
             </h2>
 
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: "18px",
-                boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
-                maxWidth: 520,
-                width: isMobile ? "100vw" : "100%",
-                overflow: "hidden",
-                marginLeft: isMobile ? "calc(-50vw + 50%)" : undefined
-              }}
+           <div style={{
+        background: '#fff',
+        borderRadius: '18px',
+        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
+        maxWidth: '480px',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
+      }}
             >
               <img
                 src={ricettaImg}

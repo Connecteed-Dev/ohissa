@@ -375,7 +375,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <div
                 className="story-image-wrapper"
-                style={{ position: "relative", width: 370, height: 380 }}
+                style={{ position: "relative", width: 370, height: 410 }}
               >
                 <img
                   src={Frame412}
@@ -424,7 +424,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <div
                 className="story-image-wrapper"
-                style={{ position: "relative", width: 370, height: 380 }}
+                style={{ position: "relative", width: 370, height: 410 }}
               >
                 <img
                   src={Frame412_1}
@@ -473,7 +473,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <div
                 className="story-image-wrapper"
-                style={{ position: "relative", width: 370, height: 380 }}
+                style={{ position: "relative", width: 370, height: 410 }}
               >
                 <img
                   src={Frame412_2}

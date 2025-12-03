@@ -338,7 +338,7 @@ const TonnoAlalunga: React.FC = () => {
     ))}
   </section>
   <section
-            style={
+             style={
               isMobile
                 ? {
                     position: "relative",
@@ -409,19 +409,30 @@ const TonnoAlalunga: React.FC = () => {
         borderRadius: '18px',
         boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
         maxWidth: '480px',
-        width: isMobile ? '100vw' : '90vw',
-        margin: isMobile ? '0' : '0 auto',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginLeft: isMobile ? 'calc(-50vw + 50%)' : undefined
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
       }}>
         <img src={Frame412_1} alt="Saku di Salmone, mango, crema di mango e uova di Salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
-        <div style={{ padding: '18px 18px 12px 18px', width: '100%' }}>
-          <h3 style={{ fontWeight: 700, fontSize: '1.18rem', marginBottom: '8px', color: '#222' }}>
+        <div style={{ padding: "18px 20px 16px" }}>
+          <h3  style={{
+            fontWeight: 700,
+            fontSize: "1.18rem",
+            margin: "0 0 8px",
+            color: "#222",
+          }}>
             OHissa burger                  </h3>
-          <p style={{ fontSize: '1rem', color: '#444', fontWeight: 400 }}>
+          <p style={{
+            fontSize: "0.98rem",
+            lineHeight: 1.7,
+            margin: 0,
+            color: "#444",
+          }}>
             Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
           </p>
         </div>
