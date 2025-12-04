@@ -37,6 +37,7 @@ import IfsLogo from "../assets/Loghi/IFS_Food_Box_RGB-1-r45mvu6xt600pd74fix1vzcy
 import MscLogo from "../assets/Loghi/Italian-Landscape-Blue-CMYK.pdf-r45mw6eua0goumyy0kbyfooyc3voana00b16oslm9s.png";
 import ItalianLandscapeBlueCMYK from "../assets/Loghi/Italian-Landscape-Blue-CMYK.pdf-r45mw6eua0goumyy0kbyfooyc3voana00b16oslm9s.png";
 import PartitaGenereLogo from "../assets/Loghi/partita-di-genere-r45mvu6xt606uceeqcisg43yrmxl0xpyo0r09dppts.png";
+import ricettaImg from "../assets/Frame 427321021.png";
 
 
 const TonnoAlalunga: React.FC = () => {
@@ -238,7 +239,7 @@ const TonnoAlalunga: React.FC = () => {
                   margin: 0,
                 }}
               >
-                Il tonno alalunga viene catturato con il palamito, o palangaro, un particolare attrezzo con ami. Questo metodo è uno dei sistemi di pesca più selettivi: una pesca attenta alla salvaguardia delle specie protette che presta grande attenzione alla sostenibilità.
+                Il tonno alalunga viene catturato con il palamito, o palangaro, un particolare attrezzo con ami. Il nostro Alalunga: una pesca attenta alla salvaguardia delle specie protette che presta grande attenzione alla sostenibilità.
               </p>
             </div>
           </div>
@@ -349,7 +350,7 @@ const TonnoAlalunga: React.FC = () => {
   }}
 >
   <img
-    src={ChiSiamo24}
+    src={ricettaImg}
     alt="Chi siamo OHissa"
     style={{
       width: "100%",
@@ -390,18 +391,20 @@ const TonnoAlalunga: React.FC = () => {
         background: '#fff',
         borderRadius: '18px',
         boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
-        maxWidth: '480px',
-        width: '90vw',
-        margin: '0 auto',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+          maxWidth: '480px',
+          width: '90vw',
+          margin: '0 auto',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxSizing: 'border-box',
       }}>
         <img src={Frame412_1} alt="Saku di Salmone, mango, crema di mango e uova di Salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
         <div style={{ padding: '18px 18px 12px 18px', width: '100%' }}>
           <h3 style={{ fontWeight: 700, fontSize: '1.18rem', marginBottom: '8px', color: '#222' }}>
-            OHissa burger                  </h3>
+            Carpaccio di Pesce Spada al limone                 </h3>
           <p style={{ fontSize: '1rem', color: '#444', fontWeight: 400 }}>
             Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
           </p>

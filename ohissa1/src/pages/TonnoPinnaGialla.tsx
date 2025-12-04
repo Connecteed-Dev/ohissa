@@ -17,6 +17,8 @@ import LogoFrame331 from "../assets/Frame 331.png";
 import Logo7 from "../assets/image 7.png";
 import Logo6 from "../assets/image 6.png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
+import Frame390_4 from "../assets/Frame 390 (4).png";
+import Frame412_1 from "../assets/Frame 38 (2).png";
 
 // loghi certificazioni
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
@@ -669,7 +671,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               }}
             >
               <img
-                src={ricettaImg}
+                src={Frame412_1}
                 alt="Ricetta con Salmone"
                 style={{
                   width: "100%",
@@ -687,8 +689,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     color: "#222",
                   }}
                 >
-                  Carpaccio di Pesce Spada al limone
-                </h3>
+OHissa burger                </h3>
                 <p
                   style={{
                     fontSize: "0.98rem",

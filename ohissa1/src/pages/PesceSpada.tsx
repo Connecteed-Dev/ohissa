@@ -286,7 +286,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 transform: isDesktop ? "none" : "translateX(-50%)",
                 maxWidth: isDesktop ? "420px" : "90vw",
                 width: isDesktop ? undefined : "90vw",
-                color: "#000000ff",
+                color: "#ffffffff",
                 textShadow: "0 2px 10px rgba(0,0,0,0.6)",
                 lineHeight: isDesktop ? 1.25 : 1.22,
                 padding: isDesktop ? undefined : "0 8vw",
@@ -475,8 +475,14 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 borderRadius: "18px",
                 boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
                 maxWidth: 520,
-                width: "100%",
+                width: isDesktop ? "520px" : "100%",
+                margin: isDesktop ? "0 auto" : undefined,
                 overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                boxSizing: "border-box",
               }}
             >
               <img

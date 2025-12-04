@@ -325,8 +325,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 }}
               >
                 Il nostro Salmone proviene da pesca sostenibile certificata in
-                Norvegia e viene lavorato secondo standard FAO e UE.
-                L&apos;allevamento secondo la FAO è una fondamentale
+                Norvegia e viene lavorato secondo standard FAO e UE.La FAO definisce la parola "allevamento"
+                come una fondamentale
                 opportunità per fornire risorse alimentari alla popolazione
                 mondiale più povera e per sostenere i consumi dei paesi
                 occidentali.
