@@ -613,7 +613,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             color: "#222",
           }}
         >
-          Saku di Salmone, mango, crema di mango e uova di Salmone
+          Tartare di Salmone OHissa
         </h3>
         <p
           style={{
@@ -623,11 +623,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             color: "#444",
           }}
         >
-          Un piatto fresco, dal sapore esotico: il gusto ricco e
-          avvolgente del Salmone è bilanciato dalla freschezza e dalla
-          leggera acidità del mango, usato sia a cubetti che in crema.
-          L&apos;aggiunta delle uova di Salmone garantisce al piatto la
-          giusta sapidità.
+           Condisci la Tartare di Salmone OHissa con olio, sale e pepe.
+ Prepara la salsa mescolando maionese, paprika e senape.
+ Disponi la tartare in un coppapasta e completa con la salsa sopra e
+ germogli.
         </p>
       </div>
     </div>

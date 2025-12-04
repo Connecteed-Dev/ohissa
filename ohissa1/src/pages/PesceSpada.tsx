@@ -531,8 +531,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             color: "#444",
           }}
         >
-          Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
-        </p>
+ Affetta il pesce a fettine sottilissime e disponile sul piatto.
+ Prepara una citronette con olio, succo di limone, sale e pepe.
+ Condisci il carpaccio con la citronette, aggiungi zeste di limone e
+ germogli.
+ Lascia insaporire qualche minuto prima di servire        </p>
       </div>
     </div>
   </div>

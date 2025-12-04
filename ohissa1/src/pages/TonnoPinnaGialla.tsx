@@ -714,7 +714,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     color: "#222",
                   }}
                 >
-OHissa burger                </h3>
+ Tartare di Tonno OHissa             </h3>
                 <p
                   style={{
                     fontSize: "0.98rem",
@@ -724,7 +724,11 @@ OHissa burger                </h3>
                   }}
                 >
                   
-                                  Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
+ Cuoci il riso, condiscilo con aceto di riso e lascialo raffreddare.
+ Disponi il riso nella bowl e aggiungi a sezioni: Tartare di Tonno
+ OHissa, mango, edamame, germogli e spinacino.
+ Condisci con salsa di soia, olio di sesamo e semi di sesamo.
+
 
                 </p>
               </div>

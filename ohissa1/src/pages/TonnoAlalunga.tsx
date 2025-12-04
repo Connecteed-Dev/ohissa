@@ -441,9 +441,12 @@ const TonnoAlalunga: React.FC = () => {
             color: "#222",
           }}
         >
-Saku di salmone con pomodori secchi         </h3>
+Carpaccio di Tonno OHissa        </h3>
         <p style={{ fontSize: "1rem", color: "#444", fontWeight: 400 }}>
-          Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
+ Disponi il Carpaccio di Tonno OHissa sul piatto.
+ Condisci con olio, succo di limone, sale e pepe rosa.
+ Decora con una fetta di limone al centro.
+
         </p>
       </div>
     </div>
