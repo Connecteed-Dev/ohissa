@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import ChiSiamo24 from "../assets/Chi siamo(24).png";
+import ChiSiamoBg from "../assets/Chi siamo.png";
 
 import Group3 from "../assets/Group 3.png";
 import Group3_1 from "../assets/Group 3 (1).png";
@@ -336,6 +337,7 @@ const TonnoAlalunga: React.FC = () => {
         </div>
       </div>
     ))}
+<<<<<<< HEAD
   </section><section
     className="ricetta-suggerimento-section"
     style={{
@@ -375,6 +377,64 @@ const TonnoAlalunga: React.FC = () => {
       zIndex: 2,
     }}
   >
+=======
+  </section>
+  <section
+             style={
+              isMobile
+                ? {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "52px 0 64px",
+                    overflow: "hidden",
+                    backgroundImage: `url(${ChiSiamoBg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }
+                : {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "72px 0 76px",
+                    overflow: "hidden",
+                  }
+            }
+          >
+            {!isMobile && (
+              <img
+                src={ChiSiamo24}
+                alt="Chi siamo OHissa"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                  objectFit: "cover",
+                  opacity: 0.7,
+                }}
+              />
+            )}
+            <div
+              style={{
+                position: "relative",
+                width: "min(960px, 92vw)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "24px",
+                zIndex: 2,
+              }}
+            >
+>>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
     <h2
       style={{
         color: "#fff",
@@ -391,6 +451,7 @@ const TonnoAlalunga: React.FC = () => {
         background: '#fff',
         borderRadius: '18px',
         boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
+<<<<<<< HEAD
           maxWidth: '480px',
           width: '90vw',
           margin: '0 auto',
@@ -406,6 +467,33 @@ const TonnoAlalunga: React.FC = () => {
           <h3 style={{ fontWeight: 700, fontSize: '1.18rem', marginBottom: '8px', color: '#222' }}>
             Carpaccio di Pesce Spada al limone                 </h3>
           <p style={{ fontSize: '1rem', color: '#444', fontWeight: 400 }}>
+=======
+        maxWidth: '480px',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
+      }}>
+        <img src={Frame412_1} alt="Saku di Salmone, mango, crema di mango e uova di Salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+        <div style={{ padding: "18px 20px 16px" }}>
+          <h3  style={{
+            fontWeight: 700,
+            fontSize: "1.18rem",
+            margin: "0 0 8px",
+            color: "#222",
+          }}>
+            OHissa burger                  </h3>
+          <p style={{
+            fontSize: "0.98rem",
+            lineHeight: 1.7,
+            margin: 0,
+            color: "#444",
+          }}>
+>>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
             Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
           </p>
         </div>
@@ -457,6 +545,21 @@ const TonnoAlalunga: React.FC = () => {
                   borderRadius: "0 0 0 0",
                 }}
               />
+
+              <h2
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.35rem",
+                  fontWeight: 700,
+                  margin: "16px 0 10px 0",
+                  color: "#008578",
+                  lineHeight: 1.2,
+                }}
+              >
+                Cosa ne pensi di OHissa?
+                <br />
+                Vuoi saperne di più?
+              </h2>
 
               <form
                 onSubmit={handleSubmit}

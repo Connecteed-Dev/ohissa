@@ -8,6 +8,7 @@ import Frame350 from "../assets/Frame 350.png";   // tondo salmone
 import Frame412 from "../assets/Frame 412.png";       // tartare
 import Frame412_1 from "../assets/Frame 412 (1).png"; // saku
 import Frame412_2 from "../assets/Frame 412 (2).png"; // poke
+import ChiSiamoBg from "../assets/Chi siamo.png";
 
 import ChiSiamo19 from "../assets/Chi siamo (19).png"; // cerchio verde ricetta
 import ChiSiamo24 from "../assets/Chi siamo(24).png";
@@ -374,7 +375,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <div
                 className="story-image-wrapper"
-                style={{ position: "relative", width: 370, height: 380 }}
+                style={{ position: "relative", width: 370, height: 410 }}
               >
                 <img
                   src={Frame412}
@@ -423,7 +424,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <div
                 className="story-image-wrapper"
-                style={{ position: "relative", width: 370, height: 380 }}
+                style={{ position: "relative", width: 370, height: 410 }}
               >
                 <img
                   src={Frame412_1}
@@ -472,7 +473,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             >
               <div
                 className="story-image-wrapper"
-                style={{ position: "relative", width: 370, height: 380 }}
+                style={{ position: "relative", width: 370, height: 410 }}
               >
                 <img
                   src={Frame412_2}
@@ -516,43 +517,60 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         {/* SUGGERIMENTO RICETTA */}
 {/* SUGGERIMENTO RICETTA */}
 <section
-  style={{
-    width: "100vw",
-    background: "#00a6a0",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
-    overflow: "hidden",
-  }}
->
-  <img
-    src={ChiSiamo24}
-    alt="Chi siamo OHissa"
-    style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      zIndex: 1,
-      objectFit: "cover",
-      opacity: 0.7,
-    }}
-  />
-  <div
-    style={{
-      position: "relative",
-      width: "min(960px, 92vw)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "24px",
-      zIndex: 2,
-    }}
-  >
+            style={
+              isMobile
+                ? {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "52px 0 64px",
+                    overflow: "hidden",
+                    backgroundImage: `url(${ChiSiamoBg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }
+                : {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "72px 0 76px",
+                    overflow: "hidden",
+                  }
+            }
+          >
+            {!isMobile && (
+              <img
+                src={ChiSiamo24}
+                alt="Chi siamo OHissa"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                  objectFit: "cover",
+                  opacity: 0.7,
+                }}
+              />
+            )}
+            <div
+              style={{
+                position: "relative",
+                width: "min(960px, 92vw)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "24px",
+                zIndex: 2,
+              }}
+            >
     <h2
       style={{
         color: "#fff",
@@ -660,6 +678,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   borderRadius: "0 0 0 0",
                 }}
               />
+
+              <h2
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.35rem",
+                  fontWeight: 700,
+                  margin: "16px 0 10px 0",
+                  color: "#008578",
+                  lineHeight: 1.2,
+                }}
+              >
+                Cosa ne pensi di OHissa?
+                <br />
+                Vuoi saperne di più?
+              </h2>
 
               <form
                 onSubmit={handleSubmit}

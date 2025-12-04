@@ -17,8 +17,12 @@ import LogoFrame331 from "../assets/Frame 331.png";
 import Logo7 from "../assets/image 7.png";
 import Logo6 from "../assets/image 6.png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
+<<<<<<< HEAD
 import Frame390_4 from "../assets/Frame 390 (4).png";
 import Frame412_1 from "../assets/Frame 38 (2).png";
+=======
+import ChiSiamoBg from "../assets/Chi siamo.png";
+>>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
 
 // loghi certificazioni
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
@@ -112,43 +116,45 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
       {/* HERO */}
       <section className="tonno-hero">
-        <div
-          style={{
-            position: "absolute",
-            top: isDesktop ? "18%" : "18%",
-            left: isDesktop ? "6%" : "50%",
-            transform: isDesktop ? "none" : "translateX(-50%)",
-            maxWidth: isDesktop ? "420px" : "90vw",
-            width: isDesktop ? undefined : "90vw",
-            color: "#000000ff",
-            textShadow: "0 2px 10px rgba(0,0,0,0.6)",
-            lineHeight: isDesktop ? 1.25 : 1.22,
-          }}
-        >
-          <h1
+        {isDesktop && (
+          <div
             style={{
-              fontSize: isDesktop ? "3.2rem" : "2.1rem",
-              fontWeight: 800,
-              margin: 0,
-              marginBottom: isDesktop ? "18px" : "12px",
-              color: "#00a6a0",
-              letterSpacing: "-1px",
+              position: "absolute",
+              top: "18%",
+              left: "6%",
+              transform: "none",
+              maxWidth: "420px",
+              width: undefined,
+              color: "#000000ff",
+              textShadow: "0 2px 10px rgba(0,0,0,0.6)",
+              lineHeight: 1.25,
             }}
           >
-            Tonno a pinna gialla
-          </h1>
-          <p
-            style={{
-              fontSize: isDesktop ? "1.25rem" : "1.05rem",
-              margin: 0,
-              color: "#222",
-              fontWeight: 500,
-              textShadow: "0 2px 10px rgba(255,255,255,0.2)",
-            }}
-          >
-            Sapore delicato, consistenza soda, ricco di Omega 3 e proteine nobili.
-          </p>
-        </div>
+            <h1
+              style={{
+                fontSize: "3.2rem",
+                fontWeight: 800,
+                margin: 0,
+                marginBottom: "18px",
+                color: "#00a6a0",
+                letterSpacing: "-1px",
+              }}
+            >
+              Tonno a pinna gialla
+            </h1>
+            <p
+              style={{
+                fontSize: "1.25rem",
+                margin: 0,
+                color: "#222",
+                fontWeight: 500,
+                textShadow: "0 2px 10px rgba(255,255,255,0.2)",
+              }}
+            >
+              Sapore delicato, consistenza soda, ricco di Omega 3 e proteine nobili.
+            </p>
+          </div>
+        )}
         <img
           src={heroTonno}
           alt="Tonno a pinna gialla in mare"
@@ -610,43 +616,60 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
  <section
-         style={{
-    width: "100vw",
-    background: "#00a6a0",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
-    overflow: "hidden",
-  }}
->
-  <img
-    src={ChiSiamo24}
-    alt="Chi siamo OHissa"
-    style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      zIndex: 1,
-      objectFit: "cover",
-      opacity: 0.7,
-    }}
-  />
-  <div
-    style={{
-      position: "relative",
-      width: "min(960px, 92vw)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "24px",
-      zIndex: 2,
-    }}
-  >
+             style={
+              isMobile
+                ? {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "52px 0 64px",
+                    overflow: "hidden",
+                    backgroundImage: `url(${ChiSiamoBg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }
+                : {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "72px 0 76px",
+                    overflow: "hidden",
+                  }
+            }
+          >
+            {!isMobile && (
+              <img
+                src={ChiSiamo24}
+                alt="Chi siamo OHissa"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                  objectFit: "cover",
+                  opacity: 0.7,
+                }}
+              />
+            )}
+            <div
+              style={{
+                position: "relative",
+                width: "min(960px, 92vw)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "24px",
+                zIndex: 2,
+              }}
+            >
     <h2
       style={{
         color: "#fff",
@@ -660,15 +683,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               Un suggerimento per una ricetta sfiziosa e veloce
             </h2>
 
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: "18px",
-                boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
-                maxWidth: 520,
-                width: "100%",
-                overflow: "hidden",
-              }}
+           <div style={{
+        background: '#fff',
+        borderRadius: '18px',
+        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
+        maxWidth: '480px',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
+      }}
             >
               <img
                 src={Frame412_1}
@@ -713,6 +741,7 @@ OHissa burger                </h3>
       {/* FORM CONTATTI */}
          {/* FORM CONTATTI SU SFONDO GRAFICO */}
        {/* FORM CONTATTI OHISSA */}
+        {/* FORM CONTATTI OHISSA */}
         <div
           style={{
             position: "relative",
@@ -755,6 +784,21 @@ OHissa burger                </h3>
                   borderRadius: "0 0 0 0",
                 }}
               />
+
+              <h2
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.35rem",
+                  fontWeight: 700,
+                  margin: "16px 0 10px 0",
+                  color: "#008578",
+                  lineHeight: 1.2,
+                }}
+              >
+                Cosa ne pensi di OHissa?
+                <br />
+                Vuoi saperne di più?
+              </h2>
 
               <form
                 onSubmit={handleSubmit}
@@ -1216,8 +1260,15 @@ OHissa burger                </h3>
         </div>
 
         {/* FOOTER */}
-        <footer className="ohissa-footer" style={{ width: "100vw", marginTop: isDesktop ? "-120px" : "-60px", position: "relative", zIndex: 2 }}>
-          {/* fascia nera */}
+          <footer
+            className="ohissa-footer"
+            style={{
+              width: "100vw",
+              marginTop: isDesktop ? "-120px" : 0,
+              position: isDesktop ? "relative" : "static",
+              zIndex: 2,
+            }}
+          >
           <div
             className="ohissa-footer-top"
             style={{

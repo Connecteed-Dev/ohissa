@@ -163,21 +163,24 @@ const Navbar: React.FC = () => {
             href="/ohissamenosessanta"
             style={{
               position: "fixed",
-              top: 18,
+              top: 19,
               right: 32,
-              padding: isMobile && menuOpen ? "2px 7px" : isMobile ? "6px 12px" : "10px 24px",
-              border: isMobile ? "1px solid #fff" : "2px solid #fff",
-              borderRadius: isMobile ? "6px" : "8px",
+              padding: "1px 3px",
+              border: "1px solid #fff",
+              borderRadius: "4px",
               color: "#fff",
               background: "rgba(7,86,89,0.18)",
-              fontWeight: 600,
-              fontSize: isMobile && menuOpen ? "0.62rem" : isMobile ? "0.82rem" : "1.05rem",
+              fontWeight: 500,
+              fontSize: "0.68rem",
               textDecoration: "none",
-              transition: "background 0.2s, color 0.2s, font-size 0.2s, padding 0.2s",
+              transition: "background 0.2s, color 0.2s",
+              lineHeight: "1.1",
+              textAlign: "center",
+              whiteSpace: "pre-line",
               zIndex: 100000
             }}
           >
-            Area Professionisti
+            Area<br />Professionisti
           </a>
           {/* Logo e X centrati in desktop, logo centrato in alto in mobile, X a destra */}
           {!isMobile ? (

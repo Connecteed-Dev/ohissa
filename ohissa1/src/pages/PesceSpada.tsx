@@ -7,6 +7,7 @@ import PescaProduzione1 from "../assets/2-3bb5d4b6.png"; // barca
 import Frame412_3 from "../assets/Frame 412 (3).png";      // tartare pesce spada
 import Frame412_1 from "../assets/Frame 38 (1).png";      // immagine ricetta
 import ChiSiamo24 from "../assets/Chi siamo(24).png";
+import ChiSiamoBg from "../assets/Chi siamo.png";
 import Frame374 from "../assets/Frame 374.png";            // sfondo form contatti
 import Logo10 from "../assets/image 10.png";
 import Logo9 from "../assets/image 9.png";
@@ -419,43 +420,34 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </section>
 
         {/* SUGGERIMENTO RICETTA */}
-        <section
-          style={{
-            position: "relative",
-            width: "100vw",
-            minHeight: 480,
-            display: "flex",
-            justifyContent: "center",
-            padding: isDesktop ? "72px 0 76px" : "52px 0 64px",
-            overflow: "hidden",
-          }}
-        >
-           <img
-    src={ChiSiamo24}
-    alt="Chi siamo OHissa"
-    style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      zIndex: 1,
-      objectFit: "cover",
-      opacity: 0.7,
-    }}
-  />
-          <div
-            style={{
-              position: "relative",
-              width: "min(960px, 92vw)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "24px",
-              zIndex: 2,
-            }}
+          <section
+             style={
+              isMobile
+                ? {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "52px 0 64px",
+                    overflow: "hidden",
+                    backgroundImage: `url(${ChiSiamoBg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }
+                : {
+                    position: "relative",
+                    width: "100vw",
+                    minHeight: 480,
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "72px 0 76px",
+                    overflow: "hidden",
+                  }
+            }
           >
+<<<<<<< HEAD
             <h2
               style={{
                 color: "#fff",
@@ -485,41 +477,98 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 boxSizing: "border-box",
               }}
             >
+=======
+            {!isMobile && (
+>>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
               <img
-                src={Frame412_1}
-                alt="Ricetta a base di Pesce Spada"
+                src={ChiSiamo24}
+                alt="Chi siamo OHissa"
                 style={{
                   width: "100%",
-                  height: 230,
-                  objectFit: "cover",
+                  height: "auto",
                   display: "block",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                  objectFit: "cover",
+                  opacity: 0.7,
                 }}
               />
-              <div style={{ padding: "18px 20px 16px" }}>
-                <h3
+            )}
+            <div
+              style={{
+                position: "relative",
+                width: "min(960px, 92vw)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "24px",
+                zIndex: 2,
+              }}
+            >
+    <h2
+      style={{
+        color: "#fff",
+        fontSize: isDesktop ? "2.1rem" : "1.7rem",
+        fontWeight: 700,
+        textAlign: "center",
+        margin: 0,
+        textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+      }}
+    >
+                Un suggerimento per una ricetta sfiziosa e veloce
+              </h2>
+
+             <div style={{
+        background: '#fff',
+        borderRadius: '18px',
+        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
+        maxWidth: '480px',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
+      }}>
+                <img
+                  src={Frame412_1}
+                  alt="Ricetta a base di Pesce Spada"
                   style={{
-                    fontWeight: 700,
-                    fontSize: "1.18rem",
-                    margin: "0 0 8px",
-                    color: "#222",
+                    width: "100%",
+                    height: 230,
+                    objectFit: "cover",
+                    display: "block",
                   }}
-                >
-                  Carpaccio di Pesce Spada al limone
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.98rem",
-                    lineHeight: 1.7,
-                    margin: 0,
-                    color: "#444",
-                  }}
-                >
-                  Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
-                </p>
+                />
+                <div style={{ padding: "18px 20px 16px" }}>
+                  <h3
+                    style={{
+                      fontWeight: 700,
+                      fontSize: "1.18rem",
+                      margin: "0 0 8px",
+                      color: "#222",
+                    }}
+                  >
+                    Carpaccio di Pesce Spada al limone
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "0.98rem",
+                      lineHeight: 1.7,
+                      margin: 0,
+                      color: "#444",
+                    }}
+                  >
+                    Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* FORM CONTATTI OHISSA */}
         <div
@@ -564,6 +613,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   borderRadius: "0 0 0 0",
                 }}
               />
+
+              <h2
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.35rem",
+                  fontWeight: 700,
+                  margin: "16px 0 10px 0",
+                  color: "#008578",
+                  lineHeight: 1.2,
+                }}
+              >
+                Cosa ne pensi di OHissa?
+                <br />
+                Vuoi saperne di più?
+              </h2>
 
               <form
                 onSubmit={handleSubmit}
