@@ -17,12 +17,9 @@ import LogoFrame331 from "../assets/Frame 331.png";
 import Logo7 from "../assets/image 7.png";
 import Logo6 from "../assets/image 6.png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
-<<<<<<< HEAD
 import Frame390_4 from "../assets/Frame 390 (4).png";
 import Frame412_1 from "../assets/Frame 38 (2).png";
-=======
 import ChiSiamoBg from "../assets/Chi siamo.png";
->>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
 
 // loghi certificazioni
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
@@ -688,18 +685,18 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         borderRadius: '18px',
         boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
         maxWidth: '480px',
-        width: isMobile ? '92vw' : '90vw',
+        width: isMobile ? '92vw' : '480px',
         margin: isMobile ? '24px 0 0' : '0 auto',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: isMobile ? 'center' : undefined,
-        marginLeft: isMobile ? undefined : undefined
+        justifyContent: 'center',
+        boxSizing: 'border-box',
       }}
             >
               <img
-                src={Frame412_1}
+                src={ricettaImg}
                 alt="Ricetta con Salmone"
                 style={{
                   width: "100%",

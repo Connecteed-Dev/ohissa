@@ -446,67 +446,35 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     overflow: "hidden",
                   }
             }
-          >
-<<<<<<< HEAD
-            <h2
-              style={{
-                color: "#fff",
-                fontSize: isDesktop ? "2.1rem" : "1.7rem",
-                fontWeight: 700,
-                textAlign: "center",
-                margin: 0,
-                textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-              }}
-            >
-              Un suggerimento per una ricetta sfiziosa e veloce
-            </h2>
-
-            <div
-              style={{
-                background: "rgba(255,255,255,0.97)",
-                borderRadius: "18px",
-                boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
-                maxWidth: 520,
-                width: isDesktop ? "520px" : "100%",
-                margin: isDesktop ? "0 auto" : undefined,
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                boxSizing: "border-box",
-              }}
-            >
-=======
-            {!isMobile && (
->>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
-              <img
-                src={ChiSiamo24}
-                alt="Chi siamo OHissa"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  zIndex: 1,
-                  objectFit: "cover",
-                  opacity: 0.7,
-                }}
-              />
-            )}
-            <div
-              style={{
-                position: "relative",
-                width: "min(960px, 92vw)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "24px",
-                zIndex: 2,
-              }}
-            >
+>
+  {!isMobile && (
+    <img
+      src={ChiSiamo24}
+      alt="Chi siamo OHissa"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: 1,
+        objectFit: "cover",
+        opacity: 0.7,
+      }}
+    />
+  )}
+  <div
+    style={{
+      position: "relative",
+      width: "min(960px, 92vw)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "24px",
+      zIndex: 2,
+    }}
+  >
     <h2
       style={{
         color: "#fff",
@@ -517,58 +485,58 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         textShadow: "0 2px 10px rgba(0,0,0,0.5)",
       }}
     >
-                Un suggerimento per una ricetta sfiziosa e veloce
-              </h2>
-
-             <div style={{
-        background: '#fff',
-        borderRadius: '18px',
-        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
-        maxWidth: '480px',
-        width: isMobile ? '92vw' : '90vw',
-        margin: isMobile ? '24px 0 0' : '0 auto',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: isMobile ? 'center' : undefined,
-        marginLeft: isMobile ? undefined : undefined
-      }}>
-                <img
-                  src={Frame412_1}
-                  alt="Ricetta a base di Pesce Spada"
-                  style={{
-                    width: "100%",
-                    height: 230,
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
-                <div style={{ padding: "18px 20px 16px" }}>
-                  <h3
-                    style={{
-                      fontWeight: 700,
-                      fontSize: "1.18rem",
-                      margin: "0 0 8px",
-                      color: "#222",
-                    }}
-                  >
-                    Carpaccio di Pesce Spada al limone
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "0.98rem",
-                      lineHeight: 1.7,
-                      margin: 0,
-                      color: "#444",
-                    }}
-                  >
-                    Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+      Un suggerimento per una ricetta sfiziosa e veloce
+    </h2>
+    <div
+      style={{
+        background: "#fff",
+        borderRadius: "18px",
+        boxShadow: "0 2px 18px rgba(0,0,0,0.12)",
+        maxWidth: "480px",
+        width: isMobile ? "92vw" : "90vw",
+        margin: isMobile ? "24px 0 0" : "0 auto",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: isMobile ? "center" : undefined,
+      }}
+    >
+      <img
+        src={Frame412_1}
+        alt="Ricetta a base di Pesce Spada"
+        style={{
+          width: "100%",
+          height: 230,
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{ padding: "18px 20px 16px" }}>
+        <h3
+          style={{
+            fontWeight: 700,
+            fontSize: "1.18rem",
+            margin: "0 0 8px",
+            color: "#222",
+          }}
+        >
+          Carpaccio di Pesce Spada al limone
+        </h3>
+        <p
+          style={{
+            fontSize: "0.98rem",
+            lineHeight: 1.7,
+            margin: 0,
+            color: "#444",
+          }}
+        >
+          Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di salmone garantisce al piatto la giusta sapidità.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* FORM CONTATTI OHISSA */}
         <div

@@ -240,13 +240,13 @@ const TonnoAlalunga: React.FC = () => {
                   margin: 0,
                 }}
               >
-                Il tonno alalunga viene catturato con il palamito, o palangaro, un particolare attrezzo con ami. Il nostro Alalunga: una pesca attenta alla salvaguardia delle specie protette che presta grande attenzione alla sostenibilità.
+                Il tonno alalunga viene catturato con il palamito, o palangaro, un particolare attrezzo con ami. Il nostro Alalunga viene pescato con metodi a basso impatto: una pesca attenta alla salvaguardia delle specie protette che presta grande attenzione alla sostenibilità.
               </p>
             </div>
           </div>
         </section>
 {/* Sezione Tagli di Tonno Alalunga – FULL SCREEN */}
-  <><section
+  <section
     className="alalunga-cuts-section"
     style={{
       width: "100vw",
@@ -336,51 +336,11 @@ const TonnoAlalunga: React.FC = () => {
           </p>
         </div>
       </div>
-    ))}
-<<<<<<< HEAD
-  </section><section
-    className="ricetta-suggerimento-section"
-    style={{
-    width: "100vw",
-    background: "#00a6a0",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: isDesktop ? "64px 0 72px" : "40px 0 40px",
-    overflow: "hidden",
-  }}
->
-  <img
-    src={ricettaImg}
-    alt="Chi siamo OHissa"
-    style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      zIndex: 1,
-      objectFit: "cover",
-      opacity: 0.7,
-    }}
-  />
-  <div
-    style={{
-      position: "relative",
-      width: "min(960px, 92vw)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "24px",
-      zIndex: 2,
-    }}
-  >
-=======
-  </section>
-  <section
-             style={
+  ))}
+</section>
+{/* Ricetta suggerimento section */}
+<section
+            style={
               isMobile
                 ? {
                     position: "relative",
@@ -434,7 +394,6 @@ const TonnoAlalunga: React.FC = () => {
                 zIndex: 2,
               }}
             >
->>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
     <h2
       style={{
         color: "#fff",
@@ -445,61 +404,51 @@ const TonnoAlalunga: React.FC = () => {
         textShadow: "0 2px 10px rgba(0,0,0,0.5)",
       }}
     >
-        Un suggerimento per una ricetta sfiziosa e veloce
-      </h2>
-      <div style={{
-        background: '#fff',
-        borderRadius: '18px',
-        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
-<<<<<<< HEAD
-          maxWidth: '480px',
-          width: '90vw',
-          margin: '0 auto',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxSizing: 'border-box',
-      }}>
-        <img src={Frame412_1} alt="Saku di Salmone, mango, crema di mango e uova di Salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
-        <div style={{ padding: '18px 18px 12px 18px', width: '100%' }}>
-          <h3 style={{ fontWeight: 700, fontSize: '1.18rem', marginBottom: '8px', color: '#222' }}>
-            Carpaccio di Pesce Spada al limone                 </h3>
-          <p style={{ fontSize: '1rem', color: '#444', fontWeight: 400 }}>
-=======
-        maxWidth: '480px',
-        width: isMobile ? '92vw' : '90vw',
-        margin: isMobile ? '24px 0 0' : '0 auto',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: isMobile ? 'center' : undefined,
-        marginLeft: isMobile ? undefined : undefined
-      }}>
-        <img src={Frame412_1} alt="Saku di Salmone, mango, crema di mango e uova di Salmone" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
-        <div style={{ padding: "18px 20px 16px" }}>
-          <h3  style={{
+      Un suggerimento per una ricetta sfiziosa e veloce
+    </h2>
+    <div
+      style={{
+        background: "#fff",
+        borderRadius: "18px",
+        boxShadow: "0 2px 18px rgba(0,0,0,0.12)",
+        maxWidth: "480px",
+        width: "90vw",
+        margin: "0 auto",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        boxSizing: "border-box",
+      }}
+    >
+      <img
+        src={Frame412_1}
+        alt="Saku di Salmone, mango, crema di mango e uova di Salmone"
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{ padding: "18px 18px 12px 18px", width: "100%" }}>
+        <h3
+          style={{
             fontWeight: 700,
             fontSize: "1.18rem",
-            margin: "0 0 8px",
+            marginBottom: "8px",
             color: "#222",
-          }}>
-            OHissa burger                  </h3>
-          <p style={{
-            fontSize: "0.98rem",
-            lineHeight: 1.7,
-            margin: 0,
-            color: "#444",
-          }}>
->>>>>>> 7a9906a10b2f6bbbab26f40e73825805fa0291c8
-            Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
-          </p>
-        </div>
+          }}
+        >
+Saku di salmone con pomodori secchi         </h3>
+        <p style={{ fontSize: "1rem", color: "#444", fontWeight: 400 }}>
+          Un piatto fresco, dal sapore esotico: il gusto ricco e avvolgente del Salmone è bilanciato dalla freschezza e dalla leggera acidità del mango, usato sia a cubetti che in crema. L’aggiunta delle uova di Salmone garantisce al piatto la giusta sapidità.
+        </p>
       </div>
     </div>
-    </section></>
+  </div>
+</section>
         
 
         {/* FORM CONTATTI OHISSA */}
@@ -1325,7 +1274,8 @@ const TonnoAlalunga: React.FC = () => {
               />
             </div>
           </div>
-        </footer></main>
+        </footer>
+      </main>
     </div>
   );
 };
