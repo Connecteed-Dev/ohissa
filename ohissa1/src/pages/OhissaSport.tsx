@@ -27,6 +27,7 @@ import AmareIlMare16 from "../assets/Amare il mare (16).png";
 import Frame384_5 from "../assets/Frame 384 (5).png";
 import Frame427_2 from "../assets/Frame 427321007 (2).png";
 import Frame381 from "../assets/Frame 381.png";
+import Frame381_1 from "../assets/Frame 381 (1).png";
 import OhissaSportVideo from "../assets/Ohissa-per-lo-Sport-1.mp4";
 import Frame415_2 from "../assets/Frame 415 (2).png";
 import Footer from "../assets/Footer.png";
@@ -531,7 +532,19 @@ const OhissaSport: React.FC = () => {
             Il tuo browser non supporta il video HTML5.
           </video>
 
-        </section>
+        {/* Immagine sotto il video */}
+        <img
+          src={Frame381_1}
+          alt="Decorazione OHissa sport"
+          style={{
+            width: isMobile ? "32vw" : "min(300px, 90vw)",
+            maxWidth: "100%",
+            display: "block",
+            margin: "18px auto 0 auto",
+            borderRadius: "12px"
+          }}
+        />
+      </section>
 
         {/* RIGA CON I 3 CERCHI (BOTTOM) ------------------------------------ */}
         <section

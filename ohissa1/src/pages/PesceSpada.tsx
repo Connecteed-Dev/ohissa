@@ -5,9 +5,9 @@ import Group2_1 from "../assets/Group 2 (1).png";          // hero pesce spada
 import Frame350_1 from "../assets/Frame 350 (1).png";      // tondo pesce spada
 import PescaProduzione1 from "../assets/2-3bb5d4b6.png"; // barca
 import Frame412_3 from "../assets/Frame 412 (3).png";      // tartare pesce spada
-import Frame412_1 from "../assets/Frame 38 (1).png";      // immagine ricetta
+import Frame412_1 from "../assets/photo_5877678267047808096_y.jpg";      // immagine ricetta
 import ChiSiamo24 from "../assets/Chi siamo(24).png";
-import ChiSiamoBg from "../assets/Chi siamo.png";
+import ChiSiamoBg from "../assets/Chi siamo (25).png";
 import Frame374 from "../assets/Frame 374.png";            // sfondo form contatti
 import Logo10 from "../assets/image 10.png";
 import Logo9 from "../assets/image 9.png";
@@ -420,62 +420,46 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </section>
 
         {/* SUGGERIMENTO RICETTA */}
-          <section
-             style={
-              isMobile
-                ? {
-                    position: "relative",
-                    width: "100vw",
-                    minHeight: 480,
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "52px 0 64px",
-                    overflow: "hidden",
-                    backgroundImage: `url(${ChiSiamoBg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                  }
-                : {
-                    position: "relative",
-                    width: "100vw",
-                    minHeight: 480,
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "72px 0 76px",
-                    overflow: "hidden",
-                  }
-            }
->
-  {!isMobile && (
-    <img
-      src={ChiSiamo24}
-      alt="Chi siamo OHissa"
-      style={{
-        width: "100%",
-        height: "auto",
-        display: "block",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        zIndex: 1,
-        objectFit: "cover",
-        opacity: 0.7,
-      }}
-    />
-  )}
-  <div
-    style={{
-      position: "relative",
-      width: "min(960px, 92vw)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "24px",
-      zIndex: 2,
-    }}
-  >
-    <h2
+        <section
+          style={{
+            position: "relative",
+            width: "100vw",
+            minHeight: 480,
+            display: "flex",
+            justifyContent: "center",
+            padding: isMobile ? "52px 0 64px" : "72px 0 76px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={isMobile ? ChiSiamoBg : ChiSiamo24}
+            alt="Chi siamo OHissa"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              objectFit: "cover",
+              opacity: 0.7,
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              position: "relative",
+              width: "min(960px, 92vw)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "24px",
+              zIndex: 2,
+            }}
+          >
+  
+      <h2
       style={{
         color: "#fff",
         fontSize: isDesktop ? "2.1rem" : "1.7rem",
@@ -487,21 +471,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     >
       Un suggerimento per una ricetta sfiziosa e veloce
     </h2>
-    <div
-      style={{
-        background: "#fff",
-        borderRadius: "18px",
-        boxShadow: "0 2px 18px rgba(0,0,0,0.12)",
-        maxWidth: "480px",
-        width: isMobile ? "92vw" : "90vw",
-        margin: isMobile ? "24px 0 0" : "0 auto",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: isMobile ? "center" : undefined,
-      }}
-    >
+     <div style={{
+        background: '#fff',
+        borderRadius: '18px',
+        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
+        maxWidth: '480px',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
+      }}>
       <img
         src={Frame412_1}
         alt="Ricetta a base di Pesce Spada"

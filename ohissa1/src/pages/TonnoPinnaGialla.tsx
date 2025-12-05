@@ -8,7 +8,7 @@ import tartareImg from "../assets/Frame 9 (4).png";
 import carpaccioImg from "../assets/Frame 412 (15).png";
 import sakuImg from "../assets/Frame 412 (16).png";   // sostituisci se hai img migliore
 import pokeImg from "../assets/Frame 412 (17).png";              // sostituisci se hai img migliore
-import ricettaImg from "../assets/Frame 427321021.png";
+import ricettaImg from "../assets/218A9399.jpg";
 import contactBg from "../assets/Frame 374.png";
 import ChiSiamo19 from "../assets/Chi siamo (19).png"; // aggiungi questa riga
 import Logo10 from "../assets/image 10.png";
@@ -19,7 +19,7 @@ import Logo6 from "../assets/image 6.png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
 import Frame390_4 from "../assets/Frame 390 (4).png";
 import Frame412_1 from "../assets/Frame 38 (2).png";
-import ChiSiamoBg from "../assets/Chi siamo.png";
+import ChiSiamoBg from "../assets/Chi siamo (25).png";
 
 // loghi certificazioni
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
@@ -613,61 +613,45 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
  <section
-             style={
-              isMobile
-                ? {
-                    position: "relative",
-                    width: "100vw",
-                    minHeight: 480,
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "52px 0 64px",
-                    overflow: "hidden",
-                    backgroundImage: `url(${ChiSiamoBg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                  }
-                : {
-                    position: "relative",
-                    width: "100vw",
-                    minHeight: 480,
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "72px 0 76px",
-                    overflow: "hidden",
-                  }
-            }
+          style={{
+            position: "relative",
+            width: "100vw",
+            minHeight: 480,
+            display: "flex",
+            justifyContent: "center",
+            padding: isMobile ? "52px 0 64px" : "72px 0 76px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={isMobile ? ChiSiamoBg : ChiSiamo24}
+            alt="Chi siamo OHissa"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              objectFit: "cover",
+              opacity: 0.7,
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              position: "relative",
+              width: "min(960px, 92vw)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "24px",
+              zIndex: 2,
+            }}
           >
-            {!isMobile && (
-              <img
-                src={ChiSiamo24}
-                alt="Chi siamo OHissa"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  zIndex: 1,
-                  objectFit: "cover",
-                  opacity: 0.7,
-                }}
-              />
-            )}
-            <div
-              style={{
-                position: "relative",
-                width: "min(960px, 92vw)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "24px",
-                zIndex: 2,
-              }}
-            >
-    <h2
+  
+      <h2
       style={{
         color: "#fff",
         fontSize: isDesktop ? "2.1rem" : "1.7rem",
@@ -677,24 +661,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         textShadow: "0 2px 10px rgba(0,0,0,0.5)",
       }}
     >
-              Un suggerimento per una ricetta sfiziosa e veloce
-            </h2>
-
-           <div style={{
+      Un suggerimento per una ricetta sfiziosa e veloce
+    </h2>
+     <div style={{
         background: '#fff',
         borderRadius: '18px',
         boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
         maxWidth: '480px',
-        width: isMobile ? '92vw' : '480px',
-        margin: isMobile ? '24px 0 0' : '0 auto',
+        width: isMobile ? '92vw' : '90vw',
+        margin: '24px auto 0 auto',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        boxSizing: 'border-box',
-      }}
-            >
+        justifyContent: 'center'
+      }}>
               <img
                 src={ricettaImg}
                 alt="Ricetta con Salmone"
@@ -724,11 +705,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   }}
                 >
                   
- Cuoci il riso, condiscilo con aceto di riso e lascialo raffreddare.
- Disponi il riso nella bowl e aggiungi a sezioni: Tartare di Tonno
- OHissa, mango, edamame, germogli e spinacino.
- Condisci con salsa di soia, olio di sesamo e semi di sesamo.
-
+ Condisci la Tartare di Tonno OHissa con salsa di soia e olio di
+ sesamo.
+ Disponi la tartare in un coppapasta e decora con germogli di soia.
+ Aggiungi semi di sesamo se desideri.
 
                 </p>
               </div>

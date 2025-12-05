@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../App.css";
 
-import HeroSection from "../assets/Hero Section.png";          // desktop
-import ScreenshotVideoPoster from "../assets/Screenshot 2025-12-02 131527.png";
 import HeroSection3 from "../assets/Hero Section (3).png";
 import HeroSection4 from "../assets/Hero Section (4).png";
 import HeroSection5 from "../assets/Hero Section (5).png";
@@ -14,7 +12,7 @@ import Hero9 from "../assets/Hero (9).png";
 import Hero10 from "../assets/Hero (10).png";
 import Hero11 from "../assets/Hero (11).png";
 import Hero12 from "../assets/Hero (12).png";
-
+import HeroSection from "../assets/Hero Section (7).png"
 import Certificazioni from "../assets/Certificazioni.png";
 
 import ScopriBenessere from "../assets/Scopri la linea benessere.png";
@@ -34,8 +32,8 @@ import FrescoImg from "../assets/fresco.png";
 import GenuinaImg from "../assets/HP/genuina.png";
 import SportImg from "../assets/HP/sport.png";
 import MaremmaImg from "../assets/Frame 9 (2).png";
-import PesceCrudoImg from "../assets/Frame 9.png";
 import MareImg from "../assets/Frame 9 (3).png";
+import PesceCrudoImg from "../assets/Frame 9 (6).png"; // <-- aggiungi il percorso corretto qui
 import frame405 from "../assets/Frame 405.png";
 import ChiSiamo21 from "../assets/Chi siamo (21).png";
 // quella grande orizzontale
@@ -56,6 +54,9 @@ import Frame390_2 from "../assets/Frame 390 (2).png";
 import Rectangle from "../assets/Rectangle.png";
 import Frame390_3 from "../assets/Frame 390 (3).png";
 import Frame390_4 from "../assets/Frame 390 (4).png";
+
+// Add the correct import for the video poster image
+import ScreenshotVideoPoster from "../assets/Screenshot 2025-12-02 131527.png";
 
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
 import CsrLogo from "../assets/Loghi/csr-r52nk3kab1dt5y95zjcydmwp2lbtys10q1ljqh7bpc.png";

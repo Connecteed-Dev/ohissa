@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 
 // HERO / CONTENUTI
-import Group6 from "../assets/Group 6.png";
 import Frame350_4 from "../assets/Frame 350 (4).png";
 import Frame350_5 from "../assets/Frame 350 (5).png";
 import Frame350_6 from "../assets/Frame 350 (6).png";
@@ -15,7 +14,7 @@ import LogoFrame331 from "../assets/Frame 331.png";
 import Logo7 from "../assets/image 7.png";
 import Logo6 from "../assets/image 6.png";
 import ChiSiamo22 from "../assets/Chi siamo (22).png";
-
+import Group6 from "../assets/Group 6 (1).png"
 // FOOTER LOGHI
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
 import CsrLogo from "../assets/Loghi/csr-r52nk3kab1dt5y95zjcydmwp2lbtys10q1ljqh7bpc.png";

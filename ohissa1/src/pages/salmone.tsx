@@ -5,15 +5,14 @@ import Navbar from "./Navbar";
 import Group1_1 from "../assets/Group 1 (1).png"; // hero salmone
 import Frame350 from "../assets/Frame 350.png";   // tondo salmone
 
-import Frame412 from "../assets/Frame 412.png";       // tartare
 import Frame412_1 from "../assets/Frame 412 (1).png"; // saku
 import Frame412_2 from "../assets/Frame 412 (2).png"; // poke
-import ChiSiamoBg from "../assets/Chi siamo.png";
-
+import ChiSiamoBg from "../assets/Chi siamo (25).png";
+import Frame412 from "../assets/Frame 412 (18).png";         // tartare
 import ChiSiamo19 from "../assets/Chi siamo (19).png"; // cerchio verde ricetta
 import ChiSiamo24 from "../assets/Chi siamo(24).png";
 import Frame374 from "../assets/Frame 374.png";        // sfondo form contatti
-import Ricetta from "../assets/Frame 38.png"; // immagine ricetta
+import Ricetta from "../assets/photo_5877678267047808095_y.jpg"; // immagine ricetta
 // LOGHI CERTIFICAZIONI
 import AscLogo from "../assets/Loghi/ASC-Landscape-Italian-r52nk2mg47canpctelhceat8bo2s8q4tciqxg0mqkg.png";
 import CsrLogo from "../assets/Loghi/csr-r52nk3kab1dt5y95zjcydmwp2lbtys10q1ljqh7bpc.png";
@@ -516,62 +515,46 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
         {/* SUGGERIMENTO RICETTA */}
 {/* SUGGERIMENTO RICETTA */}
-<section
-            style={
-              isMobile
-                ? {
-                    position: "relative",
-                    width: "100vw",
-                    minHeight: 480,
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "52px 0 64px",
-                    overflow: "hidden",
-                    backgroundImage: `url(${ChiSiamoBg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                  }
-                : {
-                    position: "relative",
-                    width: "100vw",
-                    minHeight: 480,
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "72px 0 76px",
-                    overflow: "hidden",
-                  }
-            }
+ <section
+          style={{
+            position: "relative",
+            width: "100vw",
+            minHeight: 480,
+            display: "flex",
+            justifyContent: "center",
+            padding: isMobile ? "52px 0 64px" : "72px 0 76px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={isMobile ? ChiSiamoBg : ChiSiamo24}
+            alt="Chi siamo OHissa"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              objectFit: "cover",
+              opacity: 0.7,
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              position: "relative",
+              width: "min(960px, 92vw)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "24px",
+              zIndex: 2,
+            }}
           >
-            {!isMobile && (
-              <img
-                src={ChiSiamo24}
-                alt="Chi siamo OHissa"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  zIndex: 1,
-                  objectFit: "cover",
-                  opacity: 0.7,
-                }}
-              />
-            )}
-            <div
-              style={{
-                position: "relative",
-                width: "min(960px, 92vw)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "24px",
-                zIndex: 2,
-              }}
-            >
-    <h2
+  
+      <h2
       style={{
         color: "#fff",
         fontSize: isDesktop ? "2.1rem" : "1.7rem",
@@ -583,17 +566,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     >
       Un suggerimento per una ricetta sfiziosa e veloce
     </h2>
-
-    <div
-      style={{
-        background: "rgba(255,255,255,0.97)",
-        borderRadius: "18px",
-        boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
-        maxWidth: 520,
-        width: "100%",
-        overflow: "hidden",
-      }}
-    >
+     <div style={{
+        background: '#fff',
+        borderRadius: '18px',
+        boxShadow: '0 2px 18px rgba(0,0,0,0.12)',
+        maxWidth: '480px',
+        width: isMobile ? '92vw' : '90vw',
+        margin: isMobile ? '24px 0 0' : '0 auto',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: isMobile ? 'center' : undefined,
+        marginLeft: isMobile ? undefined : undefined
+      }}>
       <img
         src={Ricetta}
         alt="Ricetta con Salmone"
