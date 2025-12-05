@@ -332,11 +332,11 @@ const ricette = [
   },
   {
     img: Frame390_1,
-    title: "Tartare di Pesce Spada al curry",
+    title: "Tartare di Salmone OHissa",
     ingredienti:
-      "Tartare di Pesce Spada OHissa, salsa (maionese + curry in polvere), olio extravergine d’oliva, sale, pepe, aneto o finocchietto.",
+      "Tartare di Pesce Spada OHissa Salsa (maionese + curry in polvere). Olio extravergine d’oliva, sale, pepe, Aneto o finocchietto per decorazion",
     preparazione:
-      "Condisci la Tartare di Pesce Spada OHissa con olio, sale e pepe. Prepara la salsa mescolando maionese e curry. Disponi poi la tartare in un coppapasta, aggiungi la salsa sopra e decora con aneto.",
+      "Condisci la Tartare di Pesce Spada OHissa con olio, sale e pepe. Prepara la salsa mescolando maionese e curry. Disponi la tartare in un coppapasta, aggiungi la salsa sopra e decora con aneto.",
     tempo: "7 min",
   },
   {
