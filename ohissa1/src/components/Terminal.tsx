@@ -70,21 +70,22 @@ Technology: Ibernazione da fresco (ULT)`;
         return;
       default:
         if (trimmedCmd.startsWith('echo ')) {
-          output = cmd.substring(5);
+          output = trimmedCmd.substring(5);
         } else {
-          output = `Command not found: ${cmd}\nType "help" for available commands.`;
+          output = `Command not found: ${trimmedCmd}\nType "help" for available commands.`;
         }
     }
 
-    setHistory(prev => [...prev, { command: cmd, output }]);
-    setCommandHistory(prev => [...prev, cmd]);
+    setHistory(prev => [...prev, { command: trimmedCmd, output }]);
+    setCommandHistory(prev => [...prev, trimmedCmd]);
     setHistoryIndex(-1);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (input.trim()) {
-      executeCommand(input);
+    const trimmed = input.trim();
+    if (trimmed) {
+      executeCommand(trimmed);
       setInput('');
     }
   };
